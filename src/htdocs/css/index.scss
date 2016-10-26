@@ -1,0 +1,14 @@
+
+/* TODO remove this rule that highlights content layout */
+.summary-view,
+.summary-map-view,
+.summary-collection-table,
+.detail-download-view,
+.detail-view,
+.detail-map-view {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  margin: 1em 0;
+  padding: 1em;
+  min-height: 300px;
+}
