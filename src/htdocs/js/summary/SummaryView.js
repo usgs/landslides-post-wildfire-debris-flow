@@ -1,9 +1,7 @@
 'use strict';
 
 
-var Collection = require('mvc/Collection'),
-    SummaryCollectionTable = require('summary/SummaryCollectionTable'),
-    SummaryMapView = require('summary/SummaryMapView'),
+var SummaryMapView = require('summary/SummaryMapView'),
     Util = require('util/Util'),
     View = require('mvc/View');
 
@@ -35,18 +33,32 @@ var SummaryView = function (options) {
     _this.el.classList.add('summary-view');
     _this.el.innerHTML =
         '<div class="summary-map-view"></div>' +
-        '<div class="summary-collection-table"></div>';
+        '<div class="summary-collection-table horizontal-scroll"></div>';
 
-    _this.collection = options.collection || Collection([]);
-
-    _this.summaryMapView = SummaryMapView({
-      el: document.querySelector('.summary-map-view'),
-      collection: _this.collection
+    // sort array in descending order
+    _this.data = (options.data || []).sort(function (a,b) {
+      return b.attributes.date - a.attributes.date;
     });
 
-    _this.summaryCollectionTable = SummaryCollectionTable({
-      el: document.querySelector('.summary-collection-table'),
-      collection: _this.collection
+    // pass array to map view
+    _this.summaryMapView = SummaryMapView({
+      el: document.querySelector('.summary-map-view'),
+      data: _this.data
+    });
+    _this.summaryMapView.render();
+  };
+
+  /**
+   * Build list of fire events that link to details page
+   *
+   * @param data {Array}
+   *        An array of features from the ArcGIS web service request
+   *
+   */
+  _this.createSummaryList = function (data) {
+    // TODO, create list of events
+    data.forEach(function (item) {
+      console.log(item.attributes.date);
     });
   };
 
@@ -68,8 +80,10 @@ var SummaryView = function (options) {
    *
    */
   _this.render = function () {
+    // render map view
     _this.summaryMapView.render();
-    _this.summaryCollectionTable.render();
+    // build list of summary events
+    _this.createSummaryList(_this.data);
   };
 
 
