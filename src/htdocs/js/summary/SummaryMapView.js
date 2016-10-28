@@ -2,7 +2,8 @@
 'use strict';
 
 
-var Terrain = require('leaflet/layer/Terrain'),
+var SummaryFireLayer = require('summary/SummaryFireLayer'),
+    Terrain = require('leaflet/layer/Terrain'),
     Util = require('util/Util'),
     View = require('mvc/View');
 
@@ -44,7 +45,15 @@ var SummaryMapView = function (options) {
       zoomAnimation: false
     });
 
+    // Add basemap
     Terrain().addTo(_this.map);
+
+    // Add fire layers
+    _this.fires = SummaryFireLayer({
+      data: _this.data
+    });
+    _this.map.addLayer(_this.fires);
+
 
     // Add Map Controls
     if (!Util.isMobile()) {

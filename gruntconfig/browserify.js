@@ -13,6 +13,7 @@ JS = './' + config.src + '/htdocs/js';
 
 BUNDLE_CLASSES = [
   JS + '/summary/SummaryCollectionTable.js:summary/SummaryCollectionTable',
+  JS + '/summary/SummaryFireLayer.js:summary/SummaryFireLayer',
   JS + '/summary/SummaryMapView.js:summary/SummaryMapView',
   JS + '/summary/SummaryView.js:summary/SummaryView',
   JS + '/detail/DetailDownloadView.js:detail/DetailDownloadView',
