@@ -1,6 +1,5 @@
 
 /* TODO remove this rule that highlights content layout */
-.summary-map-view,
 .detail-download-view,
 .detail-view,
 .detail-map-view {
@@ -9,4 +8,8 @@
   margin: 1em 0;
   padding: 1em;
   min-height: 300px;
+}
+
+.summary-map-view {
+  height: 45em;
 }

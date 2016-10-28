@@ -8,8 +8,14 @@ if (!isset($TEMPLATE)) {
   include_once '../conf/config.inc.php';
 
   $TITLE = 'Emergency Assessment of Post-Fire Debris-Flow Hazards';
-  $HEAD = '<link rel="stylesheet" href="css/index.css"/>';
-  $FOOT = '<script src="js/index.js"></script>';
+  $HEAD = '
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="/lib/leaflet-0.7.7/leaflet.css"/>
+  ';
+  $FOOT = '
+    <script src="/lib/leaflet-0.7.7/leaflet.js"></script>
+    <script src="js/index.js"></script>
+  ';
 
   include 'template.inc.php';
 }

@@ -1,7 +1,9 @@
+/* global L */
 'use strict';
 
 
-var Util = require('util/Util'),
+var Terrain = require('leaflet/layer/Terrain'),
+    Util = require('util/Util'),
     View = require('mvc/View');
 
 
@@ -28,8 +30,27 @@ var SummaryMapView = function (options) {
    * @param options {Object}
    *     Configuration options for this view.
    */
-  _initialize = function () {
+  _initialize = function (options) {
     _this.el.classList.add('summary-map-view');
+    _this.data = options.data || {};
+
+    _this.map = L.map(_this.el, {
+      center: [41.5, -112.0],
+      maxBounds: [
+        [-90, -Infinity],
+        [90, Infinity]
+      ],
+      zoom: 5,
+      zoomAnimation: false
+    });
+
+    Terrain().addTo(_this.map);
+
+    // Add Map Controls
+    if (!Util.isMobile()) {
+      _this.map.addControl(L.control.scale({position: 'bottomleft'}));
+    }
+
   };
 
   /**
@@ -46,7 +67,7 @@ var SummaryMapView = function (options) {
   }, _this.destroy);
 
   _this.render = function () {
-    _this.el.innerHTML = '<p>TODO, Create Summary Map View</p>';
+
   };
 
 

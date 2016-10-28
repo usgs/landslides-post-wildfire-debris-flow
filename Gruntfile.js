@@ -25,7 +25,8 @@ module.exports = function (grunt) {
     'browserify',
     'postcss:build',
     'copy:build',
-    'copy:test'
+    'copy:test',
+    'copy:leaflet'
   ]);
 
   grunt.registerTask('builddist', [
