@@ -6,11 +6,23 @@ var HazDevLayers = require('leaflet/control/HazDevLayers'),
 
 
 var _DEFAULTS = {
-
-
+  icon: L.icon({
+    iconUrl: 'images/flame.png',
+    iconRetinaUrl: 'my-icon@2x.png',
+    iconSize: [15, 20],
+    iconAnchor: [10, 18],
+    popupAnchor: [-3, -16]
+  })
 };
 
-
+/**
+ * A leaflet layer that displays fires (grouped by year) with a layer control
+ * that allows the user to select which year to display.
+ *
+ * @param options {Object}
+ *        - options.data {Object} arrays of fire features keyed by year
+ *        - (optional) optionsicon {L.icon} a marker icon
+ */
 var SummaryFireLayer = function (options) {
   var _this,
       _initialize;
@@ -22,42 +34,22 @@ var SummaryFireLayer = function (options) {
     options = Util.extend({}, _DEFAULTS, options);
 
     _this.data = options.data || {};
-    _this.el = options.el || document.createElement('div');
+    _this.icon = options.icon;
     _this.map = null;
-
-    _this.fireIcon = L.icon({
-      iconUrl: 'images/flame.png',
-      iconRetinaUrl: 'my-icon@2x.png',
-      iconSize: [15, 20],
-      iconAnchor: [10, 18],
-      popupAnchor: [-3, -16]
-    });
-
-    _this.markers = _this.getMarkers(_this.data);
   };
 
   /**
-   * add fire markers to the map.
+   * Add fire markers to the map for all fires in _this.data
    *
-   * @param fire {Object}
-   *     fire object.
-   * @param latLng {Object}
-   *     normalized latitude/longitude for object.
    * @return {DOMElement}
    *     marker element, positioned and styled.
    */
   _this.addMarkers = function () {
-    HazDevLayers(_this.markers).addTo(_this.map);
-  };
-
-  /**
-   * Format _this.data into object containing array of markers to plot on map
-   * @return {[type]} [description]
-   */
-  _this.getMarkers = function () {
     var data,
         fire,
         fires,
+        layer,
+        layers,
         marker,
         markers,
         year,
@@ -65,24 +57,27 @@ var SummaryFireLayer = function (options) {
 
     fires = {};
     years = Object.keys(_this.data);
-    years = years.sort(function (a,b) { return b - a; });
+    years = years.sort(function (a,b) { return b-a; });
+    layers = HazDevLayers();
+    layers.addTo(_this.map);
 
+    // Loop through each year in the fires object
     for (var x = 0; x < years.length; x++) {
       year = years[x];
       data = _this.data[year];
       markers = [];
 
-      // loop through entire year of fires
+      // loop through all fires for each year, and create markers
       for (var i = 0; i < data.length; i++) {
         fire = data[i];
+
         marker = L.marker([
           fire.attributes.lat,
           fire.attributes.lon,
         ], {
           title: fire.attributes.fire,
-          icon: _this.fireIcon
+          icon: _this.icon
         });
-
         marker.bindPopup(
             '<a href="detail.php?id=' + fire.attributes.objectid + '">' +
               '<h3>' + fire.attributes.fire + '</h3>' +
@@ -90,7 +85,14 @@ var SummaryFireLayer = function (options) {
         markers.push(marker);
       }
 
-      fires[year] = L.layerGroup(markers);
+      // create a separate layer for each year
+      layer = L.layerGroup(markers);
+      layers.addBaseLayer(layer, year);
+
+      // show data from most recent year by default
+      if (x === 0) {
+        layer.addTo(_this.map);
+      }
     }
 
     return fires;

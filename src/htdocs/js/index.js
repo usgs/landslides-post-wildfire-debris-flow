@@ -28,5 +28,6 @@ Xhr.ajax({
         'Failed to download post-wildfire debris flow data.',
       '</p>';
     console.log(error);
+    console.log(error.stack);
   }
 });
