@@ -1,7 +1,10 @@
+/* global L */
 'use strict';
 
 
-var Util = require('util/Util'),
+var SummaryFireLayer = require('summary/SummaryFireLayer'),
+    Terrain = require('leaflet/layer/Terrain'),
+    Util = require('util/Util'),
     View = require('mvc/View');
 
 
@@ -28,8 +31,35 @@ var SummaryMapView = function (options) {
    * @param options {Object}
    *     Configuration options for this view.
    */
-  _initialize = function () {
+  _initialize = function (options) {
     _this.el.classList.add('summary-map-view');
+    _this.data = options.data || {};
+
+    _this.map = L.map(_this.el, {
+      center: [41.5, -112.0],
+      maxBounds: [
+        [-90, -Infinity],
+        [90, Infinity]
+      ],
+      zoom: 5,
+      zoomAnimation: false
+    });
+
+    // Add basemap
+    Terrain().addTo(_this.map);
+
+    // Add fire layers
+    _this.fires = SummaryFireLayer({
+      data: _this.data
+    });
+    _this.map.addLayer(_this.fires);
+
+
+    // Add Map Controls
+    if (!Util.isMobile()) {
+      _this.map.addControl(L.control.scale({position: 'bottomleft'}));
+    }
+
   };
 
   /**
@@ -46,7 +76,7 @@ var SummaryMapView = function (options) {
   }, _this.destroy);
 
   _this.render = function () {
-    _this.el.innerHTML = '<p>TODO, Create Summary Map View</p>';
+
   };
 
 
