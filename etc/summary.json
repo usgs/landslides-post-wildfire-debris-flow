@@ -1,0 +1,909 @@
+{
+  "displayFieldName": "fire",
+  "fieldAliases": {
+    "objectid": "objectid",
+    "fire": "fire",
+    "lat": "lat",
+    "lon": "lon",
+    "location": "location",
+    "service": "service",
+    "date": "date",
+    "size": "size"
+  },
+  "fields": [{
+    "name": "objectid",
+    "type": "esriFieldTypeOID",
+    "alias": "objectid"
+  }, {
+    "name": "fire",
+    "type": "esriFieldTypeString",
+    "alias": "fire",
+    "length": 8000
+  }, {
+    "name": "lat",
+    "type": "esriFieldTypeDouble",
+    "alias": "lat"
+  }, {
+    "name": "lon",
+    "type": "esriFieldTypeDouble",
+    "alias": "lon"
+  }, {
+    "name": "location",
+    "type": "esriFieldTypeString",
+    "alias": "location",
+    "length": 8000
+  }, {
+    "name": "service",
+    "type": "esriFieldTypeString",
+    "alias": "service",
+    "length": 3
+  }, {
+    "name": "date",
+    "type": "esriFieldTypeDate",
+    "alias": "date",
+    "length": 36
+  }, {
+    "name": "size",
+    "type": "esriFieldTypeDouble",
+    "alias": "size"
+  }],
+  "features": [{
+    "attributes": {
+      "objectid": 1,
+      "fire": "Trailhead Fire",
+      "lat": 38.960000000000001,
+      "lon": -120.81999999999999,
+      "location": "El Dorado County, CA",
+      "service": "wms",
+      "date": 1467072000000,
+      "size": 22
+    }
+  }, {
+    "attributes": {
+      "objectid": 2,
+      "fire": "Erskine Fire",
+      "lat": 35.57,
+      "lon": -118.31999999999999,
+      "location": "Kern County, CA",
+      "service": "wms",
+      "date": 1466640000000,
+      "size": 194
+    }
+  }, {
+    "attributes": {
+      "objectid": 3,
+      "fire": "San Gabriel Complex Fire",
+      "lat": 34.200000000000003,
+      "lon": -117.88,
+      "location": "Angeles National Forest, CA",
+      "service": "wms",
+      "date": 1466380800000,
+      "size": 21
+    }
+  }, {
+    "attributes": {
+      "objectid": 4,
+      "fire": "Colby Fire",
+      "lat": 34.158000000000001,
+      "lon": -117.87,
+      "location": "Los Angeles County, California",
+      "service": "cms",
+      "date": 1389916800000,
+      "size": 8
+    }
+  }, {
+    "attributes": {
+      "objectid": 5,
+      "fire": "Rim Fire",
+      "lat": 37.869999999999997,
+      "lon": -119.94,
+      "location": "Stanislaus National Forest and Yosemite National Park, California",
+      "service": "cms",
+      "date": 1376697600000,
+      "size": 1041
+    }
+  }, {
+    "attributes": {
+      "objectid": 6,
+      "fire": "Elk/Pony Complex Fire",
+      "lat": 43.409999999999997,
+      "lon": -115.48,
+      "location": "Elmore County, Idaho",
+      "service": "cms",
+      "date": 1375920000000,
+      "size": 531
+    }
+  }, {
+    "attributes": {
+      "objectid": 7,
+      "fire": "Government Flats Fire",
+      "lat": 45.533000000000001,
+      "lon": -121.364,
+      "location": "Wasco County, Oregon",
+      "service": "cms",
+      "date": 1376611200000,
+      "size": 46.299999999999997
+    }
+  }, {
+    "attributes": {
+      "objectid": 8,
+      "fire": "Signal Fire",
+      "lat": 32.923999999999999,
+      "lon": -108.145,
+      "location": "Grant County, New Mexico",
+      "service": "cms",
+      "date": 1399766400000,
+      "size": 22.199999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 9,
+      "fire": "Slide Fire",
+      "lat": 35.008000000000003,
+      "lon": -111.78,
+      "location": "Coconino/Yavapai Counties, Arizona",
+      "service": "cms",
+      "date": 1400544000000,
+      "size": 85.900000000000006
+    }
+  }, {
+    "attributes": {
+      "objectid": 10,
+      "fire": "Dog Head Fire",
+      "lat": 34.850000000000001,
+      "lon": -106.29000000000001,
+      "location": "Bernalillo County, New Mexico",
+      "service": "wms",
+      "date": 1465862400000,
+      "size": 72
+    }
+  }, {
+    "attributes": {
+      "objectid": 11,
+      "fire": "Watermen Complex Fire",
+      "lat": 44.5,
+      "lon": -120.36,
+      "location": "Crook and Wheeler Counties, Oregon",
+      "service": "cms",
+      "date": 1405036800000,
+      "size": 50.600000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 12,
+      "fire": "Mills Canyon Complex Fire",
+      "lat": 47.619999999999997,
+      "lon": -120.29000000000001,
+      "location": "Chelan County, Washington",
+      "service": "cms",
+      "date": 1404777600000,
+      "size": 91
+    }
+  }, {
+    "attributes": {
+      "objectid": 13,
+      "fire": "French Fire",
+      "lat": 37.293999999999997,
+      "lon": -119.337,
+      "location": "Madera County, California",
+      "service": "cms",
+      "date": 1406505600000,
+      "size": 56
+    }
+  }, {
+    "attributes": {
+      "objectid": 14,
+      "fire": "El Portal Fire",
+      "lat": 37.716999999999999,
+      "lon": -119.78,
+      "location": "Mariposa County, California",
+      "service": "cms",
+      "date": 1406332800000,
+      "size": 19
+    }
+  }, {
+    "attributes": {
+      "objectid": 15,
+      "fire": "Stouts Creek Fire",
+      "lat": 42.859999999999999,
+      "lon": -122.97,
+      "location": "Douglas County, Oregon",
+      "service": "cms",
+      "date": 1438214400000,
+      "size": 107.09999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 16,
+      "fire": "Municipal Fire",
+      "lat": 46.466999999999999,
+      "lon": -116.19,
+      "location": "Clearwater County, Idaho",
+      "service": "cms",
+      "date": 1439856000000,
+      "size": 7.0999999999999996
+    }
+  }, {
+    "attributes": {
+      "objectid": 17,
+      "fire": "Butte Fire",
+      "lat": 38.259999999999998,
+      "lon": -120.58,
+      "location": "Amador and Calaveras Counties, California",
+      "service": "cms",
+      "date": 1441756800000,
+      "size": 286.60000000000002
+    }
+  }, {
+    "attributes": {
+      "objectid": 18,
+      "fire": "Valley Fire",
+      "lat": 38.787999999999997,
+      "lon": -122.624,
+      "location": "Lake County, California",
+      "service": "cms",
+      "date": 1442016000000,
+      "size": 307.80000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 19,
+      "fire": "Solimar Fire",
+      "lat": 34.304000000000002,
+      "lon": -119.339,
+      "location": "Ventura County, California",
+      "service": "cms",
+      "date": 1451088000000,
+      "size": 5.5999999999999996
+    }
+  }, {
+    "attributes": {
+      "objectid": 20,
+      "fire": "Sherpa Fire",
+      "lat": 34.5,
+      "lon": -120.03,
+      "location": "Los Padres National Forest, California",
+      "service": "wms",
+      "date": 1465948800000,
+      "size": 30
+    }
+  }, {
+    "attributes": {
+      "objectid": 21,
+      "fire": "Marina Fire",
+      "lat": 37.979999999999997,
+      "lon": -119.14,
+      "location": "Inyo National Forest, CA",
+      "service": "wms",
+      "date": 1466726400000,
+      "size": 2
+    }
+  }, {
+    "attributes": {
+      "objectid": 22,
+      "fire": "Strawberry Fire",
+      "lat": 39.060000000000002,
+      "lon": -114.28,
+      "location": "Great Basin NP, NV",
+      "service": "wms",
+      "date": 1470614400000,
+      "size": 18
+    }
+  }, {
+    "attributes": {
+      "objectid": 23,
+      "fire": "Blue Cut Fire",
+      "lat": 34.329999999999998,
+      "lon": -117.51000000000001,
+      "location": "San Bernardino County, CA",
+      "service": "wms",
+      "date": 1471305600000,
+      "size": 146
+    }
+  }, {
+    "attributes": {
+      "objectid": 24,
+      "fire": "Carlton Complex Fire",
+      "lat": 48.210999999999999,
+      "lon": -119.92,
+      "location": "Okanogan County, Washington",
+      "service": "cms",
+      "date": 1405296000000,
+      "size": 1036
+    }
+  }, {
+    "attributes": {
+      "objectid": 25,
+      "fire": "Little Bridge Creek Fire",
+      "lat": 48.442,
+      "lon": -120.37,
+      "location": "Okanogan County, Washington",
+      "service": "cms",
+      "date": 1407024000000,
+      "size": 20.100000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 26,
+      "fire": "Duncan Fire",
+      "lat": 48.009999999999998,
+      "lon": -120.54000000000001,
+      "location": "Chelan County, Washington",
+      "service": "cms",
+      "date": 1405468800000,
+      "size": 51.399999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 27,
+      "fire": "Upper Falls Fire",
+      "lat": 48.767000000000003,
+      "lon": -120.26300000000001,
+      "location": "Okanogan County, Washington",
+      "service": "cms",
+      "date": 1407196800000,
+      "size": 32.899999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 28,
+      "fire": "Way Fire",
+      "lat": 35.744999999999997,
+      "lon": -118.455,
+      "location": "Kern County, California",
+      "service": "cms",
+      "date": 1408320000000,
+      "size": 16.399999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 29,
+      "fire": "Chiwaukum Complex Fire",
+      "lat": 47.68,
+      "lon": -120.78,
+      "location": "Chelan County, Washington",
+      "service": "cms",
+      "date": 1405382400000,
+      "size": 56.200000000000003
+    }
+  }, {
+    "attributes": {
+      "objectid": 30,
+      "fire": "Silverado Fire",
+      "lat": 33.755000000000003,
+      "lon": -117.587,
+      "location": "Orange County, California",
+      "service": "cms",
+      "date": 1411171200000,
+      "size": 3.8999999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 31,
+      "fire": "King Fire",
+      "lat": 38.93,
+      "lon": -120.5,
+      "location": "El Dorado and Placer Counties, California",
+      "service": "cms",
+      "date": 1410566400000,
+      "size": 395
+    }
+  }, {
+    "attributes": {
+      "objectid": 32,
+      "fire": "Dog Rock Fire",
+      "lat": 37.682000000000002,
+      "lon": -119.73999999999999,
+      "location": "Mariposa County, California",
+      "service": "cms",
+      "date": 1412640000000,
+      "size": 1.26
+    }
+  }, {
+    "attributes": {
+      "objectid": 33,
+      "fire": "Lake Fire",
+      "lat": 34.130000000000003,
+      "lon": -116.76000000000001,
+      "location": "San Bernardino National Forest - San Bernardino County, California",
+      "service": "cms",
+      "date": 1434499200000,
+      "size": 126.90000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 34,
+      "fire": "Saddle Fire",
+      "lat": 40.68,
+      "lon": -123.52,
+      "location": "Trinity County, California",
+      "service": "cms",
+      "date": 1433808000000,
+      "size": 6.2000000000000002
+    }
+  }, {
+    "attributes": {
+      "objectid": 35,
+      "fire": "Washington Fire",
+      "lat": 38.640999999999998,
+      "lon": -119.70999999999999,
+      "location": "Alpine County, California",
+      "service": "cms",
+      "date": 1437264000000,
+      "size": 72
+    }
+  }, {
+    "attributes": {
+      "objectid": 36,
+      "fire": "Blue Creek Fire",
+      "lat": 46.039999999999999,
+      "lon": -118.06999999999999,
+      "location": "Walla Walla County, Washington",
+      "service": "cms",
+      "date": 1437350400000,
+      "size": 24
+    }
+  }, {
+    "attributes": {
+      "objectid": 37,
+      "fire": "Wragg Fire",
+      "lat": 38.487000000000002,
+      "lon": -122.07899999999999,
+      "location": "Napa County, California",
+      "service": "cms",
+      "date": 1437523200000,
+      "size": 32.600000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 38,
+      "fire": "Willow Fire",
+      "lat": 37.281999999999996,
+      "lon": -119.482,
+      "location": "Sierra National Forest - Madera County, California",
+      "service": "cms",
+      "date": 1437782400000,
+      "size": 23.100000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 39,
+      "fire": "Rocky/Jerusalem Fires",
+      "lat": 38.917000000000002,
+      "lon": -122.446,
+      "location": "Lake County, California",
+      "service": "cms",
+      "date": 1438128000000,
+      "size": 382.69999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 40,
+      "fire": "Fork Complex Fire",
+      "lat": 40.490000000000002,
+      "lon": -123.09999999999999,
+      "location": "Trinity County, California",
+      "service": "cms",
+      "date": 1438214400000,
+      "size": 147.69999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 41,
+      "fire": "Mad River Complex Fire",
+      "lat": 40.32,
+      "lon": -123.44,
+      "location": "Trinity County, California",
+      "service": "cms",
+      "date": 1438214400000,
+      "size": 151.59999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 42,
+      "fire": "River Complex Fire",
+      "lat": 40.912999999999997,
+      "lon": -123.40000000000001,
+      "location": "Shasta-Trinity National Forest, California",
+      "service": "cms",
+      "date": 1438214400000,
+      "size": 311.89999999999998
+    }
+  }, {
+    "attributes": {
+      "objectid": 43,
+      "fire": "Route Fire",
+      "lat": 40.600000000000001,
+      "lon": -123.53,
+      "location": "Humboldt and Trinity Counties, California",
+      "service": "cms",
+      "date": 1438214400000,
+      "size": 144.30000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 44,
+      "fire": "Gasquet Complex Fire",
+      "lat": 41.700000000000003,
+      "lon": -123.81,
+      "location": "Del Norte County, California",
+      "service": "cms",
+      "date": 1438300800000,
+      "size": 122.90000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 45,
+      "fire": "Rough Fire",
+      "lat": 36.874000000000002,
+      "lon": -118.905,
+      "location": "Fresno County, California",
+      "service": "cms",
+      "date": 1438300800000,
+      "size": 613.60000000000002
+    }
+  }, {
+    "attributes": {
+      "objectid": 46,
+      "fire": "South Complex Fire",
+      "lat": 40.619999999999997,
+      "lon": -123.44799999999999,
+      "location": "Trinity County, California",
+      "service": "cms",
+      "date": 1438387200000,
+      "size": 119
+    }
+  }, {
+    "attributes": {
+      "objectid": 47,
+      "fire": "Clearwater Fire",
+      "lat": 46.283999999999999,
+      "lon": -116.01000000000001,
+      "location": "Lewis, Clearwater, Idaho Counties, Idaho",
+      "service": "cms",
+      "date": 1439164800000,
+      "size": 192.09999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 48,
+      "fire": "Fisher Fire",
+      "lat": 46.326999999999998,
+      "lon": -116.42700000000001,
+      "location": "Nez Perce Reservation, Idaho",
+      "service": "cms",
+      "date": 1439164800000,
+      "size": 76.400000000000006
+    }
+  }, {
+    "attributes": {
+      "objectid": 49,
+      "fire": "Noble Fire",
+      "lat": 45.609999999999999,
+      "lon": -115.316,
+      "location": "Idaho County, Idaho",
+      "service": "cms",
+      "date": 1439164800000,
+      "size": 22.600000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 50,
+      "fire": "Kettle Complex Fire",
+      "lat": 48.756,
+      "lon": -118.33,
+      "location": "Ferry County, Washington",
+      "service": "cms",
+      "date": 1439251200000,
+      "size": 297
+    }
+  }, {
+    "attributes": {
+      "objectid": 51,
+      "fire": "Canyon Creek Fire",
+      "lat": 44.283999999999999,
+      "lon": -118.81999999999999,
+      "location": "Malheur National Forest, Oregon",
+      "service": "cms",
+      "date": 1439337600000,
+      "size": 447
+    }
+  }, {
+    "attributes": {
+      "objectid": 52,
+      "fire": "Tepee Springs Fire",
+      "lat": 45.299999999999997,
+      "lon": -116.15000000000001,
+      "location": "Idaho County, Idaho",
+      "service": "cms",
+      "date": 1439337600000,
+      "size": 387.30000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 53,
+      "fire": "Northstar Complex Fire",
+      "lat": 48.409999999999997,
+      "lon": -118.94,
+      "location": "Colville Indian Reservation, Washington",
+      "service": "cms",
+      "date": 1439424000000,
+      "size": 882
+    }
+  }, {
+    "attributes": {
+      "objectid": 54,
+      "fire": "Wash/Slide Fire",
+      "lat": 46.009999999999998,
+      "lon": -115.36,
+      "location": "Idaho County, Idaho",
+      "service": "cms",
+      "date": 1439424000000,
+      "size": 190.69999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 55,
+      "fire": "Black Canyon Fire",
+      "lat": 47.950000000000003,
+      "lon": -119.95,
+      "location": "Okanogan and Wenatchee National Forests, Washington",
+      "service": "cms",
+      "date": 1439510400000,
+      "size": 360.5
+    }
+  }, {
+    "attributes": {
+      "objectid": 56,
+      "fire": "Lime Belt Fire",
+      "lat": 48.518999999999998,
+      "lon": -119.66200000000001,
+      "location": "Okanogan and Wenatchee National Forests, Washington",
+      "service": "cms",
+      "date": 1439510400000,
+      "size": 540
+    }
+  }, {
+    "attributes": {
+      "objectid": 57,
+      "fire": "Tunk Block Fire",
+      "lat": 48.479999999999997,
+      "lon": -119.36,
+      "location": "Okanogan County, Washington",
+      "service": "cms",
+      "date": 1439510400000,
+      "size": 671.39999999999998
+    }
+  }, {
+    "attributes": {
+      "objectid": 58,
+      "fire": "Twisp River Fire",
+      "lat": 48.381999999999998,
+      "lon": -120.211,
+      "location": "Okanogan County, Washington",
+      "service": "cms",
+      "date": 1439510400000,
+      "size": 45.399999999999999
+    }
+  }, {
+    "attributes": {
+      "objectid": 59,
+      "fire": "Woodrat Fire",
+      "lat": 46.170000000000002,
+      "lon": -115.76600000000001,
+      "location": "Idaho County, Idaho",
+      "service": "cms",
+      "date": 1439510400000,
+      "size": 26.100000000000001
+    }
+  }, {
+    "attributes": {
+      "objectid": 60,
+      "fire": "Hayden Pass Fire",
+      "lat": 38.299999999999997,
+      "lon": -105.77,
+      "location": "Fremont County, CO",
+      "service": "wms",
+      "date": 1467936000000,
+      "size": 66
+    }
+  }, {
+    "attributes": {
+      "objectid": 61,
+      "fire": "Cold Springs Fire",
+      "lat": 39.979999999999997,
+      "lon": -105.48,
+      "location": "Nederland, CO",
+      "service": "wms",
+      "date": 1468022400000,
+      "size": 2
+    }
+  }, {
+    "attributes": {
+      "objectid": 62,
+      "fire": "Lava Mountain Fire",
+      "lat": 43.609999999999999,
+      "lon": -109.90000000000001,
+      "location": "Shoshone National Forest, WY",
+      "service": "wms",
+      "date": 1468195200000,
+      "size": 59
+    }
+  }, {
+    "attributes": {
+      "objectid": 64,
+      "fire": "Sand Fire",
+      "lat": 34.390000000000001,
+      "lon": -118.34,
+      "location": "Angeles National Forest, CA",
+      "service": "wms",
+      "date": 1469145600000,
+      "size": 167
+    }
+  }, {
+    "attributes": {
+      "objectid": 65,
+      "fire": "Cayuse Mountain Fire",
+      "lat": 47.840000000000003,
+      "lon": -118.04000000000001,
+      "location": "Wellpinit, WA on the Spokane Indian Reservation",
+      "service": "wms",
+      "date": 1471737600000,
+      "size": 73
+    }
+  }, {
+    "attributes": {
+      "objectid": 67,
+      "fire": "Cedar Fire",
+      "lat": 35.789999999999999,
+      "lon": -118.56999999999999,
+      "location": "Sequoia National Forest, CA",
+      "service": "wms",
+      "date": 1471305600000,
+      "size": 117
+    }
+  }, {
+    "attributes": {
+      "objectid": 68,
+      "fire": "Rey Fire",
+      "lat": 34.579999999999998,
+      "lon": -119.75,
+      "location": "Los Padres NF, CA",
+      "service": "wms",
+      "date": 1471478400000,
+      "size": 131
+    }
+  }, {
+    "attributes": {
+      "objectid": 69,
+      "fire": "Pilot Fire",
+      "lat": 34.310000000000002,
+      "lon": -117.25,
+      "location": "San Bernardino National Forest, CA",
+      "service": "wms",
+      "date": 1470528000000,
+      "size": 32
+    }
+  }, {
+    "attributes": {
+      "objectid": 70,
+      "fire": "Gap Fire",
+      "lat": 41.859999999999999,
+      "lon": -123.04000000000001,
+      "location": "Klamath National Forest, CA",
+      "service": "wms",
+      "date": 1472256000000,
+      "size": 133
+    }
+  }, {
+    "attributes": {
+      "objectid": 71,
+      "fire": "Pony Fire",
+      "lat": 41.609999999999999,
+      "lon": -123.55,
+      "location": "Klamath National Forest, CA",
+      "service": "wms",
+      "date": 1465257600000,
+      "size": 11
+    }
+  }, {
+    "attributes": {
+      "objectid": 72,
+      "fire": "Beaver Creek Fire",
+      "lat": 40.950000000000003,
+      "lon": -106.54000000000001,
+      "location": "Routt National Forest, CO",
+      "service": "wms",
+      "date": 1465689600000,
+      "size": 155
+    }
+  }, {
+    "attributes": {
+      "objectid": 73,
+      "fire": "Maple Fire",
+      "lat": 44.729999999999997,
+      "lon": -110.98,
+      "location": "Yellowstone National Park, WY",
+      "service": "wms",
+      "date": 1470614400000,
+      "size": 176
+    }
+  }, {
+    "attributes": {
+      "objectid": 74,
+      "fire": "Pioneer Fire",
+      "lat": 44.119999999999997,
+      "lon": -115.58,
+      "location": "Boise National Forest, ID",
+      "service": "wms",
+      "date": 1468800000000,
+      "size": 762
+    }
+  }, {
+    "attributes": {
+      "objectid": 75,
+      "fire": "Buffalo Fire",
+      "lat": 44.969999999999999,
+      "lon": -110.3,
+      "location": "Yellowstone National Park, WY",
+      "service": "wms",
+      "date": 1471046400000,
+      "size": 83
+    }
+  }, {
+    "attributes": {
+      "objectid": 76,
+      "fire": "Loma Fire",
+      "lat": 37.119999999999997,
+      "lon": -121.81999999999999,
+      "location": "Santa Clara County, CA",
+      "service": "wms",
+      "date": 1474848000000,
+      "size": 18
+    }
+  }, {
+    "attributes": {
+      "objectid": 77,
+      "fire": "Sawmill Fire",
+      "lat": 38.82,
+      "lon": -122.84,
+      "location": "Sonoma County, CA",
+      "service": "wms",
+      "date": 1474761600000,
+      "size": 6
+    }
+  }, {
+    "attributes": {
+      "objectid": 78,
+      "fire": "Soberanes Fire",
+      "lat": 36.329999999999998,
+      "lon": -121.72,
+      "location": "Los Padres National Forest, CA",
+      "service": "wms",
+      "date": 1469145600000,
+      "size": 534
+    }
+  }, {
+    "attributes": {
+      "objectid": 79,
+      "fire": "Canyon Fire",
+      "lat": 34.600000000000001,
+      "lon": -120.59,
+      "location": "Santa Barbara County, CA",
+      "service": "wms",
+      "date": 1474070400000,
+      "size": 51
+    }
+  }, {
+    "attributes": {
+      "objectid": 80,
+      "fire": "Yale Road Spokane Complex Fire",
+      "lat": 47.490000000000002,
+      "lon": -117.29000000000001,
+      "location": "Spokane County, WA",
+      "service": "wms",
+      "date": 1471737600000,
+      "size": 23
+    }
+  }]
+}
