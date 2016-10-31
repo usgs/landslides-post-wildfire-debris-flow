@@ -1,17 +1,32 @@
 'use strict';
 
-var SummaryView = require('summary/SummaryView');
+var SummaryView = require('summary/SummaryView'),
+    Xhr = require('util/Xhr');
 
 
-var view;
+var url,
+    view;
 
-view = SummaryView({
-  el: document.querySelector('#application')
-});
-view.render();
+url = 'http://earthquake.usgs.gov/arcgis/rest/services/ls/pwfdf_locations/' +
+    'MapServer/0/query?f=json&outfields=*&returnGeometry=false&where=1%3D1';
 
-new Promise(function (/*resolve, reject*/) {
-  // TODO, make request for all wildfires to ArcGIS web service
-}).then(function () {
-  // TODO, pass collection of wildfires to SummaryView
+Xhr.ajax({
+  url: url,
+  success: function (data) {
+    var json;
+
+    json = JSON.parse(data);
+    view = SummaryView({
+      el: document.querySelector('#application'),
+      data: json.features
+    });
+    view.render();
+  },
+  error: function (error) {
+    document.querySelector('#application').innerHTML =
+      '<p class="alert error">',
+        'Failed to download post-wildfire debris flow data.',
+      '</p>';
+    console.log(error);
+  }
 });
