@@ -40,10 +40,8 @@ var SummaryView = function (options) {
           '<div class="column one-of-three summary-links"></div>' +
         '</div>';
 
-    // sort array in descending order
-    _this.data = (options.data || []).sort(function (a,b) {
-      return b.attributes.date - a.attributes.date;
-    });
+    // sort array of events
+    _this.data = _this.orderEvents(options.data || []);
 
     // pass array to map view
     _this.summaryMapView = SummaryMapView({
@@ -55,6 +53,100 @@ var SummaryView = function (options) {
     _this.render();
   };
 
+  /**
+   * Build list of fire events that link to details page
+   *
+   * @param data {Array}
+   *        An array of features from the ArcGIS web service request
+   *
+   */
+  _this.createSummaryList = function () {
+    var data,
+        keys,
+        markup;
+
+    markup = [];
+
+    keys = Object.keys(_this.data);
+    keys = keys.sort(function (a,b) { return b - a; });
+
+    for (var x = 0; x < keys.length; x++) {
+      // grab one year of data
+      data = _this.data[keys[x]];
+      markup.push('<h3>' + keys[x] + ' Fires </h3>');
+      markup.push('<ul class="' + keys[x] + '-fires">');
+
+      // loop through entire year of fires
+      for (var i = 0; i < data.length; i++) {
+        markup.push('<li>', _this.formatSummaryListItem(data[i]), '</li>');
+      }
+
+      markup.push('</ul>');
+    }
+
+    _this.el.querySelector('.summary-list').innerHTML = markup.join('');
+  };
+
+  /**
+   * Destroy all the things.
+   *
+   */
+  _this.destroy = Util.compose(function () {
+    if (_this === null) {
+      return;
+    }
+
+    _initialize = null;
+    _this = null;
+  }, _this.destroy);
+
+  /**
+   * Format a list item for the summary list. The list item is a link to
+   * the details page.
+   *
+   * @param item {Object}
+   *        item.attributes.
+   *         - objectid
+   *         - date
+   *         - fire
+   *         - location
+   *
+   * @return {DOMString}
+   *         returns a list item string with nested link
+   *
+   */
+  _this.formatSummaryListItem = function (item) {
+    var date,
+        markup,
+        months;
+
+    markup = [];
+    months = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+
+    try {
+      date = new Date(item.attributes.date);
+      markup.push(
+        '<a href="detail.php?id=', item.attributes.objectid, '">',
+          date.getFullYear(),
+          months[date.getMonth()], // use full month name
+          item.attributes.fire,
+          '(' + item.attributes.location + ')',
+        '</a>'
+      );
+      return markup.join(' ');
+    } catch (e) {
+      return '<p class="alert error">' + e + '<p>';
+    }
+  };
+
+  /**
+   * Load static content into the page.
+   *
+   * See initialize method for scaffolding.
+   *
+   */
   _this.loadStaticContent = function () {
     _this.el.querySelector('.summary-intro').innerHTML =
       'Wildfire can significantly alter the hydrologic response of a ' +
@@ -110,33 +202,46 @@ var SummaryView = function (options) {
   };
 
   /**
-   * Build list of fire events that link to details page
+   * Create an object with all fires keyed by year.
    *
    * @param data {Array}
    *        An array of features from the ArcGIS web service request
+   *        (options.data)
+   *
+   * @return {Object}
+   *        An object with all fires keyed by year:
+   *        {
+   *          “2016”: [ {fire}, ... ],
+   *          “2015”: [ {fire}, ... ]
+   *        }
    *
    */
-  _this.createSummaryList = function (data) {
-    // TODO, create list of events
-    data.forEach(function (item) {
-      console.log(item.attributes.date);
-    });
-    _this.el.querySelector('.summary-list').innerHTML =
-        '<p>TODO, Create Summary List</p>';
-  };
+  _this.orderEvents = function (data) {
+    var i,
+        len,
+        obj,
+        year;
 
-  /**
-   * Destroy all the things.
-   *
-   */
-  _this.destroy = Util.compose(function () {
-    if (_this === null) {
-      return;
+    obj = {};
+
+    // sort in descending order
+    data = data.sort(function (a,b) {
+      return b.attributes.date - a.attributes.date;
+    });
+
+    for (i = 0, len = data.length; i < len; i++) {
+      // pull year off date
+      year = new Date(data[i].attributes.date).getFullYear();
+      // check if year key is already on the object
+      if (!obj.hasOwnProperty(year)) {
+        obj[year] = [];
+      }
+      obj[year].push(data[i]);
     }
 
-    _initialize = null;
-    _this = null;
-  }, _this.destroy);
+    return obj;
+  };
+
 
   /**
    * Renders the summary view.
@@ -148,7 +253,7 @@ var SummaryView = function (options) {
     // render map view
     _this.summaryMapView.render();
     // build list of summary events
-    _this.createSummaryList(_this.data);
+    _this.createSummaryList();
 
   };
 
