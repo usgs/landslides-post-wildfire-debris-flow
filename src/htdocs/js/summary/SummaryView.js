@@ -32,8 +32,13 @@ var SummaryView = function (options) {
   _initialize = function () {
     _this.el.classList.add('summary-view');
     _this.el.innerHTML =
+        '<p class="summary-intro"></p>' +
+        '<h2>Current and Previous Year Fires</h2>' +
         '<div class="summary-map-view"></div>' +
-        '<div class="summary-collection-table horizontal-scroll"></div>';
+        '<div class="row">' +
+          '<div class="column two-of-three summary-list"></div>' +
+          '<div class="column one-of-three summary-links"></div>' +
+        '</div>';
 
     // sort array in descending order
     _this.data = (options.data || []).sort(function (a,b) {
@@ -45,7 +50,63 @@ var SummaryView = function (options) {
       el: document.querySelector('.summary-map-view'),
       data: _this.data
     });
-    _this.summaryMapView.render();
+
+    // render the view
+    _this.render();
+  };
+
+  _this.loadStaticContent = function () {
+    _this.el.querySelector('.summary-intro').innerHTML =
+      'Wildfire can significantly alter the hydrologic response of a ' +
+      'watershed to the extent that even modest rainstorms can produce ' +
+      'dangerous flash floods and debris flows. The USGS conducts ' +
+      'post-fire debris-flow hazard assessments for select fires in the ' +
+      'Western U.S. We use geospatial data related to basin morphometry, ' +
+      'burn severity, soil properties, and rainfall characteristics to ' +
+      'estimate the probability and volume of debris flows that may ' +
+      'occur in response to a design storm.';
+
+    _this.el.querySelector('.summary-links').innerHTML =
+      '<h3>Contact Us</h3>' +
+      '<ul>' +
+        '<li>' +
+          'Dennis Staley ' +
+          '(<a href="mailto:dstaley@usgs.gov">dstaley@usgs.gov</a>)' +
+        '</li>' +
+        '<li>' +
+          'Jason Kean ' +
+          '(<a href="mailto:jwkean@usgs.gov">jwkean@usgs.gov</a>)' +
+        '</li>' +
+      '</ul>' +
+
+      '<h3>Related Links</h3>' +
+      '<ul>' +
+        '<li>' +
+          '<a href="http://landslides.usgs.gov/research/wildfire/">' +
+          'Post-Wildfire Landslide Hazards</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href="http://landslides.usgs.gov/hazards/warningsys.php">' +
+          'Early Warning System</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href="http://landslides.usgs.gov/dysi/">' +
+          'Did You See It? Report a Landslide</a>' +
+        '</li>' +
+      '</ul>' +
+
+      '<h3>GIS Service Information</h3>' +
+      '<ul>' +
+        '<li>' +
+          '<a href="http://earthquake.usgs.gov/arcgis/rest/services/ls/' +
+          'pwfdf_locations/MapServer">Post-Fire Debris-Flow Hazards GIS ' +
+          'Services</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href="https://github.com/usgs/hazdev-gis/blob/master/' +
+          'documentation.md">Landslides GIS Server Documentation</a>' +
+        '</li>' +
+      '</ul>';
   };
 
   /**
@@ -60,6 +121,8 @@ var SummaryView = function (options) {
     data.forEach(function (item) {
       console.log(item.attributes.date);
     });
+    _this.el.querySelector('.summary-list').innerHTML =
+        '<p>TODO, Create Summary List</p>';
   };
 
   /**
@@ -80,10 +143,13 @@ var SummaryView = function (options) {
    *
    */
   _this.render = function () {
+    // display static content
+    _this.loadStaticContent();
     // render map view
     _this.summaryMapView.render();
     // build list of summary events
     _this.createSummaryList(_this.data);
+
   };
 
 
