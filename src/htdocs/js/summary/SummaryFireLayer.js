@@ -1,10 +1,14 @@
 /* global L */
 'use strict';
 
-var Util = require('util/Util');
+var HazDevLayers = require('leaflet/control/HazDevLayers'),
+    Util = require('util/Util');
 
 
-var _DEFAULTS = {};
+var _DEFAULTS = {
+
+
+};
 
 
 var SummaryFireLayer = function (options) {
@@ -28,6 +32,8 @@ var SummaryFireLayer = function (options) {
       iconAnchor: [10, 18],
       popupAnchor: [-3, -16]
     });
+
+    _this.markers = _this.getMarkers(_this.data);
   };
 
   /**
@@ -41,23 +47,53 @@ var SummaryFireLayer = function (options) {
    *     marker element, positioned and styled.
    */
   _this.addMarkers = function () {
-    var marker;
-    // TODO, add all markers
-    _this.data['2016'].forEach(function (fire) {
-      marker = L.marker([
-        fire.attributes.lat,
-        fire.attributes.lon,
-      ], {
-        title: fire.attributes.fire,
-        icon: _this.fireIcon
-      });
+    HazDevLayers(_this.markers).addTo(_this.map);
+  };
 
-      marker.bindPopup(
-          '<a href="detail.php?id=' + fire.attributes.objectid + '">' +
-            '<h3>' + fire.attributes.fire + '</h3>' +
-          '</a>');
-      marker.addTo(_this.map);
-    });
+  /**
+   * Format _this.data into object containing array of markers to plot on map
+   * @return {[type]} [description]
+   */
+  _this.getMarkers = function () {
+    var data,
+        fire,
+        fires,
+        marker,
+        markers,
+        year,
+        years;
+
+    fires = {};
+    years = Object.keys(_this.data);
+    years = years.sort(function (a,b) { return b - a; });
+
+    for (var x = 0; x < years.length; x++) {
+      year = years[x];
+      data = _this.data[year];
+      markers = [];
+
+      // loop through entire year of fires
+      for (var i = 0; i < data.length; i++) {
+        fire = data[i];
+        marker = L.marker([
+          fire.attributes.lat,
+          fire.attributes.lon,
+        ], {
+          title: fire.attributes.fire,
+          icon: _this.fireIcon
+        });
+
+        marker.bindPopup(
+            '<a href="detail.php?id=' + fire.attributes.objectid + '">' +
+              '<h3>' + fire.attributes.fire + '</h3>' +
+            '</a>');
+        markers.push(marker);
+      }
+
+      fires[year] = L.layerGroup(markers);
+    }
+
+    return fires;
   };
 
   /**
