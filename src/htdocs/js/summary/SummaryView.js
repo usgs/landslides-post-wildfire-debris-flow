@@ -45,7 +45,7 @@ var SummaryView = function (options) {
 
     // pass array to map view
     _this.summaryMapView = SummaryMapView({
-      el: document.querySelector('.summary-map-view'),
+      el: _this.el.querySelector('.summary-map-view'),
       data: _this.data
     });
 

@@ -6,7 +6,7 @@ mocha.setup('bdd');
 
 
 // Add each test class here as they are implemented
-require('./spec/ExampleTest');
+require('./spec/summary/SummaryViewTest');
 
 
 if (window.mochaPhantomJS) {
