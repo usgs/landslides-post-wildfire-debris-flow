@@ -12,6 +12,7 @@ if (!isset($TEMPLATE)) {
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="/lib/leaflet-0.7.7/leaflet.css"/>
   ';
+  $NAVIGATION = true;
   $FOOT = '
     <script src="/lib/leaflet-0.7.7/leaflet.js"></script>
     <script src="js/index.js"></script>
