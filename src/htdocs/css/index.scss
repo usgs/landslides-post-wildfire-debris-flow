@@ -1,4 +1,6 @@
 @import 'leaflet/control/_HazDevLayers.scss';
+@import 'leaflet/control/_Attribution.scss';
+@import 'leaflet/control/_Scale.scss';
 
 
 /* TODO remove this rule that highlights content layout */
@@ -14,4 +16,8 @@
 
 .summary-map-view {
   height: 45em;
+}
+
+.leaflet-control-container > .leaflet-bottom > .leaflet-control-attribution {
+  position: absolute;
 }
