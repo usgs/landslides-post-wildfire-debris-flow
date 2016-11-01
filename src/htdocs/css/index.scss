@@ -2,22 +2,17 @@
 @import 'leaflet/control/_Attribution.scss';
 @import 'leaflet/control/_Scale.scss';
 
-
-/* TODO remove this rule that highlights content layout */
-.detail-download-view,
-.detail-view,
-.detail-map-view {
-  background: #fafafa;
-  border: 1px solid #ddd;
-  margin: 1em 0;
-  padding: 1em;
-  min-height: 300px;
-}
-
 .summary-map-view {
   height: 45em;
 }
 
-.leaflet-control-container > .leaflet-bottom > .leaflet-control-attribution {
-  position: absolute;
+.leaflet-control-container > .leaflet-bottom {
+
+  > .leaflet-control-scale {
+    margin: 0 0 0 10px;
+  }
+
+  > .leaflet-control-attribution {
+    position: absolute;
+  }
 }
