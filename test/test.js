@@ -6,6 +6,7 @@ mocha.setup('bdd');
 
 
 // Add each test class here as they are implemented
+require('./spec/summary/SummaryFireLayerTest');
 require('./spec/summary/SummaryMapViewTest');
 require('./spec/summary/SummaryViewTest');
 
