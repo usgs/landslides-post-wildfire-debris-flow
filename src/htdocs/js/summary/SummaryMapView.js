@@ -75,10 +75,6 @@ var SummaryMapView = function (options) {
     _this = null;
   }, _this.destroy);
 
-  _this.render = function () {
-
-  };
-
 
   _initialize(options);
   options = null;
