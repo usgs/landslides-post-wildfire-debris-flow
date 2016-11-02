@@ -1,9 +1,10 @@
 <?php
+$section = '/hazards/postfire_debrisflow';
 
 echo navGroup(navItem('/index.php', 'Post-fire Debris-flow Hazards'),
-    navItem("/background2016.php", 'Scientific Background') .
-    navItem("/request.php", 'Assessment Request') .
-    navItem("/disclaimer.php", 'Disclaimer') .
-    navItem("/updates.php", 'Updates')
+  navItem("${section}/background2016.php", 'Scientific Background') .
+  navItem("${section}/request.php", 'Assessment Request') .
+  navItem("${section}/disclaimer.php", 'Disclaimer') .
+  navItem("${section}/updates.php", 'Updates')
 );
 ?>
