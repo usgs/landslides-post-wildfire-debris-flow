@@ -21,7 +21,7 @@ var _DEFAULTS = {
  *
  * @param options {Object}
  *        - options.data {Object} arrays of fire features keyed by year
- *        - (optional) optionsicon {L.icon} a marker icon
+ *        - (optional) options.icon {L.icon} a marker icon
  */
 var SummaryFireLayer = function (options) {
   var _this,
@@ -35,11 +35,15 @@ var SummaryFireLayer = function (options) {
 
     _this.data = options.data || {};
     _this.icon = options.icon;
+    _this.layers = HazDevLayers();
     _this.map = null;
   };
 
   /**
-   * Add fire markers to the map for all fires in _this.data
+   * Add fire markers to the map.
+   *
+   * Creates a separate layer group for markers from different years.
+   * Selects the most recent year to be displayed by default.
    *
    * @return {DOMElement}
    *     marker element, positioned and styled.
@@ -47,19 +51,14 @@ var SummaryFireLayer = function (options) {
   _this.addMarkers = function () {
     var data,
         fire,
-        fires,
         layer,
-        layers,
         marker,
         markers,
         year,
         years;
 
-    fires = {};
     years = Object.keys(_this.data);
     years = years.sort(function (a,b) { return b-a; });
-    layers = HazDevLayers();
-    layers.addTo(_this.map);
 
     // Loop through each year in the fires object
     for (var x = 0; x < years.length; x++) {
@@ -87,7 +86,7 @@ var SummaryFireLayer = function (options) {
 
       // create a separate layer for each year
       layer = L.layerGroup(markers);
-      layers.addBaseLayer(layer, year);
+      _this.layers.addBaseLayer(layer, year);
 
       // show data from most recent year by default
       if (x === 0) {
@@ -95,7 +94,21 @@ var SummaryFireLayer = function (options) {
       }
     }
 
-    return fires;
+    // Add layer group to map
+    _this.layers.addTo(_this.map);
+  };
+
+  /**
+   * Destroy all the things.
+   *
+   */
+  _this.destroy = function () {
+    if (_this === null) {
+      return;
+    }
+
+    _initialize = null;
+    _this = null;
   };
 
   /**

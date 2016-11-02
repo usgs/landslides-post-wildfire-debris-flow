@@ -45,12 +45,9 @@ var SummaryView = function (options) {
 
     // pass array to map view
     _this.summaryMapView = SummaryMapView({
-      el: document.querySelector('.summary-map-view'),
+      el: _this.el.querySelector('.summary-map-view'),
       data: _this.data
     });
-
-    // render the view
-    _this.render();
   };
 
   /**
@@ -128,11 +125,11 @@ var SummaryView = function (options) {
     try {
       date = new Date(item.attributes.date);
       markup.push(
-        '<a href="detail.php?id=', item.attributes.objectid, '">',
+        '<a href="detail.php?id=' + item.attributes.objectid + '">' +
           date.getFullYear(),
           months[date.getMonth()], // use full month name
           item.attributes.fire,
-          '(' + item.attributes.location + ')',
+          '(' + item.attributes.location + ')' +
         '</a>'
       );
       return markup.join(' ');
