@@ -10,7 +10,6 @@
     "usgs"
   ],
   "scripts": {
-    "coverage": "istanbul cover _mocha -- -u exports \"test/**/*.spec.js\"",
     "test": "grunt test"
   },
   "license": "CC0-1.0",

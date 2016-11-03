@@ -1,7 +1,6 @@
 # landslides-post-wildfire-debris-flow
 
 [![Build Status](https://travis-ci.org/usgs/landslides-post-wildfire-debris-flow.svg?branch=master)](https://travis-ci.org/usgs/landslides-post-wildfire-debris-flow)
-[![codecov](https://codecov.io/gh/usgs/landslides-post-wildfire-debris-flow/branch/master/graph/badge.svg)](https://codecov.io/gh/usgs/landslides-post-wildfire-debris-flow)
 
 
 A web application that displays estimates for the probability and volume of

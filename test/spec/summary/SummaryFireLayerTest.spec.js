@@ -1,7 +1,8 @@
 /* global afterEach, beforeEach, chai, describe, it, L, sinon */
 'use strict';
 
-var SummaryFireLayer = require('summary/SummaryFireLayer');
+/* istanbul ignore next */
+var SummaryFireLayer = require('../../../src/htdocs/js/summary/SummaryFireLayer');
 
 var data,
     expect,
