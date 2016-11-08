@@ -104,10 +104,9 @@ describe('SummaryView', function () {
       link = el.querySelector('a');
 
       expect(link).to.not.be.null;
-      expect(link.innerHTML.indexOf('2016')).to.equal(0);
-      expect(link.innerHTML.indexOf('June')).to.equal(5);
-      expect(link.innerHTML.indexOf(attributes.fire)).to.equal(10);
-      expect(link.innerHTML.indexOf(attributes.location)).to.equal(26);
+      expect(link.innerHTML.indexOf('June')).to.equal(0);
+      expect(link.innerHTML.indexOf(attributes.fire)).to.equal(8);
+      expect(link.innerHTML.indexOf(attributes.location)).to.equal(24);
 
     });
   });
