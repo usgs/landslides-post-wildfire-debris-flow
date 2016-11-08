@@ -1,7 +1,7 @@
 /* global chai, describe, it */
 'use strict';
 
-var SummaryMapView = require('../../../src/htdocs/js/summary/SummaryMapView');
+var SummaryMapView = require('summary/SummaryMapView');
 
 var expect = chai.expect;
 

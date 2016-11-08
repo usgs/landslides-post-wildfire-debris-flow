@@ -4,5 +4,4 @@ dist
 node_modules
 src/conf/config.ini*
 src/conf/httpd.conf
-coverage
 npm-debug.log

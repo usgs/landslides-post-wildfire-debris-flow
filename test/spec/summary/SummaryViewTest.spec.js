@@ -1,7 +1,7 @@
 /* global afterEach, beforeEach, chai, describe, it, sinon */
 'use strict';
 
-var SummaryView = require('../../../src/htdocs/js/summary/SummaryView');
+var SummaryView = require('summary/SummaryView');
 
 var expect = chai.expect;
 
