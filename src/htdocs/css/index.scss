@@ -2,6 +2,18 @@
 @import 'leaflet/control/_Attribution.scss';
 @import 'leaflet/control/_Scale.scss';
 
+/* TODO, remove once DetailView(s) are complete */
+.detail-description,
+.detail-download-view,
+.detail-map-view,
+.detail-summary,
+.detail-view {
+  background-color: #fafafa;
+  border: 1px solid #ededed;
+  margin: 1em 0;
+  padding: 1em;
+}
+
 .summary-map-view {
   height: 45em;
 }

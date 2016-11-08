@@ -3,8 +3,7 @@
 
 var DetailDownloadView = require('detail/DetailDownloadView'),
     DetailMapView = require('detail/DetailMapView'),
-    Util = require('util/Util'),
-    View = require('mvc/View');
+    Util = require('util/Util');
 
 
 var _DEFAULTS;
@@ -22,7 +21,7 @@ var DetailView = function (options) {
 
 
   options = Util.extend({}, _DEFAULTS, options);
-  _this = View(options);
+  _this = {};
 
   /**
    * Constructor for this view.
@@ -34,6 +33,7 @@ var DetailView = function (options) {
     // summary data from wildfire
     _this.summary = options.summary || {};
 
+    _this.el = options.el || document.createElement('div');
     _this.el.classList.add('detail-view');
     _this.el.innerHTML =
         '<div class="detail-summary"></div>' +

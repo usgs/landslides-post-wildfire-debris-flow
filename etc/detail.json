@@ -1,0 +1,81 @@
+{
+  "displayFieldName": "fire",
+  "fieldAliases": {
+    "objectid": "objectid",
+    "fire": "fire",
+    "lat": "lat",
+    "lon": "lon",
+    "location": "location",
+    "mapImage": "mapImage",
+    "service": "service",
+    "date": "date",
+    "size": "size"
+  },
+  "fields": [
+    {
+      "name": "objectid",
+      "type": "esriFieldTypeOID",
+      "alias": "objectid"
+    },
+    {
+      "name": "fire",
+      "type": "esriFieldTypeString",
+      "alias": "fire",
+      "length": 8000
+    },
+    {
+      "name": "lat",
+      "type": "esriFieldTypeDouble",
+      "alias": "lat"
+    },
+    {
+      "name": "lon",
+      "type": "esriFieldTypeDouble",
+      "alias": "lon"
+    },
+    {
+      "name": "location",
+      "type": "esriFieldTypeString",
+      "alias": "location",
+      "length": 8000
+    },
+    {
+      "name": "mapImage",
+      "type": "esriFieldTypeString",
+      "alias": "image",
+      "length": 8000
+    },
+    {
+      "name": "service",
+      "type": "esriFieldTypeString",
+      "alias": "service",
+      "length": 3
+    },
+    {
+      "name": "date",
+      "type": "esriFieldTypeDate",
+      "alias": "date",
+      "length": 36
+    },
+    {
+      "name": "size",
+      "type": "esriFieldTypeDouble",
+      "alias": "size"
+    }
+  ],
+  "features": [
+    {
+      "attributes": {
+        "objectid": 5,
+        "fire": "Rim Fire",
+        "lat": 37.869999999999997,
+        "lon": -119.94,
+        "location": "Stanislaus National Forest and Yosemite National Park, California",
+        "mapImage": "20130817_rim",
+        "service": "cms",
+        "date": 1376697600000,
+        "size": 1041
+      }
+    }
+  ]
+}
