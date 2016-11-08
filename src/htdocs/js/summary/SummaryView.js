@@ -67,6 +67,13 @@ var SummaryView = function (options) {
     keys = Object.keys(_this.data);
     keys = keys.sort(function (a,b) { return b - a; });
 
+    // if feed is empty display an error
+    if (!keys || keys.length === 0) {
+      _this.el.querySelector('.summary-list').innerHTML =
+      '<p class="alert error">No data to display at this time.</p>';
+      return;
+    }
+
     for (var x = 0; x < keys.length; x++) {
       // grab one year of data
       data = _this.data[keys[x]];
