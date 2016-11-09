@@ -6,6 +6,7 @@
     "lat": "lat",
     "lon": "lon",
     "location": "location",
+    "layers": "layers",
     "mapImage": "mapImage",
     "service": "service",
     "date": "date",
@@ -27,6 +28,11 @@
       "name": "lat",
       "type": "esriFieldTypeDouble",
       "alias": "lat"
+    },
+    {
+      "name": "layers",
+      "type": "esriFieldTypeArray",
+      "alias": "layers"
     },
     {
       "name": "lon",
@@ -69,6 +75,7 @@
         "objectid": 5,
         "fire": "Rim Fire",
         "lat": 37.869999999999997,
+        "layers": [],
         "lon": -119.94,
         "location": "Stanislaus National Forest and Yosemite National Park, California",
         "mapImage": "20130817_rim",
