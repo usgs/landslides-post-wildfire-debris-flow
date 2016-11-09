@@ -2,6 +2,7 @@
 
 
 var DetailDownloadView = require('detail/DetailDownloadView'),
+    DetailMapView = require('detail/DetailMapView'),
     Util = require('util/Util');
 
 
@@ -37,17 +38,21 @@ var DetailView = function (options) {
     _this.el.innerHTML =
         '<div class="detail-summary"></div>' +
         '<h2>Preliminary Hazard Assessment</h2>' +
-        '<div class="detail-map-image"></div>' +
+        '<div class="detail-map-view"></div>' +
         '<div class="detail-description"></div>' +
         '<div class="detail-download-view"></div>';
 
     _this.detailDescriptionEl = document.querySelector('.detail-description');
     _this.detailSummaryEl = document.querySelector('.detail-summary');
-    _this.detailMapImageEl = document.querySelector('.detail-map-image');
 
     _this.detailDownloadView = DetailDownloadView({
       el: document.querySelector('.detail-download-view'),
       data: _this.getDownloads(_this.summary)
+    });
+
+    _this.detailMapView = DetailMapView({
+      el: document.querySelector('.detail-map-view'),
+      data: _this.summary
     });
   };
 
@@ -88,15 +93,6 @@ var DetailView = function (options) {
   };
 
   /**
-   * Loads the detailed map image into place
-   *
-   */
-  _this.getDetailedMapImage = function () {
-    _this.detailMapImageEl.innerHTML = 'TODO, load Detailed Map Image';
-
-  };
-
-  /**
    * Makes an ajax request to ArcGIS web service to request all
    * geodatabase/shape files for the wildfire event.
    *
@@ -112,7 +108,7 @@ var DetailView = function (options) {
    *
    */
   _this.render = function () {
-    _this.getDetailedMapImage();
+    _this.detailMapView.render();
     _this.detailDownloadView.render();
 
     _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();
