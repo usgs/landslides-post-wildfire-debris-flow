@@ -2,7 +2,6 @@
 
 
 var DetailDownloadView = require('detail/DetailDownloadView'),
-    DetailMapView = require('detail/DetailMapView'),
     Util = require('util/Util');
 
 
@@ -38,17 +37,13 @@ var DetailView = function (options) {
     _this.el.innerHTML =
         '<div class="detail-summary"></div>' +
         '<h2>Preliminary Hazard Assessment</h2>' +
-        '<div class="detail-map-view"></div>' +
+        '<div class="detail-map-image"></div>' +
         '<div class="detail-description"></div>' +
         '<div class="detail-download-view"></div>';
 
     _this.detailDescriptionEl = document.querySelector('.detail-description');
     _this.detailSummaryEl = document.querySelector('.detail-summary');
-
-    _this.detailMapView = DetailMapView({
-      el: document.querySelector('.detail-map-view'),
-      data: _this.getLayers(_this.summary)
-    });
+    _this.detailMapImageEl = document.querySelector('.detail-map-image');
 
     _this.detailDownloadView = DetailDownloadView({
       el: document.querySelector('.detail-download-view'),
@@ -76,7 +71,7 @@ var DetailView = function (options) {
    *         Detail page description
    */
   _this.getDetailDescription = function () {
-    return 'TODO';
+    return 'TODO, display description describing the image';
   };
 
   /**
@@ -89,18 +84,16 @@ var DetailView = function (options) {
    *         Detail page quick summary
    */
   _this.getDetailSummary = function () {
-    return 'TODO';
+    return 'TODO, display summary information for fire';
   };
 
   /**
-   * Makes an ajax request to ArcGIS web service to request all layers for
-   * the wildfire event.
+   * Loads the detailed map image into place
    *
-   * @return {Array}
-   *         An array of layers to display on a leaflet map
    */
-  _this.getLayers = function () {
-    return 'TODO';
+  _this.getDetailedMapImage = function () {
+    _this.detailMapImageEl.innerHTML = 'TODO, load Detailed Map Image';
+
   };
 
   /**
@@ -111,7 +104,7 @@ var DetailView = function (options) {
    *         An array of downloads to display in a list
    */
   _this.getDownloads = function () {
-    return 'TODO';
+    return 'TODO, display downloads for details page';
   };
 
   /**
@@ -119,7 +112,7 @@ var DetailView = function (options) {
    *
    */
   _this.render = function () {
-    _this.detailMapView.render();
+    _this.getDetailedMapImage();
     _this.detailDownloadView.render();
 
     _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();

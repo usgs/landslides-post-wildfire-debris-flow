@@ -46,7 +46,7 @@ var DetailDownloadView = function (options) {
   }, _this.destroy);
 
   _this.render = function () {
-    _this.el.innerHTML = '<p>TODO, Create Detail Download List</p>';
+    _this.el.innerHTML = 'TODO, Create Detail Download List';
   };
 
 
