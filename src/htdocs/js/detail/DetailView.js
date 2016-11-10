@@ -108,7 +108,6 @@ var DetailView = function (options) {
    *
    */
   _this.render = function () {
-    _this.detailMapView.render();
     _this.detailDownloadView.render();
 
     _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();

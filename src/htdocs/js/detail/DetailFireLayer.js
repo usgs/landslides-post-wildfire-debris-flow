@@ -23,7 +23,8 @@ var DetailFireLayer = function (options) {
   _initialize = function (options) {
     options = Util.extend({}, _DEFAULTS, options);
 
-    _this.overlays = options.attributes.overlays || [];
+    _this.data = options.data.attributes || {};
+    _this.overlays = _this.data.layers || [];
     _this.layers = HazDevLayers();
 
     _this.map = null;

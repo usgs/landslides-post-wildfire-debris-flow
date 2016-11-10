@@ -1,7 +1,9 @@
+/* global L */
 'use strict';
 
 
 var DetailFireLayer = require('detail/DetailFireLayer'),
+    Terrain = require('leaflet/layer/Terrain'),
     Util = require('util/Util');
 
 
@@ -35,12 +37,29 @@ var DetailMapView = function (options) {
     // summary data from wildfire
     _this.summary = options.summary || {};
 
+
+    _this.map = L.map(_this.el, {
+      center: [41.5, -112.0],
+      maxBounds: [
+        [-90, -Infinity],
+        [90, Infinity]
+      ],
+      zoom: 5,
+      zoomAnimation: false
+    });
+
+    // Add basemap
+    Terrain().addTo(_this.map);
+
     // Add fire overlay layers
     _this.fires = DetailFireLayer({
       data: _this.summary
     });
 
-    _this.el.classList.add('detail-map-view');
+    // Add Map Controls
+    if (!Util.isMobile()) {
+      _this.map.addControl(L.control.scale({position: 'bottomleft'}));
+    }
   };
 
   /**
