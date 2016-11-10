@@ -12,7 +12,7 @@ Xhr.ajax({
 
     DetailView({
       el: document.querySelector('.detail-view-example'),
-      model: fire
+      data: fire
     }).render();
 
     console.log(fire);

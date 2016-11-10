@@ -3,19 +3,30 @@
 @import 'leaflet/control/_Scale.scss';
 
 /* TODO, remove once DetailView(s) are complete */
-.detail-description,
+
 .detail-download-view,
 .detail-map-view,
-.detail-summary,
-.detail-view {
+.detail-summary {
   background-color: #fafafa;
   border: 1px solid #ededed;
   margin: 1em 0;
   padding: 1em;
+
+  > :first-child {
+    margin-top: 0.5em;
+  }
+
+  > :last-child {
+    margin-bottom: 0.5em;
+  }
 }
 
 .detail-map-view {
   height: 45em;
+}
+
+.detail-summary-list dd {
+  margin: 0 0 0.5em;
 }
 
 .summary-map-view {

@@ -31,7 +31,7 @@ var DetailView = function (options) {
    */
   _initialize = function (options) {
     // summary data from wildfire
-    _this.summary = options.summary || {};
+    _this.data = options.data || {};
 
     _this.el = options.el || document.createElement('div');
     _this.el.classList.add('detail-view');
@@ -42,16 +42,23 @@ var DetailView = function (options) {
         '<div class="detail-description"></div>' +
         '<div class="detail-download-view"></div>';
 
-    _this.detailDescriptionEl = document.querySelector('.detail-description');
-    _this.detailSummaryEl = document.querySelector('.detail-summary');
+    // Display summary info on details page
+    _this.detailSummaryEl = _this.el.querySelector('.detail-summary');
+    _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
 
-    _this.detailDownloadView = DetailDownloadView({
-      el: document.querySelector('.detail-download-view'),
-      data: _this.getDownloads(_this.summary)
+    // Display Map with details
+    _this.detailMapView = DetailMapView({
+      el: _this.el.querySelector('.detail-map-view'),
+      data: _this.summary
     });
 
-    _this.detailMapView = DetailMapView({
-      el: document.querySelector('.detail-map-view'),
+    // Display description below the map
+    _this.detailDescriptionEl = _this.el.querySelector('.detail-description');
+    _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();
+
+    // Display downloads
+    _this.detailDownloadView = DetailDownloadView({
+      el: _this.el.querySelector('.detail-download-view'),
       data: _this.summary
     });
   };
@@ -76,7 +83,30 @@ var DetailView = function (options) {
    *         Detail page description
    */
   _this.getDetailDescription = function () {
-    return 'TODO, display description describing the image';
+    var markup;
+
+    markup =
+      '<p>' +
+        'The interactive map above displays estimates of the likelihood of ' +
+        'debris flow (in &#37;), potential volume of debris flow (in ' +
+        'm<sup>3</sup>), and combined relative debris flow hazard. These ' +
+        'predictions are made at the scale of the drainage basin, and at the ' +
+        'scale of the individual stream segment. Estimates of probability, ' +
+        'volume, and combined hazard are based upon a design storm with a ' +
+        'peak 15-minute rainfall intensity of 24 millimeters per hour ' +
+        '(mm/h). Predictions may be viewed interactively by clicking on the ' +
+        'button at the top right corner of the map displayed above.' +
+      '</p>' +
+      '<p>' +
+        'Visit the <a href="/hazards/postfire_debrisflow/background2016.php">' +
+        'Scientific Background</a> page for more information on how the ' +
+        'predictions are calculated. For more information about what to do ' +
+        'in case you live in an area where debris flows are possible, please ' +
+        'visit <a href="/research/wildfire/whattodo.php">If you live in a ' +
+        'recently burned area, and there is a rainstorm…</a>' +
+      '</p>';
+
+    return markup;
   };
 
   /**
@@ -89,19 +119,27 @@ var DetailView = function (options) {
    *         Detail page quick summary
    */
   _this.getDetailSummary = function () {
-    return 'TODO, display summary information for fire';
+    var attributes,
+        markup;
+
+    attributes = _this.data.attributes;
+    if(!attributes) {
+      return '<p class="alert error">No Data to load.</p>';
+    }
+
+    markup =
+      '<dl class="detail-summary-list">' +
+        '<dt>Date of Origin</dt>' +
+        '<dd>' + new Date(attributes.date) + '</dd>' +
+        '<dt>Location</dt>' +
+        '<dd>' + attributes.location + '</dd>' +
+        '<dt>Total Area Burned</dt>' +
+        '<dd>' + attributes.size + ' km<sup>2</sup></dd>' +
+      '</dl>';
+
+    return markup;
   };
 
-  /**
-   * Makes an ajax request to ArcGIS web service to request all
-   * geodatabase/shape files for the wildfire event.
-   *
-   * @return {Array}
-   *         An array of downloads to display in a list
-   */
-  _this.getDownloads = function () {
-    return 'TODO, display downloads for details page';
-  };
 
   /**
    * Renders the detail view.
