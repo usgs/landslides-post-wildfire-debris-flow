@@ -53,7 +53,7 @@ var DetailView = function (options) {
     // Update page title
     if (attributes && attributes.fire && attributes.location) {
       titleEl = document.querySelector('.page-header > h1');
-      titleEl.innerHTML = attributes.fire + ' - ' + attributes.location;
+      titleEl.innerHTML = attributes.fire + ' (' + attributes.location + ')';
     }
 
     // Display summary info on details page
