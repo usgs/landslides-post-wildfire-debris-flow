@@ -5,7 +5,6 @@
 /* TODO, remove once DetailView(s) are complete */
 
 .detail-download-view,
-.detail-map-view,
 .detail-summary {
   background-color: #fafafa;
   border: 1px solid #ededed;
@@ -21,7 +20,7 @@
   }
 }
 
-.detail-map-view {
+.detail-map-leaflet {
   height: 45em;
 }
 

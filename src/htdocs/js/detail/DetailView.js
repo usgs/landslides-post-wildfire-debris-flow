@@ -57,11 +57,9 @@ var DetailView = function (options) {
     _this.detailSummaryEl = _this.el.querySelector('.detail-summary');
     _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
 
-    // Display Map with details
-    _this.detailMapView = DetailMapView({
-      el: _this.el.querySelector('.detail-map-view'),
-      data: _this.data
-    });
+    // Load map or map images
+    _this.detailMapEl = _this.el.querySelector('.detail-map-view');
+    _this.getDetailMap();
 
     // Display description below the map
     _this.detailDescriptionEl = _this.el.querySelector('.detail-description');
@@ -163,6 +161,51 @@ var DetailView = function (options) {
 
     return markup;
   };
+
+  /**
+   * Determines whether to load a leaflet map or a static map image.
+   *
+   * If the event is more than two calendar years old, then a static image
+   * of the segmented probability is loaded in place of the map from an
+   * ftp server.
+   *
+   */
+  _this.getDetailMap = function () {
+    var eventYear,
+        currentYear,
+        url;
+
+    currentYear = new Date().getFullYear();
+    eventYear = new Date(_this.data.attributes.date).getFullYear();
+    url = 'ftp://hazards.cr.usgs.gov/web/landslides-post-wildfire-debris-' +
+        'flow/fires/' + _this.data.attributes.mapImage + '/image.png';
+
+    // Older than two years, display image
+    if ((currentYear - eventYear) > 1) {
+      // display static image
+      _this.detailMapEl.innerHTML = '<img src="' + url + '" ' +
+          'alt="Segemented Probability Basin image" />';
+    } else {
+      // Display leaflet map with all layers
+      _this.detailMapEl.classList.add('detail-map-leaflet');
+      _this.detailMapView = DetailMapView({
+        el: _this.detailMapEl,
+        data: _this.data
+      });
+    }
+  };
+
+  /**
+   * Renders the detail view.
+   *
+   */
+  _this.render = function () {
+    _this.detailDownloadView.render();
+
+    _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();
+    _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
+  };
+
 
   _initialize(options);
   options = null;
