@@ -1,22 +1,25 @@
-hazdev-project-skeleton
-==============
+# landslides-post-wildfire-debris-flow
 
-Project skeleton for hazdev web applications.
+[![Build Status](https://travis-ci.org/usgs/landslides-post-wildfire-debris-flow.svg?branch=master)](https://travis-ci.org/usgs/landslides-post-wildfire-debris-flow)
 
+
+A web application that displays estimates for the probability and volume of
+debris flows that may be produced by a storm in a recently burned area.
 
 
 Generating a new Project
 ------------------------
 
-- Download ZIP of current repository (button to the right of URLs)
-- extract and rename folder to `new-project`
-- update package.json, README.md with `new-project` name
-- set default MOUNT_PATH in src/lib/configure.inc.php
-- import into new repository
+- Use git to clone landslides-post-wildfire-debris-flow from git repository
+- Install php
 
+  ```bash
+  $ brew install php56 --with-pdo-pgsql
+  ```
 
 Using the Generated Project
 ---------------------------
+To begin working with the project
 
 ## Getting Started
 - run `npm install` to install application development dependencies
@@ -30,54 +33,29 @@ Using the Generated Project
 
 ## CSS
 - SCSS files (`*.scss`, `!_*.scss`) in the `src/htdocs/css` directory are compiled.
-
 - Path is configured in `gruntconfig/config.js`:
-```
-cssPath: [
-  'src/htdocs/css',
-  'node_modules/hazdev-webutils/src'
-]
-```
+
+  ```
+  cssPath: [
+    'src/htdocs/css',
+    'node_modules/hazdev-webutils/src'
+  ]
+  ```
 
 ## JS
 - JS files (`*.js`) in the `src/htdocs/js` directory are compiled.
-
 - Path is configured in `gruntconfig/config.js`:
-```
-jsPath: {
-  // DIRECTORY: EXPORT_PATTERN,
 
-  # export all files in these directories in htdocs/js/bundle.js
-  # for use in testing
-  'src/htdocs/js': '*/*.js',
-  'node_modules/hazdev-webutils/src': '**/*.js',
+  ```
+  jsPath: {
+    // DIRECTORY: EXPORT_PATTERN,
 
-  # add to path, but don't export
-  'node_modules/other-module/dist': null
-}
-```
+    # export all files in these directories in htdocs/js/bundle.js
+    # for use in testing
+    'src/htdocs/js': '*/*.js',
+    'node_modules/hazdev-webutils/src': '**/*.js',
 
-## Docker
-
-### Building a container
-
-From root of project, run:
-    ```
-    docker build -t project-skeleton:version .
-    ```
-
-### Running container
-
-- Run the container using the tag
-    ```
-    docker run -it -p 8000:8881 project-skeleton:version
-    ```
-
-- Connect to running container in browser
-    ```
-    docker-machine env default \
-        | grep HOST \
-        | sed s/.*tcp/http/g \
-        | awk -F: '{print $1":"$2":8000"}' \
-        | xargs open
-    ```
+    # add to path, but don't export
+    'node_modules/other-module/dist': null
+  }
+  ```
