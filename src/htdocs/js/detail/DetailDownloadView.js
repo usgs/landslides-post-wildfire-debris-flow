@@ -28,8 +28,8 @@ var DetailDownloadView = function (options) {
    * @param options {Object}
    *     Configuration options for this view.
    */
-  _initialize = function () {
-    _this.el.classList.add('detail-download-view');
+  _initialize = function (options) {
+    _this.data = options.data || {};
   };
 
   /**
@@ -45,8 +45,44 @@ var DetailDownloadView = function (options) {
     _this = null;
   }, _this.destroy);
 
+  /**
+   * Makes an ajax request to ArcGIS web service to request all
+   * geodatabase/shape files for the wildfire event.
+   *
+   * @return {Array}
+   *         An array of downloads to display in a list
+   */
+  _this.getDownloads = function () {
+    return 'TODO';
+  };
+
+  /**
+   * TODO display actual downloads from feed
+   *
+   */
   _this.render = function () {
-    _this.el.innerHTML = '<p>TODO, Create Detail Download List</p>';
+    var markup;
+
+    markup =
+      '<h3>Downloads</h3>' +
+      '<p>' +
+        'Below are the shapefiles and geodatabase information that was ' +
+        'used in the creation of the maps on this page.' +
+      '</p>' +
+      '<ul>' +
+        '<li>' +
+          '<a href="#TODO">Geodatabase (.gdb)</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href="#TODO">Shapefile (.shp)</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href="#TODO">README (.txt)</a>' +
+        '</li>' +
+      '</ul>';
+
+
+    _this.el.innerHTML = markup;
   };
 
 
