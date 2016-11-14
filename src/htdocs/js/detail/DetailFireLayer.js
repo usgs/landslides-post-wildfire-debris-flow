@@ -54,11 +54,11 @@ var DetailFireLayer = function (options) {
     }
 
     year = new Date(_this.data.date).getFullYear();
-    ws = 'http://earthquake.usgs.gov/arcgis/services/ls/pwfdf_' + year +
+    ws = 'http://dev01-gis01.cr.usgs.gov/arcgis/services/ls/pwfdf_' + year +
         '/MapServer/WMSServer';
 
     probBasins = L.tileLayer.wms(ws, {
-      layers: '3,2,0', // TODO, update the layers
+      layers: '2,7,8',
       format: 'image/png',
       transparent: true,
       opacity: 0.65,
@@ -66,7 +66,7 @@ var DetailFireLayer = function (options) {
     });
 
     probSegments = L.tileLayer.wms(ws, {
-      layers: '4,2,1,0', // TODO, update the layers
+      layers: '5,7,6,8',
       format: 'image/png',
       transparent: true,
       opacity: 0.65,
@@ -74,7 +74,7 @@ var DetailFireLayer = function (options) {
     });
 
     volumeBasins = L.tileLayer.wms(ws, {
-      layers: '5,2,0', // TODO, update the layers
+      layers: '1,7,8',
       format: 'image/png',
       transparent: true,
       opacity: 0.65,
@@ -82,7 +82,7 @@ var DetailFireLayer = function (options) {
     });
 
     volumeSegments = L.tileLayer.wms(ws, {
-      layers: '6,2,1,0', // TODO, update the layers
+      layers: '4,7,6,8',
       format: 'image/png',
       transparent: true,
       opacity: 0.65,
@@ -90,7 +90,7 @@ var DetailFireLayer = function (options) {
     });
 
     comboBasins = L.tileLayer.wms(ws, {
-      layers: '7,2,0', // TODO, update the layers
+      layers: '0,7,8',
       format: 'image/png',
       transparent: true,
       opacity: 0.65,
@@ -98,7 +98,7 @@ var DetailFireLayer = function (options) {
     });
 
     comboSegments = L.tileLayer.wms(ws, {
-      layers: '8,2,1,0', // TODO, update the layers
+      layers: '3,7,6,8',
       format: 'image/png',
       transparent: true,
       opacity: 0.65,
