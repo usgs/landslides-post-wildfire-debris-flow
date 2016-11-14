@@ -35,7 +35,7 @@ var DetailMapView = function (options) {
     _this.el = options.el || document.createElement('div');
 
     // summary data from wildfire
-    _this.summary = options.summary || {};
+    _this.data = options.data || {};
 
 
     _this.map = L.map(_this.el, {
@@ -53,8 +53,9 @@ var DetailMapView = function (options) {
 
     // Add fire overlay layers
     _this.fires = DetailFireLayer({
-      data: _this.summary
+      data: _this.data
     });
+    _this.map.addLayer(_this.fires);
 
     // Add Map Controls
     if (!Util.isMobile()) {
