@@ -30,10 +30,18 @@ var DetailView = function (options) {
    *     Configuration options for this view.
    */
   _initialize = function (options) {
-    // summary data from wildfire
-    _this.data = options.data || {};
+    var attributes,
+        titleEl;
 
     _this.el = options.el || document.createElement('div');
+    _this.data = options.data;
+
+    attributes = _this.data.attributes;
+    if (!attributes) {
+      _this.el.innerHTML = '<p class="alert error">No Data to load.</p>';
+      return;
+    }
+
     _this.el.classList.add('detail-view');
     _this.el.innerHTML =
         '<div class="detail-summary"></div>' +
@@ -42,6 +50,12 @@ var DetailView = function (options) {
         '<div class="detail-description"></div>' +
         '<div class="detail-download-view"></div>';
 
+    // Update page title
+    if (attributes && attributes.fire && attributes.location) {
+      titleEl = document.querySelector('.page-header > h1');
+      titleEl.innerHTML = attributes.fire + ' - ' + attributes.location;
+    }
+
     // Display summary info on details page
     _this.detailSummaryEl = _this.el.querySelector('.detail-summary');
     _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
@@ -49,7 +63,7 @@ var DetailView = function (options) {
     // Display Map with details
     _this.detailMapView = DetailMapView({
       el: _this.el.querySelector('.detail-map-view'),
-      data: _this.summary
+      data: _this.data
     });
 
     // Display description below the map
@@ -59,8 +73,9 @@ var DetailView = function (options) {
     // Display downloads
     _this.detailDownloadView = DetailDownloadView({
       el: _this.el.querySelector('.detail-download-view'),
-      data: _this.summary
+      data: _this.data
     });
+    _this.detailDownloadView.render();
   };
 
   /**
@@ -138,18 +153,6 @@ var DetailView = function (options) {
       '</dl>';
 
     return markup;
-  };
-
-
-  /**
-   * Renders the detail view.
-   *
-   */
-  _this.render = function () {
-    _this.detailDownloadView.render();
-
-    _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();
-    _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
   };
 
 
