@@ -71,7 +71,7 @@ var DetailView = function (options) {
 
   /**
    * Formats date as full month, day, year.
-   * August 16, 2013
+   * Example  August 16, 2013
    *
    * @return {String}
    *         formatted date
