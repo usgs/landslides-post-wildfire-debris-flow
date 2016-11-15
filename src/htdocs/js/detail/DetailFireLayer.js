@@ -19,16 +19,13 @@ var DetailFireLayer = function (options) {
       _initialize;
 
 
+  options = Util.extend({}, _DEFAULTS, options);
   _this = {};
 
   _initialize = function (options) {
-    options = Util.extend({}, _DEFAULTS, options);
-
-    _this.data = options.data.attributes || {};
-    _this.overlays = _this.data.layers || [];
+    _this.data = options.data || {};
     _this.layers = HazDevLayers();
     _this.legendEl = options.legendEl;
-
     _this.map = null;
   };
 
@@ -67,7 +64,7 @@ var DetailFireLayer = function (options) {
     });
 
     probSegments = L.tileLayer.wms(ws, {
-      layers: '5,7,6,8',
+      layers: '5,7,6,8,9',
       format: 'image/png',
       transparent: true,
       opacity: 0.65,
@@ -83,7 +80,7 @@ var DetailFireLayer = function (options) {
     });
 
     volumeSegments = L.tileLayer.wms(ws, {
-      layers: '4,7,6,8',
+      layers: '4,7,6,8,9',
       format: 'image/png',
       transparent: true,
       opacity: 0.65,
@@ -99,7 +96,7 @@ var DetailFireLayer = function (options) {
     });
 
     comboSegments = L.tileLayer.wms(ws, {
-      layers: '3,7,6,8',
+      layers: '3,7,6,8,9',
       format: 'image/png',
       transparent: true,
       opacity: 0.65,

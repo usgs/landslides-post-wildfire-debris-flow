@@ -10,6 +10,10 @@ require('./spec/summary/SummaryFireLayerTest.spec');
 require('./spec/summary/SummaryMapViewTest.spec');
 require('./spec/summary/SummaryViewTest.spec');
 
+require('./spec/detail/DetailFireLayerTest.spec');
+require('./spec/detail/DetailMapViewTest.spec');
+require('./spec/detail/DetailViewTest.spec');
+
 
 if (window.mochaPhantomJS) {
   window.mochaPhantomJS.run();

@@ -31,10 +31,11 @@ var DetailView = function (options) {
   _initialize = function (options) {
     var titleEl;
 
+    // set _this.el element
     _this.el = options.el || document.createElement('div');
-    _this.data = options.data;
+    _this.data = _this.getData(options.data);
 
-    if (!_this.data || !_this.data.attributes) {
+    if (_this.data === {}) {
       _this.el.innerHTML = '<p class="alert error">No Data to load.</p>';
       return;
     }
@@ -52,8 +53,10 @@ var DetailView = function (options) {
 
     // Update page title
     titleEl = document.querySelector('.page-header > h1');
-    titleEl.innerHTML = _this.getAttribute('fire') + ' (' +
-        _this.getAttribute('location') + ')';
+    if (titleEl) {
+      titleEl.innerHTML = _this.getAttribute('fire') + ' (' +
+          _this.getAttribute('location') + ')';
+    }
 
     // Display summary info on details page
     _this.detailSummaryEl = _this.el.querySelector('.detail-summary');
@@ -121,10 +124,13 @@ var DetailView = function (options) {
    *        Attribute value
    */
   _this.getAttribute = function (key) {
-    try {
-      return _this.data.attributes[key];
-    } catch (e) {
-      console.log(e.stack);
+    var value;
+
+    value = _this.data[key];
+
+    if (typeof value !== 'undefined') {
+      return value;
+    } else {
       return '&ndash;';
     }
   };
@@ -198,6 +204,24 @@ var DetailView = function (options) {
   };
 
   /**
+   * Attempts to read attributes from the data object
+   *
+   * @param data {Object}
+   *        The options.data object passed into the constructor
+   *
+   * @return {Object}
+   *        The attribute object pulled from the data object
+   */
+  _this.getData = function (data) {
+    try {
+      return data.attributes;
+    } catch (e) {
+      console.log(e);
+      return {};
+    }
+  };
+
+  /**
    * Quick summary on the details page, inclues:
    *  - date
    *  - location
@@ -254,16 +278,6 @@ var DetailView = function (options) {
         data: _this.data
       });
     }
-  };
-
-  /**
-   * Renders the detail view.
-   *
-   */
-  _this.render = function () {
-    _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();
-    _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
-    _this.detailDownloadEl.innerHTML = _this.getDetailDownload();
   };
 
 
