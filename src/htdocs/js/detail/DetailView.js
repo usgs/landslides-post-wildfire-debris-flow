@@ -30,14 +30,12 @@ var DetailView = function (options) {
    *     Configuration options for this view.
    */
   _initialize = function (options) {
-    var attributes,
-        titleEl;
+    var titleEl;
 
     _this.el = options.el || document.createElement('div');
     _this.data = options.data;
 
-    attributes = _this.data.attributes;
-    if (!attributes) {
+    if (!_this.data || !_this.data.attributes) {
       _this.el.innerHTML = '<p class="alert error">No Data to load.</p>';
       return;
     }
@@ -51,10 +49,9 @@ var DetailView = function (options) {
         '<div class="detail-download-view"></div>';
 
     // Update page title
-    if (attributes && attributes.fire && attributes.location) {
-      titleEl = document.querySelector('.page-header > h1');
-      titleEl.innerHTML = attributes.fire + ' (' + attributes.location + ')';
-    }
+    titleEl = document.querySelector('.page-header > h1');
+    titleEl.innerHTML = _this.getAttribute('fire') + ' (' +
+        _this.getAttribute('location') + ')';
 
     // Display summary info on details page
     _this.detailSummaryEl = _this.el.querySelector('.detail-summary');
@@ -90,6 +87,24 @@ var DetailView = function (options) {
     _initialize = null;
     _this = null;
   }, _this.destroy);
+
+  /**
+   * Pull attributes off of _this.data
+   *
+   * @param key {String}
+   *        The name of the attribute to return
+   *
+   * @return {Mixed}
+   *        Attribute value
+   */
+  _this.getAttribute = function (key) {
+    try {
+      return _this.data.attributes[key];
+    } catch (e) {
+      console.log(e.stack);
+      return '&ndash;';
+    }
+  };
 
   /**
    * Get description to display below the map, I believe this content is static
@@ -134,27 +149,20 @@ var DetailView = function (options) {
    *         Detail page quick summary
    */
   _this.getDetailSummary = function () {
-    var attributes,
-        markup;
-
-    attributes = _this.data.attributes;
-    if(!attributes) {
-      return '<p class="alert error">No Data to load.</p>';
-    }
+    var markup;
 
     markup =
       '<dl class="detail-summary-list">' +
         '<dt>Date of Origin</dt>' +
-        '<dd>' + new Date(attributes.date) + '</dd>' +
+        '<dd>' + new Date(_this.getAttribute('date')) + '</dd>' +
         '<dt>Location</dt>' +
-        '<dd>' + attributes.location + '</dd>' +
+        '<dd>' + _this.getAttribute('location') + '</dd>' +
         '<dt>Total Area Burned</dt>' +
-        '<dd>' + attributes.size + ' km<sup>2</sup></dd>' +
+        '<dd>' + _this.getAttribute('size') + ' km<sup>2</sup></dd>' +
       '</dl>';
 
     return markup;
   };
-
 
   _initialize(options);
   options = null;
