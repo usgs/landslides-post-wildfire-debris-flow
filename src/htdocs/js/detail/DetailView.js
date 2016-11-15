@@ -152,7 +152,8 @@ var DetailView = function (options) {
           '<a href=" ' + url + '/PFDFEstimates_README.pdf">README (.pdf)</a>' +
         '</li>' +
         '<li>' +
-          '<a href=" ' + url + '/PostFireDebrisFlowEstimates.zip">Post Fire Debris Flow Estimates (.zip)</a>' +
+          '<a href=" ' + url + '/PostFireDebrisFlowEstimates.zip">' +
+              'Post Fire Debris Flow Estimates (.zip)</a>' +
         '</li>' +
         '<li>' +
           '<a href=" ' + url + '/Shapefiles.zip">Shapefile (.zip)</a>' +
