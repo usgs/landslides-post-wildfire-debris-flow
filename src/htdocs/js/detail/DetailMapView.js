@@ -31,21 +31,38 @@ var DetailMapView = function (options) {
    *     Configuration options for this view.
    */
   _initialize = function (options) {
+    var lat,
+        lon,
+        zoom;
+
+    // defaults
+    lat = 41.5;
+    lon = -112.0;
+    zoom = 5;
+
     // get element to append map 
     _this.el = options.el || document.createElement('div');
 
     // summary data from wildfire
     _this.data = options.data || {};
 
+    // get map coordinates and zoom level
+    if (_this.data.attributes && _this.data.attributes.size &&
+        _this.data.attributes.lat && _this.data.attributes.lon) {
+      lat = _this.data.attributes.lat;
+      lon = _this.data.attributes.lon;
+      zoom = _this.getZoomLevel(_this.data.attributes.size);
+    }
 
     _this.map = L.map(_this.el, {
-      center: [41.5, -112.0],
-      maxBounds: [
+      'center': [lat, lon],
+      'maxBounds': [
         [-90, -Infinity],
         [90, Infinity]
       ],
-      zoom: 5,
-      zoomAnimation: false
+      'scrollWheelZoom': false,
+      'zoom': zoom,
+      'zoomAnimation': false
     });
 
     // Add basemap
@@ -87,8 +104,32 @@ var DetailMapView = function (options) {
     return 'TODO';
   };
 
-  _this.render = function () {
-    _this.el.innerHTML = 'TODO, Create Detail Map View';
+  /**
+   * Based on the size of the fire a zoom level is returned
+   *
+   * @param size {Number}
+   *        Total area burned in km^2
+   *
+   * @return {Number}
+   *        Zoom level
+   */
+  _this.getZoomLevel = function (size) {
+    // if size is not defined, zoom to 11
+    if (!size) {
+      return 11;
+    }
+
+    if (size < 10) {
+      return 13;
+    } else if (size < 75) {
+      return 12;
+    } else if (size < 300) {
+      return 11;
+    } else if (size < 900) {
+      return 10;
+    }
+
+    return 9;
   };
 
 

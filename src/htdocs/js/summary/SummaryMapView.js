@@ -36,13 +36,14 @@ var SummaryMapView = function (options) {
     _this.data = options.data || {};
 
     _this.map = L.map(_this.el, {
-      center: [41.5, -112.0],
-      maxBounds: [
+      'center': [41.5, -112.0],
+      'maxBounds': [
         [-90, -Infinity],
         [90, Infinity]
       ],
-      zoom: 5,
-      zoomAnimation: false
+      'scrollWheelZoom': false,
+      'zoom': 5,
+      'zoomAnimation': false
     });
 
     // Add basemap

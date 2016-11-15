@@ -7,7 +7,7 @@
     "lon": "lon",
     "location": "location",
     "layers": "layers",
-    "mapImage": "mapImage",
+    "mapimage": "mapimage",
     "service": "service",
     "date": "date",
     "size": "size"
@@ -46,7 +46,7 @@
       "length": 8000
     },
     {
-      "name": "mapImage",
+      "name": "mapimage",
       "type": "esriFieldTypeString",
       "alias": "image",
       "length": 8000
@@ -78,7 +78,7 @@
         "layers": [],
         "lon": -119.94,
         "location": "Stanislaus National Forest and Yosemite National Park, California",
-        "mapImage": "20130817_rim",
+        "mapimage": "20130817_rim",
         "service": "cms",
         "date": 1376697600000,
         "size": 1041
