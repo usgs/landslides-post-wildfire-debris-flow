@@ -113,6 +113,10 @@ var DetailFireLayer = function (options) {
     _this.layers.addBaseLayer(comboBasins, 'Basin Hazard');
     _this.layers.addBaseLayer(comboSegments, 'Segment Hazard');
 
+
+    // Show "Segment Probability" by default
+    probBasins.addTo(_this.map);
+
     // Add layer group to map
     _this.layers.addTo(_this.map);
   };
