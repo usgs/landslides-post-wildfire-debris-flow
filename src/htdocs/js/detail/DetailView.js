@@ -70,6 +70,32 @@ var DetailView = function (options) {
   };
 
   /**
+   * Formats date as full month, day, year.
+   * August 16, 2013
+   *
+   * @return {String}
+   *         formatted date
+   */
+  _this.formatDate = function () {
+    var date,
+        markup,
+        months;
+
+    date = new Date(_this.getAttribute('date'));
+
+    markup = [];
+    months = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+
+    markup.push(
+      months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
+    );
+
+    return markup;
+  };
+
+  /**
    * Destroy all the things.
    *
    */
@@ -184,7 +210,7 @@ var DetailView = function (options) {
     markup =
       '<dl class="detail-summary-list">' +
         '<dt>Date of Origin</dt>' +
-        '<dd>' + new Date(_this.getAttribute('date')) + '</dd>' +
+        '<dd>' + _this.formatDate() + '</dd>' +
         '<dt>Location</dt>' +
         '<dd>' + _this.getAttribute('location') + '</dd>' +
         '<dt>Total Area Burned</dt>' +
