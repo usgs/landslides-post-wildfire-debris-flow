@@ -15,7 +15,6 @@ BUNDLE_CLASSES = [
   JS + '/summary/SummaryFireLayer.js:summary/SummaryFireLayer',
   JS + '/summary/SummaryMapView.js:summary/SummaryMapView',
   JS + '/summary/SummaryView.js:summary/SummaryView',
-  JS + '/detail/DetailDownloadView.js:detail/DetailDownloadView',
   JS + '/detail/DetailMapView.js:detail/DetailMapView',
   JS + '/detail/DetailView.js:detail/DetailView'
 ];

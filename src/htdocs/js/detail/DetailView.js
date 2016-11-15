@@ -1,8 +1,7 @@
 'use strict';
 
 
-var DetailDownloadView = require('detail/DetailDownloadView'),
-    DetailMapView = require('detail/DetailMapView'),
+var DetailMapView = require('detail/DetailMapView'),
     Util = require('util/Util');
 
 
@@ -46,7 +45,7 @@ var DetailView = function (options) {
         '<h2>Preliminary Hazard Assessment</h2>' +
         '<div class="detail-map-view"></div>' +
         '<div class="detail-description"></div>' +
-        '<div class="detail-download-view"></div>';
+        '<div class="detail-download"></div>';
 
     // Update page title
     titleEl = document.querySelector('.page-header > h1');
@@ -66,11 +65,8 @@ var DetailView = function (options) {
     _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();
 
     // Display downloads
-    _this.detailDownloadView = DetailDownloadView({
-      el: _this.el.querySelector('.detail-download-view'),
-      data: _this.data
-    });
-    _this.detailDownloadView.render();
+    _this.detailDownloadEl = _this.el.querySelector('.detail-download');
+    _this.detailDownloadEl.innerHTML = _this.getDetailDownload();
   };
 
   /**
@@ -137,12 +133,48 @@ var DetailView = function (options) {
     return markup;
   };
 
+  _this.getDetailDownload = function () {
+    var markup,
+        url;
+
+    url = 'ftp://hazards.cr.usgs.gov/web/' +
+        'landslides-post-wildfire-debris-flow/fires/' +
+        _this.getAttribute('mapImage');
+
+    markup =
+      '<h3>Downloads</h3>' +
+      '<p>' +
+        'Below are the shapefiles and geodatabase information that was ' +
+        'used in the creation of the maps on this page.' +
+      '</p>' +
+      '<ul>' +
+        '<li>' +
+          '<a href=" ' + url + '/PFDFEstimates_README.pdf">README (.pdf)</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href=" ' + url + '/PostFireDebrisFlowEstimates.zip">' +
+              'Post Fire Debris Flow Estimates (.zip)</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href=" ' + url + '/Shapefiles.zip">Shapefile (.zip)</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href=" ' + url + '/image.pdf">Image (.pdf)</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href=" ' + url + '/image.png">Image (.png)</a>' +
+        '</li>' +
+      '</ul>';
+
+    return markup;
+  };
+
   /**
    * Quick summary on the details page, inclues:
    *  - date
    *  - location
    *  - area
-   * 
+   *
    * @return {DOMString}
    *         Detail page quick summary
    */
@@ -200,10 +232,9 @@ var DetailView = function (options) {
    *
    */
   _this.render = function () {
-    _this.detailDownloadView.render();
-
     _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();
     _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
+    _this.detailDownloadEl.innerHTML = _this.getDetailDownload();
   };
 
 
