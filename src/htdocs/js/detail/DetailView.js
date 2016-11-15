@@ -111,7 +111,7 @@ var DetailView = function (options) {
 
     markup =
       '<p>' +
-        'The interactive map above displays estimates of the likelihood of ' +
+        'The map above displays estimates of the likelihood of ' +
         'debris flow (in &#37;), potential volume of debris flow (in ' +
         'm<sup>3</sup>), and combined relative debris flow hazard. These ' +
         'predictions are made at the scale of the drainage basin, and at the ' +
@@ -137,9 +137,8 @@ var DetailView = function (options) {
     var markup,
         url;
 
-    url = 'ftp://hazards.cr.usgs.gov/web/' +
-        'landslides-post-wildfire-debris-flow/fires/' +
-        _this.getAttribute('mapImage');
+    url = 'ftp://hazards.cr.usgs.gov/web/landslides-post-wildfire-debris' +
+        '-flow/fires/' + _this.getAttribute('mapimage');
 
     markup =
       '<h3>Downloads</h3>' +
@@ -149,14 +148,14 @@ var DetailView = function (options) {
       '</p>' +
       '<ul>' +
         '<li>' +
-          '<a href=" ' + url + '/PFDFEstimates_README.pdf">README (.pdf)</a>' +
-        '</li>' +
-        '<li>' +
           '<a href=" ' + url + '/PostFireDebrisFlowEstimates.zip">' +
               'Post Fire Debris Flow Estimates (.zip)</a>' +
         '</li>' +
         '<li>' +
           '<a href=" ' + url + '/Shapefiles.zip">Shapefile (.zip)</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href=" ' + url + '/PFDFEstimates_README.pdf">README (.pdf)</a>' +
         '</li>' +
         '<li>' +
           '<a href=" ' + url + '/image.pdf">Image (.pdf)</a>' +
@@ -208,13 +207,14 @@ var DetailView = function (options) {
         url;
 
     currentYear = new Date().getFullYear();
-    eventYear = new Date(_this.data.attributes.date).getFullYear();
+    eventYear = new Date(_this.getAttribute('date')).getFullYear();
     url = 'ftp://hazards.cr.usgs.gov/web/landslides-post-wildfire-debris-' +
-        'flow/fires/' + _this.data.attributes.mapImage + '/image.png';
+        'flow/fires/' + _this.getAttribute('mapimage') + '/image.png';
 
     // Older than two years, display image
     if ((currentYear - eventYear) > 1) {
       // display static image
+      _this.detailMapEl.classList.add('detail-map-image');
       _this.detailMapEl.innerHTML = '<img src="' + url + '" ' +
           'alt="Segemented Probability Basin image" />';
     } else {
