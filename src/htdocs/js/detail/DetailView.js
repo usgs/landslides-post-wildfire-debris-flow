@@ -139,7 +139,7 @@ var DetailView = function (options) {
 
     url = 'ftp://hazards.cr.usgs.gov/web/' +
         'landslides-post-wildfire-debris-flow/fires/' +
-        _this.data.attributes.mapImage;
+        _this.getAttribute('mapImage');
 
     markup =
       '<h3>Downloads</h3>' +
