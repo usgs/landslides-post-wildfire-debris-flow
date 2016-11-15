@@ -30,10 +30,16 @@ var DetailView = function (options) {
    *     Configuration options for this view.
    */
   _initialize = function (options) {
-    // summary data from wildfire
-    _this.data = options.data || {};
+    var titleEl;
 
     _this.el = options.el || document.createElement('div');
+    _this.data = options.data;
+
+    if (!_this.data || !_this.data.attributes) {
+      _this.el.innerHTML = '<p class="alert error">No Data to load.</p>';
+      return;
+    }
+
     _this.el.classList.add('detail-view');
     _this.el.innerHTML =
         '<div class="detail-summary"></div>' +
@@ -42,6 +48,11 @@ var DetailView = function (options) {
         '<div class="detail-description"></div>' +
         '<div class="detail-download-view"></div>';
 
+    // Update page title
+    titleEl = document.querySelector('.page-header > h1');
+    titleEl.innerHTML = _this.getAttribute('fire') + ' (' +
+        _this.getAttribute('location') + ')';
+
     // Display summary info on details page
     _this.detailSummaryEl = _this.el.querySelector('.detail-summary');
     _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
@@ -49,7 +60,7 @@ var DetailView = function (options) {
     // Display Map with details
     _this.detailMapView = DetailMapView({
       el: _this.el.querySelector('.detail-map-view'),
-      data: _this.summary
+      data: _this.data
     });
 
     // Display description below the map
@@ -59,8 +70,9 @@ var DetailView = function (options) {
     // Display downloads
     _this.detailDownloadView = DetailDownloadView({
       el: _this.el.querySelector('.detail-download-view'),
-      data: _this.summary
+      data: _this.data
     });
+    _this.detailDownloadView.render();
   };
 
   /**
@@ -75,6 +87,24 @@ var DetailView = function (options) {
     _initialize = null;
     _this = null;
   }, _this.destroy);
+
+  /**
+   * Pull attributes off of _this.data
+   *
+   * @param key {String}
+   *        The name of the attribute to return
+   *
+   * @return {Mixed}
+   *        Attribute value
+   */
+  _this.getAttribute = function (key) {
+    try {
+      return _this.data.attributes[key];
+    } catch (e) {
+      console.log(e.stack);
+      return '&ndash;';
+    }
+  };
 
   /**
    * Get description to display below the map, I believe this content is static
@@ -119,39 +149,20 @@ var DetailView = function (options) {
    *         Detail page quick summary
    */
   _this.getDetailSummary = function () {
-    var attributes,
-        markup;
-
-    attributes = _this.data.attributes;
-    if(!attributes) {
-      return '<p class="alert error">No Data to load.</p>';
-    }
+    var markup;
 
     markup =
       '<dl class="detail-summary-list">' +
         '<dt>Date of Origin</dt>' +
-        '<dd>' + new Date(attributes.date) + '</dd>' +
+        '<dd>' + new Date(_this.getAttribute('date')) + '</dd>' +
         '<dt>Location</dt>' +
-        '<dd>' + attributes.location + '</dd>' +
+        '<dd>' + _this.getAttribute('location') + '</dd>' +
         '<dt>Total Area Burned</dt>' +
-        '<dd>' + attributes.size + ' km<sup>2</sup></dd>' +
+        '<dd>' + _this.getAttribute('size') + ' km<sup>2</sup></dd>' +
       '</dl>';
 
     return markup;
   };
-
-
-  /**
-   * Renders the detail view.
-   *
-   */
-  _this.render = function () {
-    _this.detailDownloadView.render();
-
-    _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();
-    _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
-  };
-
 
   _initialize(options);
   options = null;

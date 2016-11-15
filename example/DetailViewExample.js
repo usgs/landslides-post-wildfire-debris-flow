@@ -13,9 +13,7 @@ Xhr.ajax({
     DetailView({
       el: document.querySelector('.detail-view-example'),
       data: fire
-    }).render();
-
-    console.log(fire);
+    });
   },
   error: function (e) {
     console.log(e.stack);

@@ -78,7 +78,7 @@ var SummaryFireLayer = function (options) {
           icon: _this.icon
         });
         marker.bindPopup(
-            '<a href="detail.php?id=' + fire.attributes.objectid + '">' +
+            '<a href="detail.php?objectid=' + fire.attributes.objectid + '">' +
               '<h3>' + fire.attributes.fire + '</h3>' +
             '</a>');
         markers.push(marker);
