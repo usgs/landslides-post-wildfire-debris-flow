@@ -43,7 +43,10 @@ var DetailView = function (options) {
     _this.el.innerHTML =
         '<div class="detail-summary"></div>' +
         '<h2>Preliminary Hazard Assessment</h2>' +
-        '<div class="detail-map-view"></div>' +
+        '<div class="detail-map-view">' +
+          '<div class="detail-map"></div>' +
+          '<img src="" class="legend" />' +
+        '</div>' +
         '<div class="detail-description"></div>' +
         '<div class="detail-download"></div>';
 
