@@ -42,8 +42,10 @@ var DetailMapView = function (options) {
 
     // get element to append map
     _this.el = options.el || document.createElement('div');
-    _this.mapEl = _this.el.querySelector('.detail-map');
-    _this.legendEl = _this.el.querySelector('.legend');
+    _this.mapEl = _this.el.querySelector('.detail-map') ||
+        document.createElement('div');
+    _this.legendEl = _this.el.querySelector('.legend') ||
+        document.createElement('div');
 
     // summary data from wildfire
     _this.data = options.data || {};

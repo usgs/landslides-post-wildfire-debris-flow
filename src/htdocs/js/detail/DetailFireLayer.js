@@ -25,7 +25,7 @@ var DetailFireLayer = function (options) {
   _initialize = function (options) {
     _this.data = options.data || {};
     _this.layers = HazDevLayers();
-    _this.legendEl = options.legendEl;
+    _this.legendEl = options.legendEl || document.createElement('img');
     _this.map = null;
   };
 
