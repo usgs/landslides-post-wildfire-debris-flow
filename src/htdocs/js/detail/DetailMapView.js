@@ -106,7 +106,7 @@ var DetailMapView = function (options) {
    */
   _this.getZoomLevel = function (size) {
     // if size is not defined, zoom to 11
-    if (!size) {
+    if (size === null || typeof size === 'undefined') {
       return 11;
     }
 
