@@ -27,6 +27,7 @@ var DetailFireLayer = function (options) {
     _this.data = options.data.attributes || {};
     _this.overlays = _this.data.layers || [];
     _this.layers = HazDevLayers();
+    _this.legendEl = options.legendEl;
 
     _this.map = null;
   };
@@ -105,6 +106,13 @@ var DetailFireLayer = function (options) {
       attribution: 'USGS'
     });
 
+    probBasins.legendUrl = '../../images/Probability_Legend_Basins2016.png';
+    probSegments.legendUrl = '../../images/Probability_Legend_Segments2016.png';
+    volumeBasins.legendUrl = '../../images/Volume_Legend_Basins2016.png';
+    volumeSegments.legendUrl = '../../images/Volume_Legend_Segments2016.png';
+    comboBasins.legendUrl = '../../images/Combined_Legend_basins2016.png';
+    comboSegments.legendUrl = '../../images/Combined_Legend_Segments2016.png';
+
     // add all layers to the layer group
     _this.layers.addBaseLayer(probBasins, 'Basin Probability');
     _this.layers.addBaseLayer(probSegments, 'Segment Probability');
@@ -116,9 +124,14 @@ var DetailFireLayer = function (options) {
 
     // Show "Segment Probability" by default
     probBasins.addTo(_this.map);
+    _this.legendEl.src = probBasins.legendUrl;
 
     // Add layer group to map
     _this.layers.addTo(_this.map);
+
+    _this.map.on('baselayerchange', function (changeEvent) {
+      _this.legendEl.src = changeEvent.layer.legendUrl;
+    });
   };
 
   /**

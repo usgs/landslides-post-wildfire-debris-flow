@@ -20,7 +20,7 @@
   }
 }
 
-.detail-map-leaflet {
+.detail-map {
   height: 50em;
 }
 
@@ -44,5 +44,23 @@
 
   > .leaflet-control-attribution {
     position: absolute;
+  }
+}
+
+.detail-map-view {
+  position: relative;
+
+  > .legend {
+    margin: 1em 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .detail-map-view > .legend {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    width: 14em;
+    margin: 0;
   }
 }

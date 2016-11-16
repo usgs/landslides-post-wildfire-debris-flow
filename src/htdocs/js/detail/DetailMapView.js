@@ -40,8 +40,10 @@ var DetailMapView = function (options) {
     lon = -112.0;
     zoom = 5;
 
-    // get element to append map 
+    // get element to append map
     _this.el = options.el || document.createElement('div');
+    _this.mapEl = _this.el.querySelector('.detail-map');
+    _this.legendEl = _this.el.querySelector('.legend');
 
     // summary data from wildfire
     _this.data = options.data || {};
@@ -54,7 +56,7 @@ var DetailMapView = function (options) {
       zoom = _this.getZoomLevel(_this.data.attributes.size);
     }
 
-    _this.map = L.map(_this.el, {
+    _this.map = L.map(_this.mapEl, {
       'center': [lat, lon],
       'maxBounds': [
         [-90, -Infinity],
@@ -70,7 +72,8 @@ var DetailMapView = function (options) {
 
     // Add fire overlay layers
     _this.fires = DetailFireLayer({
-      data: _this.data
+      data: _this.data,
+      legendEl: _this.legendEl
     });
     _this.map.addLayer(_this.fires);
 
