@@ -10,17 +10,14 @@ var data,
 expect = chai.expect;
 
 data = {
-  'attributes': {
-    'objectid':81,
-    'fire':'Junkins Fire',
-    'lat':38.159999999999997,
-    'lon':-105.09999999999999,
-    'location':'Pike and San Isabel National Forest, CO',
-    'date': new Date().getTime(),
-    //'date':1476662400000,
-    'size':74,
-    'mapimage':'20161017_junkins'
-  }
+  'objectid':81,
+  'fire':'Junkins Fire',
+  'lat':38.159999999999997,
+  'lon':-105.09999999999999,
+  'location':'Pike and San Isabel National Forest, CO',
+  'date': new Date().getTime(),
+  'size':74,
+  'mapimage':'20161017_junkins'
 };
 
 map = L.map(document.createElement('div'), {
@@ -61,6 +58,20 @@ describe('DetailFireLayer', function () {
 
       layer = DetailFireLayer();
       expect(layer.destroy).to.not.throw(Error);
+    });
+  });
+
+  describe('addOverlays', function () {
+    it('adds overlays to map', function () {
+      var stub;
+
+      stub = sinon.stub(layer.layers, 'addBaseLayer', function () {
+        return;
+      });
+      layer.addOverlays();
+
+      // all five fires are plotted
+      expect(stub.callCount).to.equal(6);
     });
   });
 
