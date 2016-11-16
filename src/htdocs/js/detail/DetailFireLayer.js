@@ -106,12 +106,12 @@ var DetailFireLayer = function (options) {
       attribution: 'USGS'
     });
 
-    probBasins.legendUrl     = '../../images/Probability_Legend_Basins2016.png';
-    probSegments.legendUrl   = '../../images/Probability_Legend_Segments2016.png';
-    volumeBasins.legendUrl   = '../../images/Volume_Legend_Basins2016.png';
+    probBasins.legendUrl = '../../images/Probability_Legend_Basins2016.png';
+    probSegments.legendUrl = '../../images/Probability_Legend_Segments2016.png';
+    volumeBasins.legendUrl = '../../images/Volume_Legend_Basins2016.png';
     volumeSegments.legendUrl = '../../images/Volume_Legend_Segments2016.png';
-    comboBasins.legendUrl    = '../../images/Combined_Legend_basins2016.png';
-    comboSegments.legendUrl  = '../../images/Combined_Legend_Segments2016.png';
+    comboBasins.legendUrl = '../../images/Combined_Legend_basins2016.png';
+    comboSegments.legendUrl = '../../images/Combined_Legend_Segments2016.png';
 
     // add all layers to the layer group
     _this.layers.addBaseLayer(probBasins, 'Basin Probability');
