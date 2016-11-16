@@ -74,7 +74,8 @@ var DetailMapView = function (options) {
     // Add fire overlay layers
     _this.fire = DetailFireLayer({
       data: _this.data,
-      legendEl: _this.legendEl
+      legendEl: _this.legendEl,
+      url: options.url
     });
     _this.map.addLayer(_this.fire);
 

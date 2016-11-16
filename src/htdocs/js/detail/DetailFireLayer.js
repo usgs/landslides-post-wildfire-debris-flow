@@ -26,6 +26,8 @@ var DetailFireLayer = function (options) {
     _this.data = options.data || {};
     _this.layers = HazDevLayers();
     _this.legendEl = options.legendEl || document.createElement('img');
+    _this.url = options.url;
+
     _this.map = null;
   };
 
@@ -42,20 +44,9 @@ var DetailFireLayer = function (options) {
         probBasins,
         probSegments,
         volumeBasins,
-        volumeSegments,
-        ws,
-        year;
+        volumeSegments;
 
-    // need year to build web service URI
-    if (!_this.data.date) {
-      return;
-    }
-
-    year = new Date(_this.data.date).getUTCFullYear();
-    ws = 'http://dev01-gis01.cr.usgs.gov/arcgis/services/ls/pwfdf_' + year +
-        '/MapServer/WMSServer';
-
-    probBasins = L.tileLayer.wms(ws, {
+    probBasins = L.tileLayer.wms(_this.url, {
       layers: '2,7,8',
       format: 'image/png',
       transparent: true,
@@ -63,7 +54,7 @@ var DetailFireLayer = function (options) {
       attribution: 'USGS'
     });
 
-    probSegments = L.tileLayer.wms(ws, {
+    probSegments = L.tileLayer.wms(_this.url, {
       layers: '5,7,6,8,9',
       format: 'image/png',
       transparent: true,
@@ -71,7 +62,7 @@ var DetailFireLayer = function (options) {
       attribution: 'USGS'
     });
 
-    volumeBasins = L.tileLayer.wms(ws, {
+    volumeBasins = L.tileLayer.wms(_this.url, {
       layers: '1,7,8',
       format: 'image/png',
       transparent: true,
@@ -79,7 +70,7 @@ var DetailFireLayer = function (options) {
       attribution: 'USGS'
     });
 
-    volumeSegments = L.tileLayer.wms(ws, {
+    volumeSegments = L.tileLayer.wms(_this.url, {
       layers: '4,7,6,8,9',
       format: 'image/png',
       transparent: true,
@@ -87,7 +78,7 @@ var DetailFireLayer = function (options) {
       attribution: 'USGS'
     });
 
-    comboBasins = L.tileLayer.wms(ws, {
+    comboBasins = L.tileLayer.wms(_this.url, {
       layers: '0,7,8',
       format: 'image/png',
       transparent: true,
@@ -95,7 +86,7 @@ var DetailFireLayer = function (options) {
       attribution: 'USGS'
     });
 
-    comboSegments = L.tileLayer.wms(ws, {
+    comboSegments = L.tileLayer.wms(_this.url, {
       layers: '3,7,6,8,9',
       format: 'image/png',
       transparent: true,

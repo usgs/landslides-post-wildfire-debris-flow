@@ -2,7 +2,8 @@
 
 
 var DetailMapView = require('detail/DetailMapView'),
-    Util = require('util/Util');
+    Util = require('util/Util'),
+    Xhr = require('util/Xhr');
 
 
 var _DEFAULTS;
@@ -264,29 +265,35 @@ var DetailView = function (options) {
    *
    */
   _this.getDetailMap = function () {
-    var eventYear,
-        currentYear,
+    var year,
         url;
 
-    currentYear = new Date().getUTCFullYear();
-    eventYear = new Date(_this.getAttribute('date')).getUTCFullYear();
-    url = 'ftp://hazards.cr.usgs.gov/web/landslides-post-wildfire-debris-' +
-        'flow/fires/' + _this.getAttribute('mapimage') + '/image.png';
+    year = new Date(_this.getAttribute('date')).getUTCFullYear();
+    // TODO, update ws url to point to production
+    url = 'http://earthquake.usgs.gov/arcgis/services/ls/pwfdf_' + year +
+        '/MapServer/WMSServer';
 
-    // Older than two years, display image
-    if ((currentYear - eventYear) > 1) {
-      // display static image
-      _this.detailMapEl.classList.add('detail-map-image');
-      _this.detailMapEl.innerHTML = '<img src="' + url + '" ' +
-          'alt="Segmented Probability Basin image" />';
-    } else {
-      // Display leaflet map with all layers
-      _this.detailMapEl.classList.add('detail-map-leaflet');
-      _this.detailMapView = DetailMapView({
-        el: _this.detailMapEl,
-        data: _this.data
-      });
-    }
+    Xhr.ajax({
+      url: url,
+      success: function () {
+        // if ws response.status = 200, Display leaflet map
+        _this.detailMapEl.classList.add('detail-map-leaflet');
+        _this.detailMapView = DetailMapView({
+          el: _this.detailMapEl,
+          data: _this.data,
+          url: url
+        });
+
+      },
+      error: function () {
+        // if ws response.status != 200, display static image
+        _this.detailMapEl.classList.add('detail-map-image');
+        _this.detailMapEl.innerHTML = '<img src="ftp://hazards.cr.usgs.gov/' +
+            'web/landslides-post-wildfire-debris-flow/fires/' +
+            _this.getAttribute('mapimage') + '/image.png" ' +
+            'alt="Segemented Probability Basin image" />';
+      }
+    });
   };
 
 
