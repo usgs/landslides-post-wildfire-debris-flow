@@ -79,24 +79,25 @@ var DetailView = function (options) {
    * Formats date as full month, day, year.
    * Example  August 16, 2013
    *
+   * @param timestamp {Number}
+   *        Millisecond timestamp
+   *
    * @return {String}
-   *         formatted date
+   *        formatted date
    */
-  _this.formatDate = function () {
+  _this.formatDate = function (timestamp) {
     var date,
         markup,
         months;
 
-    date = new Date(_this.getAttribute('date'));
+    date = new Date(timestamp);
 
-    markup = [];
     months = ['January', 'February', 'March', 'April', 'May', 'June',
       'July', 'August', 'September', 'October', 'November', 'December'
     ];
 
-    markup.push(
-      months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
-    );
+    markup = months[date.getMonth()] + ' ' + date.getDate() + ', ' +
+        date.getFullYear();
 
     return markup;
   };
@@ -213,12 +214,20 @@ var DetailView = function (options) {
    *        The attribute object pulled from the data object
    */
   _this.getData = function (data) {
+    var value;
+
     try {
-      return data.attributes;
+      value = data.attributes;
     } catch (e) {
       console.log(e);
       return {};
     }
+
+    if (typeof value === 'undefined') {
+      return {};
+    }
+
+    return value;
   };
 
   /**
@@ -236,7 +245,7 @@ var DetailView = function (options) {
     markup =
       '<dl class="detail-summary-list">' +
         '<dt>Date of Origin</dt>' +
-        '<dd>' + _this.formatDate() + '</dd>' +
+        '<dd>' + _this.formatDate(_this.getAttribute('date')) + '</dd>' +
         '<dt>Location</dt>' +
         '<dd>' + _this.getAttribute('location') + '</dd>' +
         '<dt>Total Area Burned</dt>' +
