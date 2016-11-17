@@ -33,7 +33,6 @@ var SummaryView = function (options) {
     _this.el.classList.add('summary-view');
     _this.el.innerHTML =
         '<p class="summary-intro"></p>' +
-        '<h2>Current and Previous Year Fires</h2>' +
         '<div class="summary-map-view"></div>' +
         '<div class="row">' +
           '<div class="column two-of-three summary-list"></div>' +
