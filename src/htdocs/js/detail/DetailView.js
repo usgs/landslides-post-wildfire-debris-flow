@@ -178,19 +178,19 @@ var DetailView = function (options) {
       '<ul>' +
         '<li>' +
           '<a href=" ' + url + '/PostFireDebrisFlowEstimates.zip">' +
-              'Post Fire Debris Flow Estimates (.zip)</a>' +
+              'Geodatabase (.gdb)</a>' +
         '</li>' +
         '<li>' +
-          '<a href=" ' + url + '/Shapefiles.zip">Shapefile (.zip)</a>' +
+          '<a href=" ' + url + '/Shapefiles.zip">Shapefile (.shp)</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href=" ' + url + '/image.pdf">Segmented Probability (.pdf)</a>' +
+        '</li>' +
+        '<li>' +
+          '<a href=" ' + url + '/image.png">Segmented Probability (.png)</a>' +
         '</li>' +
         '<li>' +
           '<a href=" ' + url + '/PFDFEstimates_README.pdf">README (.pdf)</a>' +
-        '</li>' +
-        '<li>' +
-          '<a href=" ' + url + '/image.pdf">Image (.pdf)</a>' +
-        '</li>' +
-        '<li>' +
-          '<a href=" ' + url + '/image.png">Image (.png)</a>' +
         '</li>' +
       '</ul>';
 
@@ -245,7 +245,7 @@ var DetailView = function (options) {
       // display static image
       _this.detailMapEl.classList.add('detail-map-image');
       _this.detailMapEl.innerHTML = '<img src="' + url + '" ' +
-          'alt="Segemented Probability Basin image" />';
+          'alt="Segmented Probability Basin image" />';
     } else {
       // Display leaflet map with all layers
       _this.detailMapEl.classList.add('detail-map-leaflet');
