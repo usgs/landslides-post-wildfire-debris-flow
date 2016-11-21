@@ -1,6 +1,7 @@
 @import 'leaflet/control/_HazDevLayers.scss';
 @import 'leaflet/control/_Attribution.scss';
 @import 'leaflet/control/_Scale.scss';
+@import 'leaflet/control/_Control.scss';
 
 /* TODO, remove once DetailView(s) are complete */
 
@@ -34,6 +35,7 @@
 
 .summary-map-view {
   height: 45em;
+  margin: 2em 0 1em;
 }
 
 .leaflet-control-container > .leaflet-bottom {
