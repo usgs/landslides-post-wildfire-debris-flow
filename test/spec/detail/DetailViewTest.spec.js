@@ -54,7 +54,7 @@ describe('DetailView', function () {
       console.log(date);
 
       expect(date.indexOf('October')).to.equal(0);
-      expect(date.indexOf('16')).to.equal(8);
+      expect(date.indexOf('17')).to.equal(8);
       expect(date.indexOf('2016')).to.equal(12);
     });
   });

@@ -132,7 +132,7 @@ var SummaryView = function (options) {
       date = new Date(item.attributes.date);
       markup.push(
         '<a href="detail.php?objectid=' + item.attributes.objectid + '">' +
-          months[date.getMonth()] + ' - ',
+          months[date.getUTCMonth()] + ' - ',
           item.attributes.fire,
           '(' + item.attributes.location + ')' +
         '</a>'
@@ -233,7 +233,7 @@ var SummaryView = function (options) {
 
     for (i = 0, len = data.length; i < len; i++) {
       // pull year off date
-      year = new Date(data[i].attributes.date).getFullYear();
+      year = new Date(data[i].attributes.date).getUTCFullYear();
       // check if year key is already on the object
       if (!obj.hasOwnProperty(year)) {
         obj[year] = [];
