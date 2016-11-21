@@ -1,4 +1,4 @@
-/* global afterEach, beforeEach, chai, describe, it */
+/* global afterEach, beforeEach, chai, describe, it, sinon */
 'use strict';
 
 var DetailView = require('detail/DetailView');
@@ -132,8 +132,9 @@ describe('DetailView', function () {
   });
 
   describe('getDetailMap', function () {
-    it('loads image when event is more than two years old', function () {
+    it('loads image when event is more than two years old', function (done) {
       var data,
+          getDetailMap,
           view;
 
       data = {
@@ -153,6 +154,13 @@ describe('DetailView', function () {
         el: document.createElement('div'),
         data: data
       });
+      getDetailMap = view.getDetailMap;
+      sinon.stub(view, 'getDetailMap', function() {
+        getDetailMap();
+        done();
+      });
+
+      view.getDetailMap();
 
       expect(view.detailMapEl.classList.contains('detail-map-image')).to.be.true;
       expect(view.detailMapEl.classList.contains('detail-map-leaflet')).to.be.false;
@@ -160,8 +168,9 @@ describe('DetailView', function () {
       view.destroy();
     });
 
-    it('loads map when event is less than two years old', function () {
+    it('loads map when event is less than two years old', function (done) {
       var data,
+          getDetailMap,
           view;
 
       data = {
@@ -181,6 +190,13 @@ describe('DetailView', function () {
         el: document.createElement('div'),
         data: data
       });
+      getDetailMap = view.getDetailMap;
+      sinon.stub(view, 'getDetailMap', function() {
+        getDetailMap();
+        done();
+      });
+
+      view.getDetailMap();
 
       expect(view.detailMapEl.classList.contains('detail-map-image')).to.be.false;
       expect(view.detailMapEl.classList.contains('detail-map-leaflet')).to.be.true;

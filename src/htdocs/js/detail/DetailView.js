@@ -283,7 +283,6 @@ var DetailView = function (options) {
           data: _this.data,
           url: url
         });
-
       },
       error: function () {
         // if ws response.status != 200, display static image
