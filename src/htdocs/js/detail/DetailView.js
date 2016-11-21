@@ -96,8 +96,8 @@ var DetailView = function (options) {
       'July', 'August', 'September', 'October', 'November', 'December'
     ];
 
-    markup = months[date.getMonth()] + ' ' + date.getDate() + ', ' +
-        date.getFullYear();
+    markup = months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ', ' +
+        date.getUTCFullYear();
 
     return markup;
   };
