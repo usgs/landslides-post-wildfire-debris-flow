@@ -233,7 +233,7 @@ var SummaryView = function (options) {
 
     for (i = 0, len = data.length; i < len; i++) {
       // pull year off date
-      year = new Date(data[i].attributes.date).getFullYear();
+      year = new Date(data[i].attributes.date).getUTCFullYear();
       // check if year key is already on the object
       if (!obj.hasOwnProperty(year)) {
         obj[year] = [];

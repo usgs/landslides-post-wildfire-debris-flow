@@ -268,8 +268,8 @@ var DetailView = function (options) {
         currentYear,
         url;
 
-    currentYear = new Date().getFullYear();
-    eventYear = new Date(_this.getAttribute('date')).getFullYear();
+    currentYear = new Date().getUTCFullYear();
+    eventYear = new Date(_this.getAttribute('date')).getUTCFullYear();
     url = 'ftp://hazards.cr.usgs.gov/web/landslides-post-wildfire-debris-' +
         'flow/fires/' + _this.getAttribute('mapimage') + '/image.png';
 

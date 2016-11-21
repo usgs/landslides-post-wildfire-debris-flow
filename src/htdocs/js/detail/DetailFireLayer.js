@@ -51,7 +51,7 @@ var DetailFireLayer = function (options) {
       return;
     }
 
-    year = new Date(_this.data.date).getFullYear();
+    year = new Date(_this.data.date).getUTCFullYear();
     ws = 'http://dev01-gis01.cr.usgs.gov/arcgis/services/ls/pwfdf_' + year +
         '/MapServer/WMSServer';
 
