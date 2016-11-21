@@ -42,18 +42,19 @@ var DetailMapView = function (options) {
 
     // get element to append map
     _this.el = options.el || document.createElement('div');
-    _this.mapEl = _this.el.querySelector('.detail-map');
-    _this.legendEl = _this.el.querySelector('.legend');
+    _this.mapEl = _this.el.querySelector('.detail-map') ||
+        document.createElement('div');
+    _this.legendEl = _this.el.querySelector('.legend') ||
+        document.createElement('div');
 
     // summary data from wildfire
     _this.data = options.data || {};
 
     // get map coordinates and zoom level
-    if (_this.data.attributes && _this.data.attributes.size &&
-        _this.data.attributes.lat && _this.data.attributes.lon) {
-      lat = _this.data.attributes.lat;
-      lon = _this.data.attributes.lon;
-      zoom = _this.getZoomLevel(_this.data.attributes.size);
+    if (_this.data.size && _this.data.lat && _this.data.lon) {
+      lat = _this.data.lat;
+      lon = _this.data.lon;
+      zoom = _this.getZoomLevel(_this.data.size);
     }
 
     _this.map = L.map(_this.mapEl, {
@@ -71,11 +72,11 @@ var DetailMapView = function (options) {
     Terrain().addTo(_this.map);
 
     // Add fire overlay layers
-    _this.fires = DetailFireLayer({
+    _this.fire = DetailFireLayer({
       data: _this.data,
       legendEl: _this.legendEl
     });
-    _this.map.addLayer(_this.fires);
+    _this.map.addLayer(_this.fire);
 
     // Add Map Controls
     if (!Util.isMobile()) {
@@ -97,17 +98,6 @@ var DetailMapView = function (options) {
   }, _this.destroy);
 
   /**
-   * Makes an ajax request to ArcGIS web service to request all layers for
-   * the wildfire event.
-   *
-   * @return {Array}
-   *         An array of layers to display on a leaflet map
-   */
-  _this.getLayers = function () {
-    return 'TODO';
-  };
-
-  /**
    * Based on the size of the fire a zoom level is returned
    *
    * @param size {Number}
@@ -118,7 +108,7 @@ var DetailMapView = function (options) {
    */
   _this.getZoomLevel = function (size) {
     // if size is not defined, zoom to 11
-    if (!size) {
+    if (size === null || typeof size === 'undefined') {
       return 11;
     }
 
