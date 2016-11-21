@@ -110,7 +110,7 @@ var DetailFireLayer = function (options) {
     _this.layers.addBaseLayer(comboSegments, 'Segment Hazard');
 
 
-    // Show "Segment Probability" by default
+    // Show "Basin Probability" by default
     probBasins.addTo(_this.map);
     _this.legendEl.src = probBasins.legendUrl;
 

@@ -13,13 +13,15 @@ url = 'http://earthquake.usgs.gov/arcgis/rest/services/ls/pwfdf_locations/' +
 Xhr.ajax({
   url: url + Objectid,
   success: function (data) {
-    var json;
+    var json,
+        view;
 
     json = JSON.parse(data);
-    DetailView({
+    view = DetailView({
       el: document.querySelector('#application'),
       data: json.features[0] || {}
     });
+    view.render();
   },
   error: function (error) {
     document.querySelector('#application').innerHTML =

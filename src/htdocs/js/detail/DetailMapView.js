@@ -49,6 +49,7 @@ var DetailMapView = function (options) {
 
     // summary data from wildfire
     _this.data = options.data || {};
+    _this.url = options.url || '';
 
     // get map coordinates and zoom level
     if (_this.data.size && _this.data.lat && _this.data.lon) {
@@ -75,7 +76,7 @@ var DetailMapView = function (options) {
     _this.fire = DetailFireLayer({
       data: _this.data,
       legendEl: _this.legendEl,
-      url: options.url
+      url: _this.url
     });
     _this.map.addLayer(_this.fire);
 

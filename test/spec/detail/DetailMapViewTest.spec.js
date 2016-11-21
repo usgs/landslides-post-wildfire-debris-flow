@@ -31,8 +31,6 @@ describe('DetailMapView', function () {
   });
 
   describe('getZoomLevel', function () {
-
-
     it('returns the correct zoom level', function () {
       var view;
 
