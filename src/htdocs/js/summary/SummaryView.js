@@ -256,7 +256,6 @@ var SummaryView = function (options) {
     _this.summaryMapView.render();
     // build list of summary events
     _this.createSummaryList();
-
   };
 
 

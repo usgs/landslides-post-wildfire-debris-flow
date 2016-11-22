@@ -2,7 +2,8 @@
 
 
 var DetailMapView = require('detail/DetailMapView'),
-    Util = require('util/Util');
+    Util = require('util/Util'),
+    Xhr = require('util/Xhr');
 
 
 var _DEFAULTS;
@@ -29,7 +30,8 @@ var DetailView = function (options) {
    *     Configuration options for this view.
    */
   _initialize = function (options) {
-    var titleEl;
+    var titleEl,
+        year;
 
     // set _this.el element
     _this.el = options.el || document.createElement('div');
@@ -58,21 +60,17 @@ var DetailView = function (options) {
           _this.getAttribute('location') + ')';
     }
 
-    // Display summary info on details page
+    // build web service URL
+    year = new Date(_this.getAttribute('date')).getUTCFullYear();
+    _this.url = 'http://earthquake.usgs.gov/arcgis/services/ls/pwfdf_' + year +
+        '/MapServer/WMSServer';
+
+    // create references to all element objects
     _this.detailSummaryEl = _this.el.querySelector('.detail-summary');
-    _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
-
-    // Load map or map images
     _this.detailMapEl = _this.el.querySelector('.detail-map-view');
-    _this.getDetailMap();
-
-    // Display description below the map
     _this.detailDescriptionEl = _this.el.querySelector('.detail-description');
-    _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();
-
-    // Display downloads
     _this.detailDownloadEl = _this.el.querySelector('.detail-download');
-    _this.detailDownloadEl.innerHTML = _this.getDetailDownload();
+
   };
 
   /**
@@ -256,37 +254,65 @@ var DetailView = function (options) {
   };
 
   /**
+   * Load the static map image.
+   *
+   */
+  _this.loadMapImage = function () {
+    _this.detailMapEl.classList.add('detail-map-image');
+    _this.detailMapEl.innerHTML = '<img src="ftp://hazards.cr.usgs.gov/' +
+        'web/landslides-post-wildfire-debris-flow/fires/' +
+        _this.getAttribute('mapimage') + '/image.png" ' +
+        'alt="Segemented Probability Basin image" />';
+  };
+
+  /**
+   * Load the leaflet map view.
+   *
+   */
+  _this.loadMapView = function () {
+    _this.detailMapEl.classList.add('detail-map-leaflet');
+    _this.detailMapView = DetailMapView({
+      el: _this.detailMapEl,
+      data: _this.data,
+      url: _this.url
+    });
+  };
+
+  /**
    * Determines whether to load a leaflet map or a static map image.
    *
-   * If the event is more than two calendar years old, then a static image
-   * of the segmented probability is loaded in place of the map from an
-   * ftp server.
+   * If the web service (_this.url) exists (returns status === 200,
+   * then a static image of the segmented probability is loaded in place
+   * of the map from an ftp server.
    *
    */
   _this.getDetailMap = function () {
-    var eventYear,
-        currentYear,
-        url;
+    Xhr.ajax({
+      url: _this.url,
+      success: function () {
+        // if ws response.status = 200, Display leaflet map
+        _this.loadMapView();
+      },
+      error: function () {
+        // if ws response.status != 200, display static image
+        _this.loadMapImage();
+      }
+    });
+  };
 
-    currentYear = new Date().getUTCFullYear();
-    eventYear = new Date(_this.getAttribute('date')).getUTCFullYear();
-    url = 'ftp://hazards.cr.usgs.gov/web/landslides-post-wildfire-debris-' +
-        'flow/fires/' + _this.getAttribute('mapimage') + '/image.png';
-
-    // Older than two years, display image
-    if ((currentYear - eventYear) > 1) {
-      // display static image
-      _this.detailMapEl.classList.add('detail-map-image');
-      _this.detailMapEl.innerHTML = '<img src="' + url + '" ' +
-          'alt="Segmented Probability Basin image" />';
-    } else {
-      // Display leaflet map with all layers
-      _this.detailMapEl.classList.add('detail-map-leaflet');
-      _this.detailMapView = DetailMapView({
-        el: _this.detailMapEl,
-        data: _this.data
-      });
-    }
+  /**
+   * Render the view
+   *
+   */
+  _this.render = function () {
+    // Display summary info on details page
+    _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
+    // Load map or map images
+    _this.getDetailMap();
+    // Display description below the map
+    _this.detailDescriptionEl.innerHTML = _this.getDetailDescription();
+    // Display downloads
+    _this.detailDownloadEl.innerHTML = _this.getDetailDownload();
   };
 
 

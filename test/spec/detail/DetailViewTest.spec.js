@@ -1,4 +1,4 @@
-/* global afterEach, beforeEach, chai, describe, it */
+/* global afterEach, beforeEach, chai, describe, it, sinon */
 'use strict';
 
 var DetailView = require('detail/DetailView');
@@ -26,6 +26,7 @@ describe('DetailView', function () {
       el: document.createElement('div'),
       data: data
     });
+    view.render();
   });
 
   afterEach(function () {
@@ -131,61 +132,42 @@ describe('DetailView', function () {
     });
   });
 
-  describe('getDetailMap', function () {
-    it('loads image when event is more than two years old', function () {
-      var data,
-          view;
-
-      data = {
-        'attributes': {
-          'objectid':81,
-          'fire':'Junkins Fire',
-          'lat':38.159999999999997,
-          'lon':-105.09999999999999,
-          'location':'Pike and San Isabel National Forest, CO',
-          'date': 0,
-          'size':74,
-          'mapimage':'20161017_junkins'
-        }
-      };
-
-      view = DetailView({
-        el: document.createElement('div'),
-        data: data
-      });
+  describe('loadMapImage', function () {
+    it('loads map when event is less than two years old', function () {
+      view.loadMapImage();
 
       expect(view.detailMapEl.classList.contains('detail-map-image')).to.be.true;
       expect(view.detailMapEl.classList.contains('detail-map-leaflet')).to.be.false;
-
-      view.destroy();
     });
+  });
 
+  describe('loadMapView', function () {
     it('loads map when event is less than two years old', function () {
-      var data,
-          view;
-
-      data = {
-        'attributes': {
-          'objectid':81,
-          'fire':'Junkins Fire',
-          'lat':38.159999999999997,
-          'lon':-105.09999999999999,
-          'location':'Pike and San Isabel National Forest, CO',
-          'date': new Date().getTime(),
-          'size':74,
-          'mapimage':'20161017_junkins'
-        }
-      };
-
-      view = DetailView({
-        el: document.createElement('div'),
-        data: data
-      });
+      view.loadMapView();
 
       expect(view.detailMapEl.classList.contains('detail-map-image')).to.be.false;
       expect(view.detailMapEl.classList.contains('detail-map-leaflet')).to.be.true;
+    });
+  });
 
-      view.destroy();
+  describe('render', function () {
+    it('calls all helper methods', function () {
+      var getDetailSummaryStub,
+          getDetailMapStub,
+          getDetailDescriptionStub,
+          getDetailDownloadStub;
+
+      getDetailSummaryStub = sinon.stub(view, 'getDetailSummary', function () {});
+      getDetailMapStub = sinon.stub(view, 'getDetailMap', function () {});
+      getDetailDescriptionStub = sinon.stub(view, 'getDetailDescription', function () {});
+      getDetailDownloadStub = sinon.stub(view, 'getDetailDownload', function () {});
+
+      view.render();
+
+      expect(getDetailSummaryStub.callCount).to.equal(1);
+      expect(getDetailMapStub.callCount).to.equal(1);
+      expect(getDetailDescriptionStub.callCount).to.equal(1);
+      expect(getDetailDownloadStub.callCount).to.equal(1);
     });
   });
 
