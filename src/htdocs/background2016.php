@@ -17,7 +17,7 @@
     conditions, terrain and soils information, and burn-severity data from
     recently burned areas (Staley et al., 2016a, 2016b). Hazard assessments for
     fires prior to May 2016 relied upon an earlier set of empirical methods
-    described <a href="/hazards/postfire_debrisflow/background2010.php">here
+    described <a href="background2010.php">here
     </a>.
   </p>
   <p>
