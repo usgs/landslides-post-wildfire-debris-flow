@@ -131,7 +131,7 @@ var SummaryView = function (options) {
     try {
       date = new Date(item.attributes.date);
       markup.push(
-        '<a href="detail.php?objectid=' + item.attributes.objectid + '">' +
+        '<a href="detail.php?objectid=' + item.attributes.OBJECTID + '">' +
           months[date.getUTCMonth()] + ' - ',
           item.attributes.fire,
           '(' + item.attributes.location + ')' +

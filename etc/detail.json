@@ -1,7 +1,7 @@
 {
   "displayFieldName": "fire",
   "fieldAliases": {
-    "objectid": "objectid",
+    "OBJECTID": "OBJECTID",
     "fire": "fire",
     "lat": "lat",
     "lon": "lon",
@@ -14,9 +14,9 @@
   },
   "fields": [
     {
-      "name": "objectid",
+      "name": "OBJECTID",
       "type": "esriFieldTypeOID",
-      "alias": "objectid"
+      "alias": "OBJECTID"
     },
     {
       "name": "fire",
@@ -72,7 +72,7 @@
   "features": [
     {
       "attributes": {
-        "objectid": 5,
+        "OBJECTID": 5,
         "fire": "Rim Fire",
         "lat": 37.869999999999997,
         "layers": [],
