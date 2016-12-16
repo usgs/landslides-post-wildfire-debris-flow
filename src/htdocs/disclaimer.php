@@ -16,6 +16,12 @@ if (!isset($TEMPLATE)) {
     or volume of potential debris flows.
   </p>
   <p>
+    The models were developed, calibrated, and tested using data from the
+    western United States. The models have not yet been tested in burn areas
+    in the eastern United States. Currently, efforts are being made to validate
+    model predictions in the eastern United States.
+  </p>
+  <p>
     In addition, this hazard assessment relies upon readily available geospatial
     data, the accuracy and precision of which may influence the estimated
     likelihood and magnitude of post-fire debris flows. However, local
