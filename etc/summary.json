@@ -1,7 +1,7 @@
 {
   "displayFieldName": "fire",
   "fieldAliases": {
-    "objectid": "objectid",
+    "OBJECTID": "OBJECTID",
     "fire": "fire",
     "lat": "lat",
     "lon": "lon",
@@ -11,9 +11,9 @@
     "size": "size"
   },
   "fields": [{
-    "name": "objectid",
+    "name": "OBJECTID",
     "type": "esriFieldTypeOID",
-    "alias": "objectid"
+    "alias": "OBJECTID"
   }, {
     "name": "fire",
     "type": "esriFieldTypeString",
@@ -49,7 +49,7 @@
   }],
   "features": [{
     "attributes": {
-      "objectid": 1,
+      "OBJECTID": 1,
       "fire": "Trailhead Fire",
       "lat": 38.960000000000001,
       "lon": -120.81999999999999,
@@ -60,7 +60,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 2,
+      "OBJECTID": 2,
       "fire": "Erskine Fire",
       "lat": 35.57,
       "lon": -118.31999999999999,
@@ -71,7 +71,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 3,
+      "OBJECTID": 3,
       "fire": "San Gabriel Complex Fire",
       "lat": 34.200000000000003,
       "lon": -117.88,
@@ -82,7 +82,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 4,
+      "OBJECTID": 4,
       "fire": "Colby Fire",
       "lat": 34.158000000000001,
       "lon": -117.87,
@@ -93,7 +93,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 5,
+      "OBJECTID": 5,
       "fire": "Rim Fire",
       "lat": 37.869999999999997,
       "lon": -119.94,
@@ -104,7 +104,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 6,
+      "OBJECTID": 6,
       "fire": "Elk/Pony Complex Fire",
       "lat": 43.409999999999997,
       "lon": -115.48,
@@ -115,7 +115,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 7,
+      "OBJECTID": 7,
       "fire": "Government Flats Fire",
       "lat": 45.533000000000001,
       "lon": -121.364,
@@ -126,7 +126,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 8,
+      "OBJECTID": 8,
       "fire": "Signal Fire",
       "lat": 32.923999999999999,
       "lon": -108.145,
@@ -137,7 +137,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 9,
+      "OBJECTID": 9,
       "fire": "Slide Fire",
       "lat": 35.008000000000003,
       "lon": -111.78,
@@ -148,7 +148,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 10,
+      "OBJECTID": 10,
       "fire": "Dog Head Fire",
       "lat": 34.850000000000001,
       "lon": -106.29000000000001,
@@ -159,7 +159,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 11,
+      "OBJECTID": 11,
       "fire": "Watermen Complex Fire",
       "lat": 44.5,
       "lon": -120.36,
@@ -170,7 +170,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 12,
+      "OBJECTID": 12,
       "fire": "Mills Canyon Complex Fire",
       "lat": 47.619999999999997,
       "lon": -120.29000000000001,
@@ -181,7 +181,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 13,
+      "OBJECTID": 13,
       "fire": "French Fire",
       "lat": 37.293999999999997,
       "lon": -119.337,
@@ -192,7 +192,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 14,
+      "OBJECTID": 14,
       "fire": "El Portal Fire",
       "lat": 37.716999999999999,
       "lon": -119.78,
@@ -203,7 +203,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 15,
+      "OBJECTID": 15,
       "fire": "Stouts Creek Fire",
       "lat": 42.859999999999999,
       "lon": -122.97,
@@ -214,7 +214,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 16,
+      "OBJECTID": 16,
       "fire": "Municipal Fire",
       "lat": 46.466999999999999,
       "lon": -116.19,
@@ -225,7 +225,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 17,
+      "OBJECTID": 17,
       "fire": "Butte Fire",
       "lat": 38.259999999999998,
       "lon": -120.58,
@@ -236,7 +236,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 18,
+      "OBJECTID": 18,
       "fire": "Valley Fire",
       "lat": 38.787999999999997,
       "lon": -122.624,
@@ -247,7 +247,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 19,
+      "OBJECTID": 19,
       "fire": "Solimar Fire",
       "lat": 34.304000000000002,
       "lon": -119.339,
@@ -258,7 +258,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 20,
+      "OBJECTID": 20,
       "fire": "Sherpa Fire",
       "lat": 34.5,
       "lon": -120.03,
@@ -269,7 +269,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 21,
+      "OBJECTID": 21,
       "fire": "Marina Fire",
       "lat": 37.979999999999997,
       "lon": -119.14,
@@ -280,7 +280,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 22,
+      "OBJECTID": 22,
       "fire": "Strawberry Fire",
       "lat": 39.060000000000002,
       "lon": -114.28,
@@ -291,7 +291,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 23,
+      "OBJECTID": 23,
       "fire": "Blue Cut Fire",
       "lat": 34.329999999999998,
       "lon": -117.51000000000001,
@@ -302,7 +302,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 24,
+      "OBJECTID": 24,
       "fire": "Carlton Complex Fire",
       "lat": 48.210999999999999,
       "lon": -119.92,
@@ -313,7 +313,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 25,
+      "OBJECTID": 25,
       "fire": "Little Bridge Creek Fire",
       "lat": 48.442,
       "lon": -120.37,
@@ -324,7 +324,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 26,
+      "OBJECTID": 26,
       "fire": "Duncan Fire",
       "lat": 48.009999999999998,
       "lon": -120.54000000000001,
@@ -335,7 +335,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 27,
+      "OBJECTID": 27,
       "fire": "Upper Falls Fire",
       "lat": 48.767000000000003,
       "lon": -120.26300000000001,
@@ -346,7 +346,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 28,
+      "OBJECTID": 28,
       "fire": "Way Fire",
       "lat": 35.744999999999997,
       "lon": -118.455,
@@ -357,7 +357,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 29,
+      "OBJECTID": 29,
       "fire": "Chiwaukum Complex Fire",
       "lat": 47.68,
       "lon": -120.78,
@@ -368,7 +368,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 30,
+      "OBJECTID": 30,
       "fire": "Silverado Fire",
       "lat": 33.755000000000003,
       "lon": -117.587,
@@ -379,7 +379,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 31,
+      "OBJECTID": 31,
       "fire": "King Fire",
       "lat": 38.93,
       "lon": -120.5,
@@ -390,7 +390,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 32,
+      "OBJECTID": 32,
       "fire": "Dog Rock Fire",
       "lat": 37.682000000000002,
       "lon": -119.73999999999999,
@@ -401,7 +401,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 33,
+      "OBJECTID": 33,
       "fire": "Lake Fire",
       "lat": 34.130000000000003,
       "lon": -116.76000000000001,
@@ -412,7 +412,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 34,
+      "OBJECTID": 34,
       "fire": "Saddle Fire",
       "lat": 40.68,
       "lon": -123.52,
@@ -423,7 +423,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 35,
+      "OBJECTID": 35,
       "fire": "Washington Fire",
       "lat": 38.640999999999998,
       "lon": -119.70999999999999,
@@ -434,7 +434,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 36,
+      "OBJECTID": 36,
       "fire": "Blue Creek Fire",
       "lat": 46.039999999999999,
       "lon": -118.06999999999999,
@@ -445,7 +445,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 37,
+      "OBJECTID": 37,
       "fire": "Wragg Fire",
       "lat": 38.487000000000002,
       "lon": -122.07899999999999,
@@ -456,7 +456,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 38,
+      "OBJECTID": 38,
       "fire": "Willow Fire",
       "lat": 37.281999999999996,
       "lon": -119.482,
@@ -467,7 +467,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 39,
+      "OBJECTID": 39,
       "fire": "Rocky/Jerusalem Fires",
       "lat": 38.917000000000002,
       "lon": -122.446,
@@ -478,7 +478,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 40,
+      "OBJECTID": 40,
       "fire": "Fork Complex Fire",
       "lat": 40.490000000000002,
       "lon": -123.09999999999999,
@@ -489,7 +489,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 41,
+      "OBJECTID": 41,
       "fire": "Mad River Complex Fire",
       "lat": 40.32,
       "lon": -123.44,
@@ -500,7 +500,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 42,
+      "OBJECTID": 42,
       "fire": "River Complex Fire",
       "lat": 40.912999999999997,
       "lon": -123.40000000000001,
@@ -511,7 +511,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 43,
+      "OBJECTID": 43,
       "fire": "Route Fire",
       "lat": 40.600000000000001,
       "lon": -123.53,
@@ -522,7 +522,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 44,
+      "OBJECTID": 44,
       "fire": "Gasquet Complex Fire",
       "lat": 41.700000000000003,
       "lon": -123.81,
@@ -533,7 +533,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 45,
+      "OBJECTID": 45,
       "fire": "Rough Fire",
       "lat": 36.874000000000002,
       "lon": -118.905,
@@ -544,7 +544,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 46,
+      "OBJECTID": 46,
       "fire": "South Complex Fire",
       "lat": 40.619999999999997,
       "lon": -123.44799999999999,
@@ -555,7 +555,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 47,
+      "OBJECTID": 47,
       "fire": "Clearwater Fire",
       "lat": 46.283999999999999,
       "lon": -116.01000000000001,
@@ -566,7 +566,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 48,
+      "OBJECTID": 48,
       "fire": "Fisher Fire",
       "lat": 46.326999999999998,
       "lon": -116.42700000000001,
@@ -577,7 +577,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 49,
+      "OBJECTID": 49,
       "fire": "Noble Fire",
       "lat": 45.609999999999999,
       "lon": -115.316,
@@ -588,7 +588,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 50,
+      "OBJECTID": 50,
       "fire": "Kettle Complex Fire",
       "lat": 48.756,
       "lon": -118.33,
@@ -599,7 +599,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 51,
+      "OBJECTID": 51,
       "fire": "Canyon Creek Fire",
       "lat": 44.283999999999999,
       "lon": -118.81999999999999,
@@ -610,7 +610,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 52,
+      "OBJECTID": 52,
       "fire": "Tepee Springs Fire",
       "lat": 45.299999999999997,
       "lon": -116.15000000000001,
@@ -621,7 +621,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 53,
+      "OBJECTID": 53,
       "fire": "Northstar Complex Fire",
       "lat": 48.409999999999997,
       "lon": -118.94,
@@ -632,7 +632,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 54,
+      "OBJECTID": 54,
       "fire": "Wash/Slide Fire",
       "lat": 46.009999999999998,
       "lon": -115.36,
@@ -643,7 +643,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 55,
+      "OBJECTID": 55,
       "fire": "Black Canyon Fire",
       "lat": 47.950000000000003,
       "lon": -119.95,
@@ -654,7 +654,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 56,
+      "OBJECTID": 56,
       "fire": "Lime Belt Fire",
       "lat": 48.518999999999998,
       "lon": -119.66200000000001,
@@ -665,7 +665,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 57,
+      "OBJECTID": 57,
       "fire": "Tunk Block Fire",
       "lat": 48.479999999999997,
       "lon": -119.36,
@@ -676,7 +676,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 58,
+      "OBJECTID": 58,
       "fire": "Twisp River Fire",
       "lat": 48.381999999999998,
       "lon": -120.211,
@@ -687,7 +687,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 59,
+      "OBJECTID": 59,
       "fire": "Woodrat Fire",
       "lat": 46.170000000000002,
       "lon": -115.76600000000001,
@@ -698,7 +698,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 60,
+      "OBJECTID": 60,
       "fire": "Hayden Pass Fire",
       "lat": 38.299999999999997,
       "lon": -105.77,
@@ -709,7 +709,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 61,
+      "OBJECTID": 61,
       "fire": "Cold Springs Fire",
       "lat": 39.979999999999997,
       "lon": -105.48,
@@ -720,7 +720,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 62,
+      "OBJECTID": 62,
       "fire": "Lava Mountain Fire",
       "lat": 43.609999999999999,
       "lon": -109.90000000000001,
@@ -731,7 +731,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 64,
+      "OBJECTID": 64,
       "fire": "Sand Fire",
       "lat": 34.390000000000001,
       "lon": -118.34,
@@ -742,7 +742,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 65,
+      "OBJECTID": 65,
       "fire": "Cayuse Mountain Fire",
       "lat": 47.840000000000003,
       "lon": -118.04000000000001,
@@ -753,7 +753,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 67,
+      "OBJECTID": 67,
       "fire": "Cedar Fire",
       "lat": 35.789999999999999,
       "lon": -118.56999999999999,
@@ -764,7 +764,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 68,
+      "OBJECTID": 68,
       "fire": "Rey Fire",
       "lat": 34.579999999999998,
       "lon": -119.75,
@@ -775,7 +775,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 69,
+      "OBJECTID": 69,
       "fire": "Pilot Fire",
       "lat": 34.310000000000002,
       "lon": -117.25,
@@ -786,7 +786,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 70,
+      "OBJECTID": 70,
       "fire": "Gap Fire",
       "lat": 41.859999999999999,
       "lon": -123.04000000000001,
@@ -797,7 +797,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 71,
+      "OBJECTID": 71,
       "fire": "Pony Fire",
       "lat": 41.609999999999999,
       "lon": -123.55,
@@ -808,7 +808,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 72,
+      "OBJECTID": 72,
       "fire": "Beaver Creek Fire",
       "lat": 40.950000000000003,
       "lon": -106.54000000000001,
@@ -819,7 +819,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 73,
+      "OBJECTID": 73,
       "fire": "Maple Fire",
       "lat": 44.729999999999997,
       "lon": -110.98,
@@ -830,7 +830,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 74,
+      "OBJECTID": 74,
       "fire": "Pioneer Fire",
       "lat": 44.119999999999997,
       "lon": -115.58,
@@ -841,7 +841,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 75,
+      "OBJECTID": 75,
       "fire": "Buffalo Fire",
       "lat": 44.969999999999999,
       "lon": -110.3,
@@ -852,7 +852,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 76,
+      "OBJECTID": 76,
       "fire": "Loma Fire",
       "lat": 37.119999999999997,
       "lon": -121.81999999999999,
@@ -863,7 +863,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 77,
+      "OBJECTID": 77,
       "fire": "Sawmill Fire",
       "lat": 38.82,
       "lon": -122.84,
@@ -874,7 +874,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 78,
+      "OBJECTID": 78,
       "fire": "Soberanes Fire",
       "lat": 36.329999999999998,
       "lon": -121.72,
@@ -885,7 +885,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 79,
+      "OBJECTID": 79,
       "fire": "Canyon Fire",
       "lat": 34.600000000000001,
       "lon": -120.59,
@@ -896,7 +896,7 @@
     }
   }, {
     "attributes": {
-      "objectid": 80,
+      "OBJECTID": 80,
       "fire": "Yale Road Spokane Complex Fire",
       "lat": 47.490000000000002,
       "lon": -117.29000000000001,
