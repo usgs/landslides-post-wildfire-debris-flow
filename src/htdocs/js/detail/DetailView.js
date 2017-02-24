@@ -62,7 +62,7 @@ var DetailView = function (options) {
 
     // build web service URL
     year = new Date(_this.getAttribute('date')).getUTCFullYear();
-    _this.url = 'http://earthquake.usgs.gov/arcgis/services/ls/pwfdf_' + year +
+    _this.url = 'https://earthquake.usgs.gov/arcgis/services/ls/pwfdf_' + year +
         '/MapServer/WMSServer';
 
     // create references to all element objects

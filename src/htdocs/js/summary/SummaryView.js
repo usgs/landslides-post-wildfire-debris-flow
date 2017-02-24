@@ -176,15 +176,15 @@ var SummaryView = function (options) {
       '<h3>Related Links</h3>' +
       '<ul>' +
         '<li>' +
-          '<a href="http://landslides.usgs.gov/research/wildfire/">' +
+          '<a href="https://landslides.usgs.gov/research/wildfire/">' +
           'Post-Wildfire Landslide Hazards</a>' +
         '</li>' +
         '<li>' +
-          '<a href="http://landslides.usgs.gov/hazards/warningsys.php">' +
+          '<a href="https://landslides.usgs.gov/hazards/warningsys.php">' +
           'Early Warning System</a>' +
         '</li>' +
         '<li>' +
-          '<a href="http://landslides.usgs.gov/dysi/">' +
+          '<a href="https://landslides.usgs.gov/dysi/">' +
           'Did You See It? Report a Landslide</a>' +
         '</li>' +
       '</ul>' +
@@ -192,7 +192,7 @@ var SummaryView = function (options) {
       '<h3>GIS Service Information</h3>' +
       '<ul>' +
         '<li>' +
-          '<a href="http://earthquake.usgs.gov/arcgis/rest/services/ls/' +
+          '<a href="https://earthquake.usgs.gov/arcgis/rest/services/ls/' +
           'pwfdf_locations/MapServer">Post-Fire Debris-Flow Hazards GIS ' +
           'Services</a>' +
         '</li>' +

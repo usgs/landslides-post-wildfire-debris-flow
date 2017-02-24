@@ -158,23 +158,23 @@
       United States derived from the NRCS State Soil Geographic (STATSGO)
       Database: U.S. Geological Survey Open-File Report 95–449, accessed July
       2013, article
-      <a href="http://water.usgs.gov/GIS/metadata/usgswrd/XML/ussoils.xml">
-      http://water.usgs.gov/GIS/metadata/usgswrd/XML/ussoils.xml</a>.
+      <a href="https://water.usgs.gov/GIS/metadata/usgswrd/XML/ussoils.xml">
+      https://water.usgs.gov/GIS/metadata/usgswrd/XML/ussoils.xml</a>.
     </li>
     <li>
       Staley, D.M., Negri, J.A., Kean, J.W., Tillery, A.C., Youberg, A.M., 2016,
       Updated logistic regression equations for the calculation of post-fire
       debris-flow likelihood in the western United States: U.S. Geological
       Survey Open-File Report 2016-1106, 13 p., available at
-      <a href="http://pubs.usgs.gov/of/2016/1106/">
-      http://pubs.usgs.gov/of/2016/1106/</a>
+      <a href="https://pubs.usgs.gov/of/2016/1106/">
+      https://pubs.usgs.gov/of/2016/1106/</a>
     </li>
     <li>
       Verdin, K.L., Dupree, J.A., and Elliot, J.G., 2012, Probability and volume
       of potential postwildfire debris flows in the 2012 Waldo Canyon Burn Area
       near Colorado Springs, Colorado: U.S. Geological Survey Open-File Report
-      2012–1158, 8 p., at <a href="http://pubs.usgs.gov/of/2012/1158/">
-      http://pubs.usgs.gov/of/2012/1158/</a>.
+      2012–1158, 8 p., at <a href="https://pubs.usgs.gov/of/2012/1158/">
+      https://pubs.usgs.gov/of/2012/1158/</a>.
     </li>
   </ul>
 </div>
