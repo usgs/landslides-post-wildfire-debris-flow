@@ -226,20 +226,20 @@
 		2008, Using logistic regression to predict the probability of debris flows in
 		areas burned by wildfires, southern California, 2003–2006: U.S. Geological
 		Survey Open-File Report 2008–1370, 20 p.,
-		<a href="http://pubs.usgs.gov/of/2008/1370/">http://pubs.usgs.gov/of/2008/1370/</a>.
+		<a href="https://pubs.usgs.gov/of/2008/1370/">https://pubs.usgs.gov/of/2008/1370/</a>.
 	</li>
 	<li>
 		Schwartz, G.E., and Alexander, R.B., 1995, Soils data for the conterminous
 		United States derived from the NRCS State Soil Geographic (STATSGO) Database:
 		U.S. Geological Survey Open-File Report 95–449, accessed July 2013, at
-		<a href="http://water.usgs.gov/GIS/metadata/usgswrd/XML/ussoils.xml">
-		http://water.usgs.gov/GIS/metadata/usgswrd/XML/ussoils.xml</a>.
+		<a href="https://water.usgs.gov/GIS/metadata/usgswrd/XML/ussoils.xml">
+		https://water.usgs.gov/GIS/metadata/usgswrd/XML/ussoils.xml</a>.
 	</li>
 	<li>
 		Verdin, K.L., Dupree, J.A., and Elliot, J.G., 2012, Probability and volume of
 		potential postwildfire debris flows in the 2012 Waldo Canyon Burn Area near
 		Colorado Springs, Colorado: U.S. Geological Survey Open-File Report 2012–1158,
-		8 p., at <a href="http://pubs.usgs.gov/of/2012/1158/">http://pubs.usgs.gov/of/2012/1158/</a>.
+		8 p., at <a href="https://pubs.usgs.gov/of/2012/1158/">https://pubs.usgs.gov/of/2012/1158/</a>.
 	</li>
 </ul>
 </div>

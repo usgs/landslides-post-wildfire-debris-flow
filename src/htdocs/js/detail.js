@@ -7,7 +7,7 @@ var DetailView = require('detail/DetailView'),
 
 var url;
 
-url = 'http://earthquake.usgs.gov/arcgis/rest/services/ls/pwfdf_locations/' +
+url = 'https://earthquake.usgs.gov/arcgis/rest/services/ls/pwfdf_locations/' +
     'MapServer/0/query?f=json&outfields=*&returnGeometry=false&objectIds=';
 
 Xhr.ajax({

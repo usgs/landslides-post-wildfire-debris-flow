@@ -38,7 +38,7 @@ describe('DetailFireLayer', function () {
     layer = DetailFireLayer({
       el: document.createElement('div'),
       data: data,
-      url: 'http://earthquake.usgs.gov/arcgis/services/ls/pwfdf_2016/MapServer/WMSServer'
+      url: 'https://earthquake.usgs.gov/arcgis/services/ls/pwfdf_2016/MapServer/WMSServer'
     });
     layer.map = map;
   });
