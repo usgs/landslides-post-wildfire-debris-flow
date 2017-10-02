@@ -98,7 +98,7 @@ var DetailFireLayer = function (options) {
     probSegments.legendUrl = MOUNT_PATH + '/images/Probability_Legend_Segments2016.png';
     volumeBasins.legendUrl = MOUNT_PATH + '/images/Volume_Legend_Basins2016.png';
     volumeSegments.legendUrl = MOUNT_PATH + '/images/Volume_Legend_Segments2016.png';
-    comboBasins.legendUrl = MOUNT_PATH + '/images/Combined_Legend_basins2016.png';
+    comboBasins.legendUrl = MOUNT_PATH + '/images/Combined_Legend_Basins2016.png';
     comboSegments.legendUrl = MOUNT_PATH + '/images/Combined_Legend_Segments2016.png';
 
     // add all layers to the layer group
