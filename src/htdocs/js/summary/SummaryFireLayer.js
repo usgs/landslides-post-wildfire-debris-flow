@@ -8,7 +8,7 @@ var HazDevLayers = require('leaflet/control/HazDevLayers'),
 var _DEFAULTS = {
   icon: L.icon({
     iconUrl: 'images/flame.png',
-    iconRetinaUrl: 'my-icon@2x.png',
+    iconRetinaUrl: 'images/flame.png',
     iconSize: [15, 20],
     iconAnchor: [10, 18],
     popupAnchor: [-3, -16]
