@@ -52,9 +52,12 @@ var DetailMapView = function (options) {
     _this.url = options.url || '';
 
     // get map coordinates and zoom level
-    if (_this.data.size && _this.data.lat && _this.data.lon) {
+    if (_this.data.lat  !== null && _this.data.lon  !== null) {
       lat = _this.data.lat;
       lon = _this.data.lon;
+    }
+
+    if (_this.data.size !== null) {
       zoom = _this.getZoomLevel(_this.data.size);
     }
 
