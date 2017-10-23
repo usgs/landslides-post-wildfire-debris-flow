@@ -25,8 +25,8 @@ Xhr.ajax({
   },
   error: function (error) {
     document.querySelector('#application').innerHTML =
-      '<p class="alert error">',
-        'Failed to download post-wildfire debris flow data.',
+      '<p class="alert error">' +
+        'Failed to download post-wildfire debris flow data.' +
       '</p>';
     console.log(error);
     console.log(error.stack);

@@ -22,12 +22,12 @@ Xhr.ajax({
     });
     view.render();
   },
-  error: function (error) {
+  error: function (err) {
     document.querySelector('#application').innerHTML =
-      '<p class="alert error">',
-        'Failed to download post-wildfire debris flow data.',
+      '<p class="alert error">' +
+        'Failed to download post-wildfire debris flow data.' +
       '</p>';
-    console.log(error);
-    console.log(error.stack);
+    console.log(err);
+    console.log(err.stack);
   }
 });
