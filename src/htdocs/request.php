@@ -9,10 +9,10 @@ if (!isset($TEMPLATE)) {
   <p>
     Post-fire debris-flow hazard assessments for recently burned areas in the
     western United States are provided free to any interested Federal, State,
-    or Local Agency, or to any private organization, company or individual.
-    These assessments rely upon field-validated estimates of soil burn severity
-    in geospatial format. These data should be provided at the time of the
-    request.
+    or Local Agency, or to any private organization. These assessments rely
+    upon the differenced normalized burn ratio (dNBR) image and field-validated
+    estimates of soil burn severity in geospatial format. These data should
+    be provided at the time of the request.
   </p>
   <p>
     Due to limitations in the model, we may not be able to accommodate requests
