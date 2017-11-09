@@ -168,11 +168,19 @@
   <h4>References</h4>
   <ul class="referencelist">
     <li>
+      Cannon, S.H., Gartner, J.E., Rupert, M.G., Michael, J.A., Rea, A.H.,
+      Parrett, C., 2010. Predicting the probability and volume of postwildfire
+      debris flows in the intermountain western United States. Geological
+      Society of America Bulletin, 122(1-2), 127-144.
+      <a href="https://doi.org/10.1130/B26459.1">https://doi.org/10.1130/B26459.1</a>
+    </li>
+    <li>
       Gartner J.E., Cannon S.H., Santi P.M., 2014 Empirical models for
       predicting volumes of sediment deposited by debris flows and
       sediment-laden floods in the transverse ranges of southern California,
-      Engineering Geology 176:45-56, doi:http://dx.doi.org/10.1016/j.
-      enggeo.2014.04.008
+      Engineering Geology 176:45-56, doi:
+      <a href="http://dx.doi.org/10.1016/j.enggeo.2014.04.008">
+      http://dx.doi.org/10.1016/j.enggeo.2014.04.008</a>
     </li>
     <li>
       Schwartz, G.E., and Alexander, R.B., 1995, Soils data for the conterminous
@@ -189,6 +197,14 @@
       Survey Open-File Report 2016-1106, 13 p., available at
       <a href="https://pubs.usgs.gov/of/2016/1106/">
       https://pubs.usgs.gov/of/2016/1106/</a>
+    </li>
+    <li>
+      Staley, D.M., Negri, J.A., Kean, J.W., Laber, J.L., Tillery, A.C.,
+      Youberg, A.M., 2017. Prediction of spatially explicit rainfall
+      intensity–duration thresholds for post-fire debris-flow generation
+      in the western United States. Geomorphology, 278, 149-162.
+      <a href="http://dx.doi.org/10.1016/j.geomorph.2016.10.019">
+      http://dx.doi.org/10.1016/j.geomorph.2016.10.019</a>.
     </li>
     <li>
       Verdin, K.L., Dupree, J.A., and Elliot, J.G., 2012, Probability and volume
