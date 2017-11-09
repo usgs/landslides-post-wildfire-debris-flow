@@ -10,15 +10,15 @@
 ?>
 <div>
   <p>
-    The preliminary hazard assessment relies upon empirical models to estimate
-    the likelihood and volume of debris flows for selected basins in response
-    to a design storm. Beginning in 2016, the empirical models are based upon
-    historical debris-flow occurrence and magnitude data, rainfall storm
-    conditions, terrain and soils information, and burn-severity data from
-    recently burned areas (Staley et al., 2016a, 2016b). Hazard assessments for
-    fires prior to May 2016 relied upon an earlier set of empirical methods
-    described <a href="background2010.php">here
-    </a>.
+    The preliminary hazard assessment relies upon empirical models to
+    estimate the likelihood and volume of debris flows for selected basins
+    in response to a design storm. Beginning in 2016, the empirical models
+    are based upon historical debris&ndash;flow occurrence and magnitude data,
+    rainfall storm conditions, terrain and soils information, and
+    burn&ndash;severity data from recently burned areas (Staley et al., 2016,
+    2017). Hazard assessments for fires prior to May 2016 relied upon an
+    earlier set of empirical methods described
+    <a href="background2010.php">here</a>.
   </p>
   <p>
     Post-fire debris-flow likelihood, volume, and combined hazards are
