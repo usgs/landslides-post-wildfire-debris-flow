@@ -8,17 +8,18 @@
       include 'template.inc.php';
     }
 ?>
+
 <div>
   <p>
-    The preliminary hazard assessment relies upon empirical models to estimate
-    the likelihood and volume of debris flows for selected basins in response
-    to a design storm. Beginning in 2016, the empirical models are based upon
-    historical debris-flow occurrence and magnitude data, rainfall storm
-    conditions, terrain and soils information, and burn-severity data from
-    recently burned areas (Staley et al., 2016a, 2016b). Hazard assessments for
-    fires prior to May 2016 relied upon an earlier set of empirical methods
-    described <a href="background2010.php">here
-    </a>.
+    The preliminary hazard assessment relies upon empirical models to
+    estimate the likelihood and volume of debris flows for selected basins
+    in response to a design storm. Beginning in 2016, the empirical models
+    are based upon historical debris&ndash;flow occurrence and magnitude data,
+    rainfall storm conditions, terrain and soils information, and
+    burn&ndash;severity data from recently burned areas (Staley et al., 2016,
+    2017). Hazard assessments for fires prior to May 2016 relied upon an
+    earlier set of empirical methods described
+    <a href="background2010.php">here</a>.
   </p>
   <p>
     Post-fire debris-flow likelihood, volume, and combined hazards are
@@ -37,31 +38,43 @@
   <p>
     The likelihood of a debris-flow in response to a given peak 15-minute
     rainfall intensity are based upon a logistic regression approach, which
-    combines the following two equations: <br>
-    (1) P = e<sup>x</sup> / (1 + e<sup>x</sup>),<br> <br>Where
+    combines the following two equations:
   </p>
-  <ul>
-    <li>
-      P is the probability of debris-flow occurrence in fractional form, and
-    </li>
-    <li>
-      e<sup>x</sup> is the exponential function where e represents the
-      mathematical constant 2.718.
-    </li>
-  </ul>
+
+  <p>
+    (1) P = e<sup>x</sup> / (1 + e<sup>x</sup>)
+  </p>
+
+  <p>
+    Where
+
+    <ul>
+      <li>
+        P is the probability of debris-flow occurrence in fractional form, and
+      </li>
+      <li>
+        e<sup>x</sup> is the exponential function where e represents the
+        mathematical constant 2.718.
+      </li>
+    </ul>
+  </p>
 
   <p>
     For recently burned areas in southern California, equation 2 is used to
-    calculate x:<br/>
-
-    <br>(2) x = -3.63 + (0.41 &#215; X1R) + (0.67 &#215; X2R) + (0.7 &#215; X3R)
-
-    <br>Where
+    calculate x:
   </p>
+
+  <p>
+    (2) x = -3.63 + (0.41 &#215; X1R) + (0.67 &#215; X2R) + (0.7 &#215; X3R)
+  </p>
+
+  <p>
+    Where
+
     <ul>
       <li>
         X1R is the proportion of upslope area in burned area reflectance class
-        (BARC) Class 3 or 4 with gradients &ge;23&deg;, multiplied by the peak
+        (BARC) Class 3 or 4 with gradients &ge; 23&deg;, multiplied by the peak
         15-minute rainfall accumulation of the design storm
         (in millimeters [mm]),
       </li>
@@ -76,6 +89,8 @@
         design storm (in millimeters [mm]).
       </li>
     </ul>
+  </p>
+
   <p>
     Likelihood values predicted by the equation potentially range from 0 (least
     likely) to 1 (most likely). The predicted likelihood values are assigned to
@@ -93,29 +108,35 @@
   </p>
 
   <p>
-    Potential debris-flow volume is calculated with equation 4:<br/>
-
-    <br>(3) ln(V) = 2.89 + (0.17 &#215; sqrt(ElevRange)) +
-    (0.3 &times; ln(HM<sub>km</sub>)) + (0.47 &times; sqrt(i15))<br>
-    <br>Where
+    Potential debris-flow volume is calculated with equation 4:
   </p>
 
-  <ul>
-    <li>
-      ElevRange is the range (maximum elevation–minimum elevation) of elevation
-      values within the upstream watershed (in meters),
-    </li>
+  <p>
+    (3) ln(V) = 4.22 + (0.13 &#215; sqrt(ElevRange)) +
+    (0.36 &times; ln(HM<sub>km</sub>)) + (0.39 &times; sqrt(i15))
+  </p>
 
-    <li>
-      HM<sub>km</sub> is the area upstream of the calculation point that
-      was burned at high or moderate severity (in km<sup>2</sup>), and
-    </li>
+  <p>
+    Where
 
-    <li>
-      i15 is the spatially-averaged peak 15-min rainfall intensity for the
-      design storm in the upstream watershed (in mm/h).
-    </li>
-  </ul>
+    <ul>
+      <li>
+        ElevRange is the range (maximum elevation–minimum elevation) of elevation
+        values within the upstream watershed (in meters),
+      </li>
+
+      <li>
+        HM<sub>km</sub> is the area upstream of the calculation point that
+        was burned at high or moderate severity (in km<sup>2</sup>), and
+      </li>
+
+      <li>
+        i15 is the spatially-averaged peak 15-min rainfall intensity for the
+        design storm in the upstream watershed (in mm/h).
+      </li>
+    </ul>
+  </p>
+
   <p>
     Volume estimates were classified in order of magnitude scale ranges
     0–1,000 m<sup>3</sup>; 1,000–10,000 m<sup>3</sup>;
@@ -147,11 +168,19 @@
   <h4>References</h4>
   <ul class="referencelist">
     <li>
+      Cannon, S.H., Gartner, J.E., Rupert, M.G., Michael, J.A., Rea, A.H.,
+      Parrett, C., 2010. Predicting the probability and volume of postwildfire
+      debris flows in the intermountain western United States. Geological
+      Society of America Bulletin, 122(1-2), 127-144.
+      <a href="https://doi.org/10.1130/B26459.1">https://doi.org/10.1130/B26459.1</a>
+    </li>
+    <li>
       Gartner J.E., Cannon S.H., Santi P.M., 2014 Empirical models for
       predicting volumes of sediment deposited by debris flows and
       sediment-laden floods in the transverse ranges of southern California,
-      Engineering Geology 176:45-56, doi:http://dx.doi.org/10.1016/j.
-      enggeo.2014.04.008
+      Engineering Geology 176:45-56, doi:
+      <a href="http://dx.doi.org/10.1016/j.enggeo.2014.04.008">
+      http://dx.doi.org/10.1016/j.enggeo.2014.04.008</a>
     </li>
     <li>
       Schwartz, G.E., and Alexander, R.B., 1995, Soils data for the conterminous
@@ -168,6 +197,14 @@
       Survey Open-File Report 2016-1106, 13 p., available at
       <a href="https://pubs.usgs.gov/of/2016/1106/">
       https://pubs.usgs.gov/of/2016/1106/</a>
+    </li>
+    <li>
+      Staley, D.M., Negri, J.A., Kean, J.W., Laber, J.L., Tillery, A.C.,
+      Youberg, A.M., 2017. Prediction of spatially explicit rainfall
+      intensity–duration thresholds for post-fire debris-flow generation
+      in the western United States. Geomorphology, 278, 149-162.
+      <a href="http://dx.doi.org/10.1016/j.geomorph.2016.10.019">
+      http://dx.doi.org/10.1016/j.geomorph.2016.10.019</a>.
     </li>
     <li>
       Verdin, K.L., Dupree, J.A., and Elliot, J.G., 2012, Probability and volume
