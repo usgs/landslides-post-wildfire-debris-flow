@@ -1,6 +1,6 @@
 {
   "name": "landslides-post-wildfire-debris-flow",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "A web application that displays estimates for the probability and volume of debris flows that may be produced by a storm in a recently burned area.",
   "repository": {
     "type": "git",

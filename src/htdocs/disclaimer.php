@@ -18,8 +18,9 @@ if (!isset($TEMPLATE)) {
   <p>
     The models were developed, calibrated, and tested using data from the
     western United States. The models have not yet been tested in burn areas
-    in the eastern United States. Currently, efforts are being made to validate
-    model predictions in the eastern United States.
+    in the eastern United States, western Oregon, or Washington (west of the
+    Cascade Range). Currently, efforts are being made to validate model
+    predictions in the eastern United States, western Oregon, and Washington.
   </p>
   <p>
     In addition, this hazard assessment relies upon readily available geospatial
