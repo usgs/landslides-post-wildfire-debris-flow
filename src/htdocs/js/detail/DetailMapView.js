@@ -51,10 +51,15 @@ var DetailMapView = function (options) {
     _this.data = options.data || {};
     _this.url = options.url || '';
 
-    // get map coordinates and zoom level
-    if (_this.data.size && _this.data.lat && _this.data.lon) {
+    // set map coordinates
+    if (typeof _this.data.lat !== 'undefined' && _this.data.lat !== null &&
+        typeof _this.data.lon !== 'undefined' && _this.data.lon !== null) {
       lat = _this.data.lat;
       lon = _this.data.lon;
+    }
+
+    // set zoom level on map
+    if (typeof _this.data.size !== 'undefined' && _this.data.size !== null) {
       zoom = _this.getZoomLevel(_this.data.size);
     }
 
