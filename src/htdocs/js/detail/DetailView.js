@@ -158,10 +158,7 @@ var DetailView = function (options) {
       '<p>' +
         'Visit the <a href="/hazards/postfire_debrisflow/background2016.php">' +
         'Scientific Background</a> page for more information on how the ' +
-        'predictions are calculated. For more information about what to do ' +
-        'in case you live in an area where debris flows are possible, please ' +
-        'visit <a href="/research/wildfire/whattodo.php">If you live in a ' +
-        'recently burned area, and there is a rainstorm…</a>' +
+        'predictions are calculated.' +
       '</p>';
 
     return markup;

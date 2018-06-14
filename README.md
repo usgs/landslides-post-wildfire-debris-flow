@@ -59,3 +59,17 @@ To begin working with the project
     'node_modules/other-module/dist': null
   }
   ```
+
+
+Deploying this application
+--------------------------
+
+This application is deployed via the `landslides-website` project.
+
+Build the project, then copy the files to the landslides-website project
+(assuming they are checked out in parallel folders):
+
+```
+grunt builddist
+cp -r dist/htdocs/{index.php,detail.php,css,images,js,README.md} ../landslides-website/src/htdocs/hazards/postfire_debrisflow/.
+```

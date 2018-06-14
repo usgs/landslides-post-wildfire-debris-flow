@@ -4,9 +4,6 @@ if (!isset($TEMPLATE)) {
   // template functions
   include_once 'functions.inc.php';
 
-  // defines the $CONFIG hash of configuration variables
-  include_once '../conf/config.inc.php';
-
   $TITLE = 'Emergency Assessment of Post-Fire Debris-Flow Hazards';
   $HEAD = '
     <link rel="stylesheet" href="css/index.css"/>
@@ -16,7 +13,6 @@ if (!isset($TEMPLATE)) {
   $FOOT = '
     <script>
       var Objectid = ' . intval($_GET['objectid']) . ';
-      var MOUNT_PATH = \'' . $CONFIG['MOUNT_PATH'] .'\';
     </script>
     <script src="/lib/leaflet-0.7.7/leaflet.js"></script>
     <script src="js/detail.js"></script>
@@ -27,10 +23,19 @@ if (!isset($TEMPLATE)) {
 
 ?>
 
+<p>
+  <strong><a href="/learn/prepare.php">Landslide Preparedness</a></strong>
+  - what to do if you live in a recently-burned area where debris flows
+  are possible, and there is a rainstorm - before, during, and after.
+</p>
+
+
 <div id="application">
   <noscript>
+  <p>
     <a href="https://www.google.com/search?q=javascript">
       This page requires javascript.
     </a>
+  </p>
   </noscript>
 </div>
