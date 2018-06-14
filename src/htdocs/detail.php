@@ -26,10 +26,19 @@ if (!isset($TEMPLATE)) {
 
 ?>
 
+<p>
+  <strong><a href="/learn/prepare.php">Landslide Preparedness</a></strong>
+  - what to do if you live in a recently-burned area where debris flows
+  are possible, and there is a rainstorm - before, during, and after.
+</p>
+
+
 <div id="application">
   <noscript>
+  <p>
     <a href="https://www.google.com/search?q=javascript">
       This page requires javascript.
     </a>
+  </p>
   </noscript>
 </div>
