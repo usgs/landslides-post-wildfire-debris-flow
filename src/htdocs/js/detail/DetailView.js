@@ -168,8 +168,8 @@ var DetailView = function (options) {
     var markup,
         url;
 
-    url = 'ftp://hazards.cr.usgs.gov/web/landslides-post-wildfire-debris' +
-        '-flow/fires/' + _this.getAttribute('mapimage');
+    url = 'https://landslides.usgs.gov/static/landslides-realtime/fires/' +
+        _this.getAttribute('mapimage');
 
     markup =
       '<h3>Downloads</h3>' +
@@ -256,8 +256,8 @@ var DetailView = function (options) {
    */
   _this.loadMapImage = function () {
     _this.detailMapEl.classList.add('detail-map-image');
-    _this.detailMapEl.innerHTML = '<img src="ftp://hazards.cr.usgs.gov/' +
-        'web/landslides-post-wildfire-debris-flow/fires/' +
+    _this.detailMapEl.innerHTML = '<img src="' +
+        'https://landslides.usgs.gov/static/landslides-realtime/fires/' +
         _this.getAttribute('mapimage') + '/image.png" ' +
         'alt="Segemented Probability Basin image" />';
   };
