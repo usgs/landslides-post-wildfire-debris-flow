@@ -16,7 +16,6 @@ if (!isset($TEMPLATE)) {
   $FOOT = '
     <script>
       var Objectid = ' . intval($_GET['objectid']) . ';
-      var MOUNT_PATH = \'' . $CONFIG['MOUNT_PATH'] .'\';
     </script>
     <script src="/lib/leaflet-0.7.7/leaflet.js"></script>
     <script src="js/detail.js"></script>

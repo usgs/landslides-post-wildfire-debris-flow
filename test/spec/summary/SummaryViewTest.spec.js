@@ -111,23 +111,6 @@ describe('SummaryView', function () {
     });
   });
 
-  describe('loadStaticContent', function () {
-    it('loads static content into the page skeleton', function () {
-      var summaryIntroEl,
-          summaryLinksEl;
-
-      summaryIntroEl = view.el.querySelector('.summary-intro');
-      summaryLinksEl = view.el.querySelector('.summary-links');
-
-      expect(summaryIntroEl.innerHTML).to.equal('');
-      expect(summaryLinksEl.innerHTML).to.equal('');
-
-      view.loadStaticContent();
-
-      expect(summaryIntroEl.innerHTML).to.not.equal('');
-      expect(summaryLinksEl.innerHTML).to.not.equal('');
-    });
-  });
 
   describe('orderEvents', function () {
     it('orders the events', function () {
@@ -146,8 +129,7 @@ describe('SummaryView', function () {
   describe('render', function () {
     it('loads static content, renders the map, creates list', function () {
       var listStub,
-          mapStub,
-          staticStub;
+          mapStub;
 
       listStub = sinon.stub(view, 'createSummaryList', function () {
         return;
@@ -157,15 +139,10 @@ describe('SummaryView', function () {
         return;
       });
 
-      staticStub = sinon.stub(view, 'loadStaticContent', function () {
-        return;
-      });
-
       view.render();
 
       expect(listStub.callCount).to.equal(1);
       expect(mapStub.callCount).to.equal(1);
-      expect(staticStub.callCount).to.equal(1);
     });
   });
 

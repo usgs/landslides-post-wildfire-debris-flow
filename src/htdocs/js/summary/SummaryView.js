@@ -30,9 +30,11 @@ var SummaryView = function (options) {
    *     Configuration options for this view.
    */
   _initialize = function () {
+    // links are defined on page outside application
+    var summaryLinks = document.querySelector('.summary-links');
+
     _this.el.classList.add('summary-view');
     _this.el.innerHTML =
-        '<p class="summary-intro"></p>' +
         '<div class="summary-map-view"></div>' +
         '<div class="row">' +
           '<div class="column two-of-three summary-list"></div>' +
@@ -47,6 +49,11 @@ var SummaryView = function (options) {
       el: _this.el.querySelector('.summary-map-view'),
       data: _this.data
     });
+  
+    // move links outside application into application layout
+    if (summaryLinks) {
+      _this.el.querySelector('.summary-links').appendChild(summaryLinks);
+    }
   };
 
   /**
@@ -144,57 +151,6 @@ var SummaryView = function (options) {
   };
 
   /**
-   * Load static content into the page.
-   *
-   * See initialize method for scaffolding.
-   *
-   */
-  _this.loadStaticContent = function () {
-    _this.el.querySelector('.summary-intro').innerHTML =
-      'Wildfire can significantly alter the hydrologic response of a ' +
-      'watershed to the extent that even modest rainstorms can produce ' +
-      'dangerous flash floods and debris flows. The USGS conducts ' +
-      'post-fire debris-flow hazard assessments for select fires in the ' +
-      'Western U.S. We use geospatial data related to basin morphometry, ' +
-      'burn severity, soil properties, and rainfall characteristics to ' +
-      'estimate the probability and volume of debris flows that may ' +
-      'occur in response to a design storm.';
-
-    _this.el.querySelector('.summary-links').innerHTML =
-      '<h3>Contact Us</h3>' +
-      '<ul>' +
-        '<li>' +
-          'Dennis Staley ' +
-          '(<a href="mailto:dstaley@usgs.gov">dstaley@usgs.gov</a>)' +
-        '</li>' +
-        '<li>' +
-          'Jason Kean ' +
-          '(<a href="mailto:jwkean@usgs.gov">jwkean@usgs.gov</a>)' +
-        '</li>' +
-      '</ul>' +
-
-      '<h3>Related Links</h3>' +
-      '<ul>' +
-        '<li>' +
-          '<a href="https://landslides.usgs.gov/hazards/warningsys.php">' +
-          'Early Warning System</a>' +
-        '</li>' +
-      '</ul>' +
-
-      '<h3>GIS Service Information</h3>' +
-      '<ul>' +
-        '<li>' +
-          '<a href="https://earthquake.usgs.gov/arcgis/rest/services/ls/">' +
-          'Post-Fire Debris-Flow Hazards GIS Services</a>' +
-        '</li>' +
-        '<li>' +
-          '<a href="https://github.com/usgs/hazdev-gis/blob/master/' +
-          'documentation.md">Landslides GIS Server Documentation</a>' +
-        '</li>' +
-      '</ul>';
-  };
-
-  /**
    * Create an object with all fires keyed by year.
    *
    * @param data {Array}
@@ -241,8 +197,6 @@ var SummaryView = function (options) {
    *
    */
   _this.render = function () {
-    // display static content
-    _this.loadStaticContent();
     // render map view
     _this.summaryMapView.render();
     // build list of summary events
