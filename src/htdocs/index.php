@@ -21,14 +21,25 @@ if (!isset($TEMPLATE)) {
 ?>
 
 <p class="summary-intro">
-  Wildfire can significantly alter the hydrologic response of a 
-  watershed to the extent that even modest rainstorms can produce 
-  dangerous flash floods and debris flows. The USGS conducts 
-  post-fire debris-flow hazard assessments for select fires in the 
-  Western U.S. We use geospatial data related to basin morphometry, 
-  burn severity, soil properties, and rainfall characteristics to 
-  estimate the probability and volume of debris flows that may 
+  Wildfire can significantly alter the hydrologic response of a
+  watershed to the extent that even modest rainstorms can produce
+  dangerous flash floods and debris flows. The USGS conducts
+  post-fire debris-flow hazard assessments for select fires in the
+  Western U.S. We use geospatial data related to basin morphometry,
+  burn severity, soil properties, and rainfall characteristics to
+  estimate the probability and volume of debris flows that may
   occur in response to a design storm.
+</p>
+
+<p class="alert info">
+  The maps below depict the likelihood of debris-flow generation and estimates of flow magnitude in locations where debris flows initiate. The models do not predict downstream impacts, potential debris-flow runout paths, and the areal extent of debris-flow or flood inundation.<br /><br />
+
+  For information on what to do if you live in a recently-burned area where debris flows are possible, and there is a rainstorm - before, during, and after, download the
+  <a href="https://www.wrh.noaa.gov/lox/hydrology/files/DebrisFlowSurvivalGuide.pdf">
+    National Weather Service
+    Post Wildfire Flash Flood and Debris Flow Guide
+    (PDF 7.2 MB)
+  </a>
 </p>
 
 <div id="application">
@@ -57,7 +68,7 @@ if (!isset($TEMPLATE)) {
   <h3>Related Links</h3>
   <ul>
     <li>
-      <a href="https://landslides.usgs.gov/hazards/warningsys.php">
+      <a href="https://www.usgs.gov/natural-hazards/landslide-hazards/science/early-warning-system">
         Early Warning System
       </a>
     </li>
