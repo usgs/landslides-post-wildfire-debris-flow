@@ -16,7 +16,12 @@ Xhr.ajax({
     var json,
         view;
 
-    json = JSON.parse(data);
+    try {
+      json = JSON.parse(data);
+    } catch (e) {
+      json = data;
+    }
+
     view = DetailView({
       el: document.querySelector('#application'),
       data: json.features[0] || {}
@@ -29,6 +34,5 @@ Xhr.ajax({
         'Failed to download post-wildfire debris flow data.' +
       '</p>';
     console.log(error);
-    console.log(error.stack);
   }
 });
