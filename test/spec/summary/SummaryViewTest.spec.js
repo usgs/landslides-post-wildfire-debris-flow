@@ -71,47 +71,6 @@ describe('SummaryView', function () {
     });
   });
 
-  describe('createSummaryList', function () {
-    it('lists all events that are passed into view', function () {
-      var el,
-          stub;
-
-      stub = sinon.stub(view, 'formatSummaryListItem', function () {
-        return '';
-      });
-      view.createSummaryList();
-      el = view.el.querySelector('.summary-list');
-
-      expect(stub.callCount).to.equal(3);
-      expect(el.querySelectorAll('h3').length).to.equal(1);
-      expect(el.querySelectorAll('ul').length).to.equal(1);
-      expect(el.querySelectorAll('li').length).to.equal(3);
-    });
-  });
-
-  describe('formatSummaryListItem', function () {
-    it('formats a single feature into a list item', function () {
-      var attributes,
-          el,
-          link,
-          markup;
-
-      attributes = data[0].attributes;
-      el = document.createElement('div');
-      markup = view.formatSummaryListItem(data[0]);
-
-      el.innerHTML = markup;
-      link = el.querySelector('a');
-
-      expect(link).to.not.be.null;
-      expect(link.innerHTML.indexOf('June')).to.equal(0);
-      expect(link.innerHTML.indexOf(attributes.fire)).to.equal(8);
-      expect(link.innerHTML.indexOf(attributes.location)).to.equal(24);
-
-    });
-  });
-
-
   describe('orderEvents', function () {
     it('orders the events', function () {
       var events;
@@ -131,7 +90,7 @@ describe('SummaryView', function () {
       var listStub,
           mapStub;
 
-      listStub = sinon.stub(view, 'createSummaryList', function () {
+      listStub = sinon.stub(view.summaryListView, 'render', function () {
         return;
       });
 

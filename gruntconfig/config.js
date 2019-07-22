@@ -34,12 +34,14 @@ config = {
 
   cssPath: [
     'src/htdocs/css',
+    'node_modules/hazdev-accordion/src',
     'node_modules/hazdev-webutils/src',
     'node_modules/hazdev-leaflet/src'
   ],
 
   jsPath: {
     'src/htdocs/js': '*/*.js',
+    'node_modules/hazdev-accordion/src': '**/*.js',
     'node_modules/hazdev-webutils/src': '**/*.js',
     'node_modules/hazdev-leaflet/src': '**/*.js'
   }
