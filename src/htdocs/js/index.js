@@ -30,7 +30,8 @@ Xhr.ajax({
   error: function (err) {
     document.querySelector('#application').innerHTML =
       '<p class="alert error">' +
-        'Failed to download post-wildfire debris flow data.' +
+        'Failed to download post-wildfire debris flow data. We are working ' +
+        'to fix this issue. Please check back at a later time.' +
       '</p>';
     console.log(err);
   }
