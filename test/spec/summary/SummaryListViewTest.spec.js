@@ -106,9 +106,9 @@ describe('SummaryListView', function () {
       link = el.querySelector('a');
 
       expect(link).to.not.be.null;
-      expect(link.innerHTML.indexOf('June')).to.equal(0);
-      expect(link.innerHTML.indexOf(item.attributes.fire)).to.equal(8);
-      expect(link.innerHTML.indexOf(item.attributes.location)).to.equal(24);
+      expect(link.innerHTML.indexOf('June')).to.not.equal(-1);
+      expect(link.innerHTML.indexOf(item.attributes.fire)).to.not.equal(-1);
+      expect(link.innerHTML.indexOf(item.attributes.location)).to.not.equal(-1);
 
     });
   });
