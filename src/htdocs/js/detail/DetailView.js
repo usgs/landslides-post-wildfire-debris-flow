@@ -266,11 +266,12 @@ var DetailView = function (options) {
     }
 
     disclaimer =
-        'Note: These data are based upon preliminary imagery and assessments'
+        'Note:'
+        + '  These data are based upon preliminary imagery and assessments'
         + ' of soil burn severity.  These estimates will be updated as new'
-        + ' imagery becomes available and the U.S. Forest Service Burned Area'
-        + ' Emergency Response (BAER) teams finalize their soil burn severity'
-        + ' map.  The estimates of debris-flow likelihood, volume, and combined'
+        + ' imagery becomes available and the local burned area emergency'
+        + ' response teams finalize their soil burn severity map.'
+        + '  The estimates of debris-flow likelihood, volume, and combined'
         + ' hazard presented here are preliminary and are subject to revision.';
     return disclaimer;
   };
