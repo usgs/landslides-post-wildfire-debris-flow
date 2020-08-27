@@ -120,7 +120,8 @@ var SummaryView = function (options) {
   _this.formatSummaryListItem = function (item) {
     var date,
         markup,
-        months;
+        months,
+        status;
 
     markup = [];
     months = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -129,11 +130,13 @@ var SummaryView = function (options) {
 
     try {
       date = new Date(item.attributes.date);
+      status = item.attributes.status;
       markup.push(
-        '<a href="detail.php?objectid=' + item.attributes.OBJECTID + '">' +
-          months[date.getUTCMonth()] + ' - ',
+        '<a href="detail.php?objectid=' + item.attributes.OBJECTID + '">',
+        months[date.getUTCMonth()] + ' - ',
           item.attributes.fire,
-          '(' + item.attributes.location + ')' +
+          '(' + item.attributes.location + ')',
+        status !== 'FINAL' ? ' - ' + status : '',
         '</a>'
       );
       return markup.join(' ');

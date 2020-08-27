@@ -46,6 +46,7 @@ var DetailView = function (options) {
     _this.el.innerHTML =
         '<div class="detail-summary"></div>' +
         '<h2>Preliminary Hazard Assessment</h2>' +
+        '<div class="detail-disclaimer"></div>' +
         '<div class="detail-map-view">' +
           '<div class="detail-map"></div>' +
           '<img src="" class="legend" />' +
@@ -67,6 +68,7 @@ var DetailView = function (options) {
 
     // create references to all element objects
     _this.detailSummaryEl = _this.el.querySelector('.detail-summary');
+    _this.detailDisclaimerEl = _this.el.querySelector('.detail-disclaimer');
     _this.detailMapEl = _this.el.querySelector('.detail-map-view');
     _this.detailDescriptionEl = _this.el.querySelector('.detail-description');
     _this.detailDownloadEl = _this.el.querySelector('.detail-download');
@@ -251,6 +253,30 @@ var DetailView = function (options) {
   };
 
   /**
+   * Get disclaimer text.
+   */
+  _this.getDisclaimer = function () {
+    var disclaimer = _this.getAttribute('disclaimer'),
+        status = _this.getAttribute('status');
+
+    if (status === 'FINAL') {
+      return '';
+    } else if (disclaimer) {
+      return disclaimer;
+    }
+
+    disclaimer =
+        'Note:'
+        + '  These data are based upon preliminary imagery and assessments'
+        + ' of soil burn severity.  These estimates will be updated as new'
+        + ' imagery becomes available and the local burned area emergency'
+        + ' response teams finalize their soil burn severity map.'
+        + '  The estimates of debris-flow likelihood, volume, and combined'
+        + ' hazard presented here are preliminary and are subject to revision.';
+    return disclaimer;
+  };
+
+  /**
    * Load the static map image.
    *
    */
@@ -302,6 +328,17 @@ var DetailView = function (options) {
    *
    */
   _this.render = function () {
+    var disclaimer = _this.getDisclaimer();
+    if (disclaimer !== '') {
+      _this.detailDisclaimerEl.innerHTML = disclaimer;
+      _this.detailDisclaimerEl.classList.add('alert');
+      _this.detailDisclaimerEl.classList.add('warning');
+    } else {
+      _this.detailDisclaimerEl.innerHTML = '';
+      _this.detailDisclaimerEl.classList.remove('alert');
+      _this.detailDisclaimerEl.classList.remove('warninig');
+    }
+
     // Display summary info on details page
     _this.detailSummaryEl.innerHTML = _this.getDetailSummary();
     // Load map or map images
